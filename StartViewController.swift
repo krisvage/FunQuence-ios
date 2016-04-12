@@ -58,8 +58,8 @@ class StartViewController: UIViewController {
 
         Users.login(username!, password: password!) { token, message, error in
             if error == nil {
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(token, forKey: "userToken")
+                UserDefaultStorage.saveToken(token ?? "")
+
                 self.messageField.text = message
                 print(token)
 
