@@ -54,7 +54,6 @@ class LoginViewController: UIViewController {
     func login(button: UIButton) {
         let username = usernameField.text!
         let password = passwordField.text!
-
         Users.login(username, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
