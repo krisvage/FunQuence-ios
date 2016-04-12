@@ -10,8 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class Users {
-    static let basePath = "http://recallo.noip.me/api"
+class Users: API {
     static let loginRoute = Route(path: basePath + "/login", method: Method.POST)
     static let registerRoute = Route(path: basePath + "/users", method: Method.POST)
     static let myUserRoute = Route(path: basePath + "/users/me", method: Method.GET)
@@ -19,7 +18,7 @@ class Users {
     static func login(username: String, password: String, completionHandler: (token: String?, message: String?, error: String?) -> ()) {
         let params = ["username": username, "password": password]
         
-        Alamofire.request(loginRoute!.method, loginRoute!.path, parameters: params)
+        Alamofire.request(loginRoute.method, loginRoute.path, parameters: params)
             .responseJSON { response in
                 switch response.result {
                 case .Success(_):
@@ -45,7 +44,7 @@ class Users {
     static func register(username: String, email: String, password: String, completionHandler: (token: String?, message: String?, error: String?) -> ()) {
         let params = ["username": username, "email": email, "password": password]
 
-        Alamofire.request(registerRoute!.method, registerRoute!.path, parameters: params)
+        Alamofire.request(registerRoute.method, registerRoute.path, parameters: params)
             .responseJSON { response in
                 switch response.result {
                 case .Success(_):
@@ -69,10 +68,8 @@ class Users {
         }
     }
 
-    static func myUser(token: String, completionHandler: (userJSON: JSON?, errorOccured: Bool) -> ()) {
-        let headers = ["x-access-token": token]
-        
-        Alamofire.request(myUserRoute!.method, myUserRoute!.path, headers: headers)
+    static func myUser(completionHandler: (userJSON: JSON?, errorOccured: Bool) -> ()) {
+        Alamofire.request(myUserRoute.method, myUserRoute.path, headers: headers())
             .responseJSON { response in
                 switch response.result {
                 case .Success(_):

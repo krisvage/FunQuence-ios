@@ -20,9 +20,7 @@ class GameScene: SKScene {
 
         self.addChild(myLabel)
         
-        let token = UserDefaultStorage.getToken()
-
-        Users.myUser(token) { json, error in
+        Users.myUser() { json, error in
             if error {
                 myLabel.text = "Error"
             } else {
