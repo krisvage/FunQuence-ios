@@ -20,9 +20,7 @@ class GameScene: SKScene {
 
         self.addChild(myLabel)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        let token = defaults.objectForKey("userToken") as? String ?? ""
+        let token = UserDefaultStorage.getToken()
 
         Users.myUser(token) { json, error in
             if error {
