@@ -13,8 +13,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var messageField: UILabel!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var guestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,8 @@ class StartViewController: UIViewController {
         loginButton.setTitle("LOGIN", forState: .Normal)
         
         loginButton.addTarget(self, action: #selector(StartViewController.loginButtonTapped), forControlEvents: .TouchDown)
+        
+        messageField.text = "please log in"
     }
     
     override func shouldAutorotate() -> Bool {
@@ -53,9 +55,18 @@ class StartViewController: UIViewController {
     func loginButtonTapped(button: UIButton) {
         let username = usernameField.text
         let password = passwordField.text
-        
-        let token = Users.login(username!, password: password!)
-        
-        print(token)
+
+        Users.login(username!, password: password!) { token, message, error in
+            if error == nil {
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(token, forKey: "userToken")
+                self.messageField.text = message
+                print(token)
+
+                self.performSegueWithIdentifier("startToGame", sender: self)
+            } else {
+                self.messageField.text = error
+            }
+        }
     }
 }

@@ -12,31 +12,43 @@ import SwiftyJSON
 
 class Users {
     static let basePath = "http://recallo.noip.me/api"
-    static let loginRoute = Route(path: "/login", method: Method.POST)
+    static let loginRoute = Route(path: basePath + "/login", method: Method.POST)
+    static let myUserRoute = Route(path: basePath + "/users/me", method: Method.GET)
     
-    static func login(username: String, password: String) -> String {
-        var token = "abc"
-        
-        
-        // loginRoute!.method, basePath + loginRoute!.path
-        Alamofire.request(loginRoute!.method, basePath + loginRoute!.path, parameters: ["username": username, "password": password])
+    static func login(username: String, password: String, completionHandler: (String?, String?, String?) -> ()) {
+        Alamofire.request(loginRoute!.method, loginRoute!.path, parameters: ["username": username, "password": password])
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.response?.statusCode)
-                print(response.data)     // server data
-                
-                print(response.result)   // result of response serialization
-                
-                if let json = response.result.value {
-                    print("JSON: \(json)")
-                    let parsed_json = JSON(json)
-                    print("message \(parsed_json["message"].stringValue)")
-                    token = parsed_json["token"].stringValue
-                    print(token)
+                switch response.result {
+                case .Success(_):
+                    if let json = response.result.value {
+                        let parsed_json = JSON(json)
+                        if parsed_json["error"] == nil {
+                            completionHandler(parsed_json["token"].stringValue, parsed_json["message"].stringValue, nil)
+                        } else {
+                            completionHandler(nil, nil, parsed_json["error"].stringValue)
+                        }
+                    }
+                case .Failure(_):
+                    completionHandler(nil, nil, "failed request")
                 }
         }
+    }
+
+    static func myUser(token: String, completionHandler: (JSON?, Bool) -> ()) {
+        let headers = ["x-access-token": token]
         
-        return token
+        Alamofire.request(myUserRoute!.method, myUserRoute!.path, headers: headers)
+            .responseJSON { response in
+                switch response.result {
+                case .Success(_):
+                    if let json = response.result.value {
+                        let parsed_json = JSON(json)
+                        
+                        completionHandler(parsed_json["user"], false)
+                    }
+                case .Failure(_):
+                    completionHandler(nil, true)
+                }
+        }
     }
 }

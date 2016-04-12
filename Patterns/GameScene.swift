@@ -19,32 +19,23 @@ class GameScene: SKScene {
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
 
         self.addChild(myLabel)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let token = defaults.objectForKey("userToken") as? String ?? ""
 
-        let api_location = "http://recallo.noip.me/api/users/me" /// "http://82.196.0.219.xip.io/api/users/me"
-        let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImtyaXN2YWdlIiwiaWF0IjoxNDYwMzY4MjE2fQ.H5dmE_pBGSTzaE08Yk5_aZgR_lNia8jGZsL9zd2yjG0"
-
-        let headers = ["x-access-token": token]
-
-        Alamofire.request(.GET, api_location, headers: headers)
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.response?.statusCode)
-                print(response.data)     // server data
-
-                print(response.result)   // result of response serialization
-
-                if let json = response.result.value {
-                    print("JSON: \(json)")
-                    let parsed_json = JSON(json)
-                    print("message \(parsed_json["message"].stringValue)")
-                }
+        Users.myUser(token) { json, error in
+            if error {
+                myLabel.text = "Error"
+            } else {
+                myLabel.text = json!["username"].stringValue
+            }
         }
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
-        
+
         for touch in touches {
             let location = touch.locationInNode(self)
             

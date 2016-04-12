@@ -38,12 +38,14 @@
                                 <rect key="frame" x="277" y="221" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5U-ET-vDG">
+                                <rect key="frame" x="279" y="281" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-hF-djw">
-                                <rect key="frame" x="277" y="386" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpF-Uj-lv4">
-                                <rect key="frame" x="277" y="449" width="46" height="30"/>
+                                <rect key="frame" x="277" y="343" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -54,32 +56,32 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ZFi-to-K72" secondAttribute="trailing" constant="20" id="7J4-Jm-kJm"/>
                             <constraint firstItem="ZFi-to-K72" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="9Fe-39-cGv"/>
                             <constraint firstItem="cWn-81-KjR" firstAttribute="leading" secondItem="kYO-nh-wau" secondAttribute="leading" id="AYb-NG-2aW"/>
+                            <constraint firstItem="c5U-ET-vDG" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="BEs-lq-0fM"/>
                             <constraint firstItem="NOk-Z2-VJE" firstAttribute="leading" secondItem="kYO-nh-wau" secondAttribute="leading" id="Hff-FH-OCJ"/>
                             <constraint firstItem="IIc-hF-djw" firstAttribute="leading" secondItem="kYO-nh-wau" secondAttribute="leading" id="OhV-tG-Jb4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KpF-Uj-lv4" secondAttribute="trailing" constant="20" id="PbS-Pa-TmA"/>
                             <constraint firstItem="NOk-Z2-VJE" firstAttribute="top" secondItem="Aat-mz-dtY" secondAttribute="bottom" constant="20" id="ahE-6m-fLd"/>
                             <constraint firstItem="ZFi-to-K72" firstAttribute="leading" secondItem="kYO-nh-wau" secondAttribute="leading" id="byc-H6-dU4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IIc-hF-djw" secondAttribute="trailing" constant="20" id="d39-0v-ybS"/>
-                            <constraint firstItem="KpF-Uj-lv4" firstAttribute="leading" secondItem="kYO-nh-wau" secondAttribute="leading" id="lJJ-Jb-Q8z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c5U-ET-vDG" secondAttribute="trailing" constant="20" id="jPA-Fo-e1F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kYO-nh-wau" secondAttribute="trailing" constant="20" id="leT-97-ZaR"/>
                             <constraint firstItem="NOk-Z2-VJE" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="myw-Qw-ckR"/>
-                            <constraint firstItem="KpF-Uj-lv4" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="sEN-AK-MtT"/>
                             <constraint firstItem="cWn-81-KjR" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="uKz-u7-Ike"/>
                             <constraint firstItem="IIc-hF-djw" firstAttribute="leading" secondItem="P3c-lh-b1U" secondAttribute="leadingMargin" constant="20" id="wIg-5u-4Su"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NOk-Z2-VJE" secondAttribute="trailing" constant="20" id="z1u-RK-h2v"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="guestButton" destination="KpF-Uj-lv4" id="enF-jw-MJ2"/>
                         <outlet property="loginButton" destination="ZFi-to-K72" id="qyU-df-yw7"/>
+                        <outlet property="messageField" destination="c5U-ET-vDG" id="BMt-86-cd5"/>
                         <outlet property="passwordField" destination="cWn-81-KjR" id="hTM-Mw-IxB"/>
                         <outlet property="registerButton" destination="IIc-hF-djw" id="jsR-wB-SfW"/>
                         <outlet property="usernameField" destination="kYO-nh-wau" id="fiy-PN-l8h"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="startToGame" id="B9Q-vF-qQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49f-41-fe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="277"/>
+            <point key="canvasLocation" x="480" y="262"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -119,4 +121,7 @@
             <point key="canvasLocation" x="480" y="-514"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="B9Q-vF-qQx"/>
+    </inferredMetricsTieBreakers>
 </document>
