@@ -12,7 +12,7 @@ class Route {
     var path: String
     var method: Method
     
-    init?(path: String, method: Method) {
+    init(path: String, method: Method) {
         self.path = path
         self.method = method
     }
