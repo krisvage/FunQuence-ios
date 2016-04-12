@@ -17,6 +17,7 @@
 		F14075A81C85DF1300EEADC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14075A71C85DF1300EEADC1 /* Assets.xcassets */; };
 		F14075AB1C85DF1300EEADC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A91C85DF1300EEADC1 /* LaunchScreen.storyboard */; };
 		F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14075B51C85DF1300EEADC1 /* PatternsTests.swift */; };
+		F142BE0D1CBD3C320052E6C9 /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F142BE0C1CBD3C320052E6C9 /* Spring.framework */; };
 		F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D23481CBD21F000220218 /* RegisterViewController.swift */; };
 		F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
 		F19D30DE1CBBA42D004A2B07 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -50,6 +51,7 @@
 		F14075B11C85DF1300EEADC1 /* PatternsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatternsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14075B51C85DF1300EEADC1 /* PatternsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsTests.swift; sourceTree = "<group>"; };
 		F14075B71C85DF1300EEADC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F142BE0C1CBD3C320052E6C9 /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = Carthage/Build/iOS/Spring.framework; sourceTree = "<group>"; };
 		F16D23481CBD21F000220218 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F16D234A1CBD254700220218 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19D30DE1CBBA42D004A2B07 /* Alamofire.framework in Frameworks */,
+				F142BE0D1CBD3C320052E6C9 /* Spring.framework in Frameworks */,
 				F19D30E11CBBC4CE004A2B07 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +85,7 @@
 		F14075901C85DF1200EEADC1 = {
 			isa = PBXGroup;
 			children = (
+				F142BE0C1CBD3C320052E6C9 /* Spring.framework */,
 				F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */,
 				F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */,
 				F140759B1C85DF1300EEADC1 /* Patterns */,
@@ -255,6 +259,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Spring.framework",
 			);
 			outputPaths = (
 			);
