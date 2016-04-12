@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
+		265AFFC21CBD7C7400D3F898 /* StaticGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AFFC11CBD7C7400D3F898 /* StaticGames.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		265AFFC11CBD7C7400D3F898 /* StaticGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticGames.swift; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				F14075A71C85DF1300EEADC1 /* Assets.xcassets */,
 				F14075A91C85DF1300EEADC1 /* LaunchScreen.storyboard */,
 				F14075AC1C85DF1300EEADC1 /* Info.plist */,
+				265AFFC11CBD7C7400D3F898 /* StaticGames.swift */,
 			);
 			path = Patterns;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				F19D30E61CBBD3EE004A2B07 /* Users.swift in Sources */,
 				F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */,
 				F19D30E91CBBD67D004A2B07 /* Route.swift in Sources */,
+				265AFFC21CBD7C7400D3F898 /* StaticGames.swift in Sources */,
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
 				F14075A31C85DF1300EEADC1 /* GameViewController.swift in Sources */,

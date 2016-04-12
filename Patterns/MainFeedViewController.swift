@@ -24,13 +24,13 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return data.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! GameCellTableViewCell
-        cell.usernameLabel.text = "Mathias";
-        cell.roundLabel.text = "Round: 3";
+        let game = data[indexPath.row]
+        cell.configureCell(game)
         return cell
     }
     
