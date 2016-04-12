@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
-		26D87D5E1CBD2FFB00F78E08 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
-		26D87D5F1CBD2FFB00F78E08 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
-		26D87D641CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F100A8CF1CBD409400E517C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
 		F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140759C1C85DF1300EEADC1 /* AppDelegate.swift */; };
@@ -291,6 +289,7 @@
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
 				F14075A11C85DF1300EEADC1 /* GameScene.swift in Sources */,
 				F19D30E31CBBCE8B004A2B07 /* StartViewController.swift in Sources */,
+				264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */,
 				F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */,
 				F19D30E61CBBD3EE004A2B07 /* Users.swift in Sources */,
 				F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */,
