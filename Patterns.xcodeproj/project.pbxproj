@@ -75,6 +75,8 @@
 		F14075A81C85DF1300EEADC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14075A71C85DF1300EEADC1 /* Assets.xcassets */; };
 		F14075AB1C85DF1300EEADC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A91C85DF1300EEADC1 /* LaunchScreen.storyboard */; };
 		F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14075B51C85DF1300EEADC1 /* PatternsTests.swift */; };
+		F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D23481CBD21F000220218 /* RegisterViewController.swift */; };
+		F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
 		F19D30DE1CBBA42D004A2B07 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F19D30E11CBBC4CE004A2B07 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
 		F19D30E31CBBCE8B004A2B07 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */; };
@@ -136,6 +138,8 @@
 		F14075B11C85DF1300EEADC1 /* PatternsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatternsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14075B51C85DF1300EEADC1 /* PatternsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsTests.swift; sourceTree = "<group>"; };
 		F14075B71C85DF1300EEADC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16D23481CBD21F000220218 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F16D234A1CBD254700220218 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../StartViewController.swift; sourceTree = "<group>"; };
@@ -203,9 +207,9 @@
 		F14075901C85DF1200EEADC1 = {
 			isa = PBXGroup;
 			children = (
+				F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */,
 				2689D14E1CBD193E00FBCB0C /* Spring */,
 				F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */,
-				F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */,
 				F140759B1C85DF1300EEADC1 /* Patterns */,
 				F14075B41C85DF1300EEADC1 /* PatternsTests */,
 				F140759A1C85DF1300EEADC1 /* Products */,
@@ -230,12 +234,13 @@
 				F140759E1C85DF1300EEADC1 /* GameScene.sks */,
 				F14075A01C85DF1300EEADC1 /* GameScene.swift */,
 				F14075A21C85DF1300EEADC1 /* GameViewController.swift */,
+				2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */,
+				F16D23481CBD21F000220218 /* RegisterViewController.swift */,
 				F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */,
 				F14075A41C85DF1300EEADC1 /* Main.storyboard */,
 				F14075A71C85DF1300EEADC1 /* Assets.xcassets */,
 				F14075A91C85DF1300EEADC1 /* LaunchScreen.storyboard */,
 				F14075AC1C85DF1300EEADC1 /* Info.plist */,
-				2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */,
 			);
 			path = Patterns;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				F19D30E81CBBD67D004A2B07 /* Route.swift */,
+				F16D234A1CBD254700220218 /* UserDefaultStorage.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				2689D1811CBD193E00FBCB0C /* DesignableView.swift in Sources */,
 				2689D19D1CBD193E00FBCB0C /* SpringTextView.swift in Sources */,
 				2689D19B1CBD193E00FBCB0C /* SpringTextField.swift in Sources */,
+				F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */,
 				2689D18F1CBD193E00FBCB0C /* SoundPlayer.swift in Sources */,
 				2689D1831CBD193E00FBCB0C /* ImageLoader.swift in Sources */,
 				2689D1711CBD193E00FBCB0C /* AutoTextView.swift in Sources */,
@@ -415,6 +422,7 @@
 				2689D1A51CBD193E00FBCB0C /* UnwindSegue.swift in Sources */,
 				2689D16F1CBD193E00FBCB0C /* AsyncImageView.swift in Sources */,
 				2689D1931CBD193E00FBCB0C /* SpringAnimation.swift in Sources */,
+				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
 				2689D1871CBD193E00FBCB0C /* KeyboardLayoutConstraint.swift in Sources */,
 				F14075A31C85DF1300EEADC1 /* GameViewController.swift in Sources */,
 				2689D17D1CBD193E00FBCB0C /* DesignableTextField.swift in Sources */,

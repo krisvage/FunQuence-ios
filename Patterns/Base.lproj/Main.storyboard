@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vPi-68-ekc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vPi-68-ekc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -118,23 +118,23 @@
                                 <exclude reference="GlA-cQ-LxM"/>
                                 <exclude reference="QgA-JZ-sWq"/>
                                 <exclude reference="uKs-BM-jhN"/>
-                                <exclude reference="ght-Oo-2zP"/>
-                                <exclude reference="pq7-Ik-M55"/>
                                 <exclude reference="OQE-Ry-XCa"/>
                                 <exclude reference="zhA-Ib-O7V"/>
-                                <exclude reference="q16-wc-ACa"/>
-                                <exclude reference="rGD-lb-lnF"/>
                                 <exclude reference="Qwr-UE-GrB"/>
                                 <exclude reference="ZKB-yz-7PQ"/>
                                 <exclude reference="zqE-AS-Mqn"/>
                                 <exclude reference="Suf-TX-Xs8"/>
                                 <exclude reference="UOi-mD-1pL"/>
-                                <exclude reference="yt9-gW-Q9q"/>
+                                <exclude reference="ght-Oo-2zP"/>
+                                <exclude reference="pq7-Ik-M55"/>
                                 <exclude reference="EAc-Jj-tVM"/>
                                 <exclude reference="Ojt-ud-8ks"/>
                                 <exclude reference="ohD-oj-wnf"/>
                                 <exclude reference="teh-ZT-li7"/>
                                 <exclude reference="tfI-OT-6Eu"/>
+                                <exclude reference="q16-wc-ACa"/>
+                                <exclude reference="rGD-lb-lnF"/>
+                                <exclude reference="yt9-gW-Q9q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -155,23 +155,23 @@
                                 <include reference="GlA-cQ-LxM"/>
                                 <include reference="QgA-JZ-sWq"/>
                                 <exclude reference="uKs-BM-jhN"/>
-                                <include reference="ght-Oo-2zP"/>
-                                <include reference="pq7-Ik-M55"/>
                                 <include reference="OQE-Ry-XCa"/>
                                 <include reference="zhA-Ib-O7V"/>
-                                <include reference="q16-wc-ACa"/>
-                                <include reference="rGD-lb-lnF"/>
                                 <exclude reference="Qwr-UE-GrB"/>
                                 <include reference="ZKB-yz-7PQ"/>
                                 <include reference="zqE-AS-Mqn"/>
                                 <include reference="Suf-TX-Xs8"/>
                                 <include reference="UOi-mD-1pL"/>
-                                <include reference="yt9-gW-Q9q"/>
+                                <include reference="ght-Oo-2zP"/>
+                                <include reference="pq7-Ik-M55"/>
                                 <include reference="EAc-Jj-tVM"/>
                                 <exclude reference="Ojt-ud-8ks"/>
                                 <include reference="ohD-oj-wnf"/>
                                 <include reference="teh-ZT-li7"/>
                                 <exclude reference="tfI-OT-6Eu"/>
+                                <include reference="q16-wc-ACa"/>
+                                <include reference="rGD-lb-lnF"/>
+                                <include reference="yt9-gW-Q9q"/>
                             </mask>
                         </variation>
                     </view>
@@ -243,7 +243,7 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
-                                <state key="normal" title="Log in" image="FBA84B00-04FB-470A-93E9-212280FB46A4" backgroundImage="button_bg">
+                                <state key="normal" title="Log in" image="768048FB-9420-47E8-99BE-56D63855BC60" backgroundImage="button_bg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -297,14 +297,14 @@ is incorrect.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="NPk-GL-2vz"/>
                                         <exclude reference="61b-Ij-fHC"/>
+                                        <exclude reference="NPk-GL-2vz"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="NPk-GL-2vz"/>
                                         <include reference="61b-Ij-fHC"/>
+                                        <include reference="NPk-GL-2vz"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -347,24 +347,24 @@ is incorrect.</string>
                                 <exclude reference="zIf-wi-m47"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4aI-BF-7sc"/>
-                                <exclude reference="I0T-pE-5fm"/>
+                                <exclude reference="dbB-SQ-jth"/>
                                 <exclude reference="JWT-vH-RQW"/>
                                 <exclude reference="r63-y3-mN3"/>
-                                <exclude reference="6W6-Un-B5d"/>
-                                <exclude reference="IL9-5A-uFO"/>
-                                <exclude reference="cRj-ho-DGd"/>
-                                <exclude reference="hJA-zQ-ZHA"/>
+                                <exclude reference="4aI-BF-7sc"/>
+                                <exclude reference="I0T-pE-5fm"/>
+                                <exclude reference="s8d-LJ-djD"/>
                                 <exclude reference="FLU-5C-gMr"/>
                                 <exclude reference="V8b-I9-E9C"/>
                                 <exclude reference="cdC-ki-Gcc"/>
                                 <exclude reference="cjj-xh-UaW"/>
-                                <exclude reference="PiL-Fj-Ksp"/>
-                                <exclude reference="jGf-S9-bbL"/>
+                                <exclude reference="cRj-ho-DGd"/>
+                                <exclude reference="hJA-zQ-ZHA"/>
+                                <exclude reference="6W6-Un-B5d"/>
+                                <exclude reference="IL9-5A-uFO"/>
                                 <exclude reference="JrV-Nu-epw"/>
                                 <exclude reference="c7T-al-HZw"/>
-                                <exclude reference="s8d-LJ-djD"/>
-                                <exclude reference="dbB-SQ-jth"/>
+                                <exclude reference="PiL-Fj-Ksp"/>
+                                <exclude reference="jGf-S9-bbL"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -379,24 +379,24 @@ is incorrect.</string>
                                 <include reference="zIf-wi-m47"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4aI-BF-7sc"/>
-                                <include reference="I0T-pE-5fm"/>
+                                <include reference="dbB-SQ-jth"/>
                                 <include reference="JWT-vH-RQW"/>
                                 <include reference="r63-y3-mN3"/>
-                                <include reference="6W6-Un-B5d"/>
-                                <include reference="IL9-5A-uFO"/>
-                                <include reference="cRj-ho-DGd"/>
-                                <include reference="hJA-zQ-ZHA"/>
+                                <include reference="4aI-BF-7sc"/>
+                                <include reference="I0T-pE-5fm"/>
+                                <include reference="s8d-LJ-djD"/>
                                 <exclude reference="FLU-5C-gMr"/>
                                 <include reference="V8b-I9-E9C"/>
                                 <include reference="cdC-ki-Gcc"/>
                                 <exclude reference="cjj-xh-UaW"/>
-                                <include reference="PiL-Fj-Ksp"/>
-                                <include reference="jGf-S9-bbL"/>
+                                <include reference="cRj-ho-DGd"/>
+                                <include reference="hJA-zQ-ZHA"/>
+                                <include reference="6W6-Un-B5d"/>
+                                <include reference="IL9-5A-uFO"/>
                                 <include reference="JrV-Nu-epw"/>
                                 <include reference="c7T-al-HZw"/>
-                                <include reference="s8d-LJ-djD"/>
-                                <include reference="dbB-SQ-jth"/>
+                                <include reference="PiL-Fj-Ksp"/>
+                                <include reference="jGf-S9-bbL"/>
                             </mask>
                         </variation>
                     </view>
@@ -413,10 +413,10 @@ is incorrect.</string>
             </objects>
             <point key="canvasLocation" x="-30" y="295"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="S96-QA-RjI">
             <objects>
-                <viewController id="7ar-XI-pO1" sceneMemberID="viewController">
+                <viewController id="7ar-XI-pO1" customClass="RegisterViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pRj-QP-xr0"/>
                         <viewControllerLayoutGuide type="bottom" id="cg9-Kd-cID"/>
@@ -463,7 +463,7 @@ is incorrect.</string>
                                 </constraints>
                                 <color key="textColor" red="0.74901960779999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="mAm-7G-LTd"/>
@@ -508,6 +508,9 @@ is incorrect.</string>
                                         <include reference="nWS-JV-Hgg"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="7ar-XI-pO1" eventType="touchUpInside" id="pad-DB-UfO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-NX-3mr">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -526,14 +529,14 @@ is incorrect.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="FZN-CS-yXP"/>
                                         <exclude reference="32H-8G-AlE"/>
+                                        <exclude reference="FZN-CS-yXP"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="FZN-CS-yXP"/>
                                         <include reference="32H-8G-AlE"/>
+                                        <include reference="FZN-CS-yXP"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -581,7 +584,7 @@ is incorrect.</string>
                             <constraint firstItem="Igp-tc-W7K" firstAttribute="centerX" secondItem="fvO-hw-Oed" secondAttribute="centerX" id="MzP-SQ-4GI"/>
                             <constraint firstItem="Igp-tc-W7K" firstAttribute="centerX" secondItem="fvO-hw-Oed" secondAttribute="centerX" id="RR0-VP-eCn"/>
                             <constraint firstItem="BWh-NX-3mr" firstAttribute="top" secondItem="pRj-QP-xr0" secondAttribute="bottom" id="SsF-VR-fGa">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="Igp-tc-W7K" firstAttribute="centerX" secondItem="fvO-hw-Oed" secondAttribute="centerX" id="V0X-r0-OOM"/>
                             <constraint firstItem="tT8-Z2-paJ" firstAttribute="centerX" secondItem="fvO-hw-Oed" secondAttribute="centerX" id="XqY-Ov-ivi"/>
@@ -619,18 +622,18 @@ is incorrect.</string>
                                 <exclude reference="5MW-OP-iX7"/>
                                 <exclude reference="YBs-kg-cqY"/>
                                 <exclude reference="kXW-ac-jTM"/>
+                                <exclude reference="1VE-2u-0AC"/>
+                                <exclude reference="SsF-VR-fGa"/>
+                                <exclude reference="aKa-8T-dq2"/>
+                                <exclude reference="daW-pt-Qpe"/>
+                                <exclude reference="IOi-3E-IKd"/>
+                                <exclude reference="vfD-U0-0O6"/>
                                 <exclude reference="MzP-SQ-4GI"/>
                                 <exclude reference="RR0-VP-eCn"/>
                                 <exclude reference="V0X-r0-OOM"/>
                                 <exclude reference="jjn-Ly-QIM"/>
-                                <exclude reference="IOi-3E-IKd"/>
-                                <exclude reference="vfD-U0-0O6"/>
-                                <exclude reference="1VE-2u-0AC"/>
-                                <exclude reference="SsF-VR-fGa"/>
                                 <exclude reference="XqY-Ov-ivi"/>
                                 <exclude reference="bnh-1p-iga"/>
-                                <exclude reference="aKa-8T-dq2"/>
-                                <exclude reference="daW-pt-Qpe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -649,21 +652,26 @@ is incorrect.</string>
                                 <include reference="5MW-OP-iX7"/>
                                 <exclude reference="YBs-kg-cqY"/>
                                 <include reference="kXW-ac-jTM"/>
+                                <include reference="1VE-2u-0AC"/>
+                                <include reference="SsF-VR-fGa"/>
+                                <include reference="aKa-8T-dq2"/>
+                                <include reference="daW-pt-Qpe"/>
+                                <include reference="IOi-3E-IKd"/>
+                                <include reference="vfD-U0-0O6"/>
                                 <include reference="MzP-SQ-4GI"/>
                                 <include reference="RR0-VP-eCn"/>
                                 <include reference="V0X-r0-OOM"/>
                                 <include reference="jjn-Ly-QIM"/>
-                                <include reference="IOi-3E-IKd"/>
-                                <include reference="vfD-U0-0O6"/>
-                                <include reference="1VE-2u-0AC"/>
-                                <include reference="SsF-VR-fGa"/>
                                 <include reference="XqY-Ov-ivi"/>
                                 <include reference="bnh-1p-iga"/>
-                                <include reference="aKa-8T-dq2"/>
-                                <include reference="daW-pt-Qpe"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="6lm-m6-0o5" id="t3F-0f-uUd"/>
+                        <outlet property="passwordField" destination="tT8-Z2-paJ" id="Hhs-ux-ve8"/>
+                        <outlet property="usernameField" destination="Igp-tc-W7K" id="vT7-g8-q5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wt-MJ-CTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hFd-0K-LKd" userLabel="Exit" sceneMemberID="exit"/>
@@ -672,7 +680,7 @@ is incorrect.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="FBA84B00-04FB-470A-93E9-212280FB46A4" width="274" height="54">
+        <image name="768048FB-9420-47E8-99BE-56D63855BC60" width="274" height="54">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

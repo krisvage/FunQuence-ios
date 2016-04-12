@@ -1,31 +1,24 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Patterns
 //
-//  Created by Mathias Iden on 12.04.2016.
+//  Created by Kristian Våge on 12.04.2016.
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var messageHeader: UILabel!
-    @IBOutlet weak var messageField: UILabel!
+class RegisterViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBAction func loginButtonTapped(sender: UIButton) {
-        self.login(sender)
+    @IBAction func registerButtonTapped(sender: UIButton) {
+        self.register(sender)
     }
     
-    @IBAction func registerNewAccountTapped(sender: AnyObject) {
-        performSegueWithIdentifier("goToRegister", sender: self)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageField.hidden = true;
-        messageHeader.hidden = true;
     }
     
     override func shouldAutorotate() -> Bool {
@@ -49,25 +42,23 @@ class LoginViewController: UIViewController {
         return true
     }
     
-    // MARK: Button action
-    
-    func login(button: UIButton) {
+    func register(button: UIButton) {
         let username = usernameField.text!
+        let email = emailField.text!
         let password = passwordField.text!
-
-        Users.login(username, password: password) { token, message, error in
+        
+        print(username)
+        print(email)
+        print(password)
+        
+        Users.register(username, email: email, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
-                print(UserDefaultStorage.getToken())
-                self.messageField.hidden = true
-                self.messageHeader.hidden = true
-                // TODO: Go to main feed view.
+                
+                print(message)
             } else {
-                self.messageField.text = error
-                self.messageField.hidden = false
-                self.messageHeader.hidden = false
+                print(error)
             }
         }
     }
-
 }
