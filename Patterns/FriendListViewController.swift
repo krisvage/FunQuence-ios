@@ -25,8 +25,19 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         friendsCountLabel.text = String(dataSource.count)
         self.tableView.reloadData();
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Friends.friendsList() { friends, error in
+            if error == nil {
+                self.dataSource.appendContentsOf(friends!)
+                self.dataDidChange()
+            } else {
+                print(error)
+            }
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -46,7 +57,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier(friendCellIdentifier) as! FriendCellTableViewCell
         let username = dataSource[indexPath.row]
         cell.configureCell(username)
-        cell.userInteractionEnabled = false
+        cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
@@ -55,6 +66,21 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let username = dataSource[indexPath.row]
+            print(username)
+            Friends.delete(username) { deleted in
+                if deleted {
+                    self.dataSource.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                } else {
+                    print("user not deleted")
+                }
+            }
+        }
+    }
+
     @IBAction func addFriendTapped(sender: AnyObject) {
         let alertController = UIAlertController(title: "Add Friend", message: "Enter friends username", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addTextFieldWithConfigurationHandler { (UITextField) in
@@ -64,9 +90,16 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
             print("Trykket add")
-            self.dataSource.append(self.inputFieldInAlertView.text!)
-            self.dataDidChange();
-            print(self.inputFieldInAlertView.text!)
+            let username = self.inputFieldInAlertView.text!
+            
+            Friends.add(username) { added in
+                if added {
+                    self.dataSource.append(username)
+                    self.dataDidChange();
+                } else {
+                    print("Add friend failed")
+                }
+            }
         }))
         self.presentViewController(alertController, animated: true) {
             // Do something when alert view is shown.

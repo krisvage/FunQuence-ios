@@ -89,11 +89,7 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="green label" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Nh-e8U">
                                                     <rect key="frame" x="0.0" y="-27" width="27" height="27"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                         <rect key="frame" x="197" y="24" width="27" height="27"/>
-=======
-                                                        <rect key="frame" x="197" y="24" width="27" height="27.5"/>
->>>>>>> Adds temporary login flow
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-1X-cTk">
@@ -537,11 +533,7 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                 <state key="normal" title="Log in" image="24507629-D0F3-4070-A682-D00F82C555E8" backgroundImage="button_bg">
-=======
-                                <state key="normal" title="Log in" image="03E06980-FFC8-46FB-B3F2-F81CE8AFF331" backgroundImage="button_bg">
->>>>>>> Adds temporary login flow
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -1053,7 +1045,7 @@ is incorrect.</string>
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="150" y="17.5" width="67" height="41"/>
+                                                        <rect key="frame" x="150" y="17" width="67" height="41"/>
                                                     </variation>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-cc-Ig0">
@@ -1452,14 +1444,11 @@ is incorrect.</string>
                                                     <exclude reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="2hU-kg-Tjd"/>
-=======
                                                     <exclude reference="gKl-H5-TrP"/>
                                                     <exclude reference="gjf-bm-7PH"/>
                                                     <exclude reference="m2B-rD-C6V"/>
                                                     <exclude reference="yAQ-UK-kwL"/>
->>>>>>> Adds temporary login flow
                                                     <exclude reference="2iT-AD-9DD"/>
                                                     <exclude reference="5vB-3x-yAe"/>
                                                     <exclude reference="96O-8f-nyY"/>
@@ -1470,7 +1459,6 @@ is incorrect.</string>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
                                                     <exclude reference="t9Q-O9-sao"/>
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="2r4-XE-8p6"/>
                                                     <exclude reference="FAO-gh-AZc"/>
                                                     <exclude reference="RgD-3N-guW"/>
@@ -1478,8 +1466,6 @@ is incorrect.</string>
                                                     <exclude reference="gjf-bm-7PH"/>
                                                     <exclude reference="m2B-rD-C6V"/>
                                                     <exclude reference="yAQ-UK-kwL"/>
-=======
->>>>>>> Adds temporary login flow
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1490,16 +1476,13 @@ is incorrect.</string>
                                                     <include reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <include reference="2hU-kg-Tjd"/>
                                                     <exclude reference="2iT-AD-9DD"/>
-=======
                                                     <include reference="gKl-H5-TrP"/>
                                                     <include reference="gjf-bm-7PH"/>
                                                     <include reference="m2B-rD-C6V"/>
                                                     <include reference="yAQ-UK-kwL"/>
                                                     <include reference="2iT-AD-9DD"/>
->>>>>>> Adds temporary login flow
                                                     <exclude reference="5vB-3x-yAe"/>
                                                     <include reference="96O-8f-nyY"/>
                                                     <exclude reference="9bx-Vf-GJU"/>
@@ -1508,7 +1491,6 @@ is incorrect.</string>
                                                     <exclude reference="XWM-gE-wIZ"/>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="t9Q-O9-sao"/>
                                                     <include reference="2r4-XE-8p6"/>
                                                     <include reference="FAO-gh-AZc"/>
@@ -1517,9 +1499,7 @@ is incorrect.</string>
                                                     <include reference="gjf-bm-7PH"/>
                                                     <include reference="m2B-rD-C6V"/>
                                                     <include reference="yAQ-UK-kwL"/>
-=======
                                                     <include reference="t9Q-O9-sao"/>
->>>>>>> Adds temporary login flow
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1659,11 +1639,7 @@ is incorrect.</string>
         </scene>
     </scenes>
     <resources>
-<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
         <image name="24507629-D0F3-4070-A682-D00F82C555E8" width="274" height="54">
-=======
-        <image name="03E06980-FFC8-46FB-B3F2-F81CE8AFF331" width="274" height="54">
->>>>>>> Adds temporary login flow
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -2719,7 +2695,6 @@ yPUK9Q/1GvUj9Tb1OvVF9U71U/Vb9V71Y/Vy9Xb1ffWF9ZL1l/WZ9Zv1oPWo9av1sPW49bv1zfXQ9dUA
 AAAAAAACAQAAAAAAAAA+AAAAAAAAAAAAAAAAAAD11w
 </mutableData>
         </image>
-        <image name="Back Chevron" width="13" height="21"/>
         <image name="FunQuence-1" width="170" height="29"/>
         <image name="Grey badge" width="23" height="23"/>
         <image name="Grey label" width="27" height="27"/>
