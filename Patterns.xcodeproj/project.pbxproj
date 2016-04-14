@@ -14,7 +14,6 @@
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
 		26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
-		26E989A91CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
 		26E989AD1CBFCD520045D24F /* StaticFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */; };
 		26E989AE1CBFCD520045D24F /* StaticFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */; };
 		26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */; };
@@ -390,7 +389,6 @@
 				26E989B41CBFE6C10045D24F /* InvitationViewController.swift in Sources */,
 				26E989BF1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
-				26E989A91CBFCC800045D24F /* FriendListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

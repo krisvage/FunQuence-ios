@@ -15,12 +15,24 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     let dataSource = staticGames;
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if UserDefaultStorage.getToken().isEmpty {
+            performSegueWithIdentifier("launchLogin", sender: self)
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         gamesCountLabel.text = String(dataSource.count)
     }
+
+    // TODO: Fix settings, currently logout
+    @IBAction func settingsButtonTapped(sender: AnyObject) {
+        UserDefaultStorage.saveToken("")
+        performSegueWithIdentifier("launchLogin", sender: self)
+    }
+
     @IBAction func invitationsTapped(sender: AnyObject) {
         performSegueWithIdentifier("goToInvitations", sender: self)
     }
