@@ -11,10 +11,11 @@ import Foundation
 
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let textCellIdentifier = "InvitationCell"
-    
+    let dataSource = staticInvitations;
+
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    let dataSource = staticInvitations;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -23,6 +24,14 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         tableView.estimatedRowHeight = 76;
         invitationCountLabel.text = String(staticInvitations.count)
     }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if(navigationController!.viewControllers.count > 1){
+            return true
+        }
+        return false
+    }
+    
     @IBAction func exitTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

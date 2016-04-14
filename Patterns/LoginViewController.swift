@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageHeader: UILabel!
     @IBOutlet weak var messageField: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginButtonTapped(sender: UIButton) {
-        self.login(sender)
+        self.login()
     }
     
     @IBAction func registerNewAccountTapped(sender: AnyObject) {
@@ -26,6 +26,20 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         messageField.hidden = true;
         messageHeader.hidden = true;
+        usernameField?.delegate = self;
+        passwordField?.delegate = self;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == usernameField { // Switch focus to other text field
+            passwordField.becomeFirstResponder()
+        }
+        if textField == passwordField {
+            print("hei")
+            self.login()
+        }
+        return true
     }
     
     override func shouldAutorotate() -> Bool {
@@ -51,7 +65,7 @@ class LoginViewController: UIViewController {
     
     // MARK: Button action
     
-    func login(button: UIButton) {
+    func login() {
         let username = usernameField.text!
         let password = passwordField.text!
         Users.login(username, password: password) { token, message, error in

@@ -464,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq3-7o-THo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="772"/>
+            <point key="canvasLocation" x="663" y="758"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JUD-2P-PxG">
@@ -486,7 +486,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.74901960779999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ReR-VN-qC4"/>
@@ -507,7 +507,7 @@
                                     <constraint firstAttribute="height" constant="54" id="Rrf-85-G2q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Kwn-3Y-YO7"/>
@@ -529,7 +529,7 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
-                                <state key="normal" title="Log in" image="24507629-D0F3-4070-A682-D00F82C555E8" backgroundImage="button_bg">
+                                <state key="normal" title="Log in" image="0F8641F6-7E7D-4A76-B6EC-7C960CD0B710" backgroundImage="button_bg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -686,6 +686,7 @@ is incorrect.</string>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="ZnI-Hr-zVk"/>
                     <connections>
                         <outlet property="loginButton" destination="K4h-24-CmW" id="nYp-IM-9Zl"/>
                         <outlet property="messageField" destination="27E-GL-KXa" id="tax-OK-hms"/>
@@ -720,7 +721,7 @@ is incorrect.</string>
                                 </constraints>
                                 <color key="textColor" red="0.74901960779999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="3T1-fY-glB"/>
@@ -748,7 +749,7 @@ is incorrect.</string>
                                 </constraints>
                                 <color key="textColor" red="0.74901960779999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="mAm-7G-LTd"/>
@@ -838,7 +839,7 @@ is incorrect.</string>
                                 </constraints>
                                 <color key="textColor" red="0.74901960779999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Lki-4c-ovI"/>
@@ -952,6 +953,7 @@ is incorrect.</string>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="EwJ-EM-Td2"/>
                     <connections>
                         <outlet property="emailField" destination="6lm-m6-0o5" id="t3F-0f-uUd"/>
                         <outlet property="passwordField" destination="tT8-Z2-paJ" id="Hhs-ux-ve8"/>
@@ -1300,7 +1302,7 @@ is incorrect.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3bD-Qb-EAp" kind="relationship" relationship="rootViewController" id="d71-gD-f2f"/>
+                        <segue destination="vPi-68-ekc" kind="relationship" relationship="rootViewController" id="GJ9-bq-GYO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmT-5l-y6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1374,7 +1376,8 @@ is incorrect.</string>
                                                             <exclude reference="844-c0-UNm"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="141" y="17" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="844-c0-UNm"/>
                                                         </mask>
@@ -1393,7 +1396,8 @@ is incorrect.</string>
                                                             <exclude reference="c03-vg-9j9"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="50" y="17" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="c03-vg-9j9"/>
                                                         </mask>
@@ -1436,6 +1440,13 @@ is incorrect.</string>
                                                     <exclude reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="gKl-H5-TrP"/>
+                                                    <exclude reference="gjf-bm-7PH"/>
+                                                    <exclude reference="m2B-rD-C6V"/>
+                                                    <exclude reference="yAQ-UK-kwL"/>
+                                                    <exclude reference="2r4-XE-8p6"/>
+                                                    <exclude reference="FAO-gh-AZc"/>
+                                                    <exclude reference="RgD-3N-guW"/>
                                                     <exclude reference="2hU-kg-Tjd"/>
                                                     <exclude reference="2iT-AD-9DD"/>
                                                     <exclude reference="5vB-3x-yAe"/>
@@ -1447,13 +1458,6 @@ is incorrect.</string>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
                                                     <exclude reference="t9Q-O9-sao"/>
-                                                    <exclude reference="2r4-XE-8p6"/>
-                                                    <exclude reference="FAO-gh-AZc"/>
-                                                    <exclude reference="RgD-3N-guW"/>
-                                                    <exclude reference="gKl-H5-TrP"/>
-                                                    <exclude reference="gjf-bm-7PH"/>
-                                                    <exclude reference="m2B-rD-C6V"/>
-                                                    <exclude reference="yAQ-UK-kwL"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1464,6 +1468,13 @@ is incorrect.</string>
                                                     <include reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="gKl-H5-TrP"/>
+                                                    <include reference="gjf-bm-7PH"/>
+                                                    <include reference="m2B-rD-C6V"/>
+                                                    <include reference="yAQ-UK-kwL"/>
+                                                    <include reference="2r4-XE-8p6"/>
+                                                    <include reference="FAO-gh-AZc"/>
+                                                    <include reference="RgD-3N-guW"/>
                                                     <include reference="2hU-kg-Tjd"/>
                                                     <exclude reference="2iT-AD-9DD"/>
                                                     <exclude reference="5vB-3x-yAe"/>
@@ -1475,13 +1486,6 @@ is incorrect.</string>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
                                                     <exclude reference="t9Q-O9-sao"/>
-                                                    <include reference="2r4-XE-8p6"/>
-                                                    <include reference="FAO-gh-AZc"/>
-                                                    <include reference="RgD-3N-guW"/>
-                                                    <include reference="gKl-H5-TrP"/>
-                                                    <include reference="gjf-bm-7PH"/>
-                                                    <include reference="m2B-rD-C6V"/>
-                                                    <include reference="yAQ-UK-kwL"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1621,7 +1625,7 @@ is incorrect.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="24507629-D0F3-4070-A682-D00F82C555E8" width="274" height="54">
+        <image name="0F8641F6-7E7D-4A76-B6EC-7C960CD0B710" width="274" height="54">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
