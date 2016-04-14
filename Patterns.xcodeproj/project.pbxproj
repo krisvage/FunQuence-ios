@@ -18,6 +18,12 @@
 		26E989AE1CBFCD520045D24F /* StaticFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */; };
 		26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */; };
 		26E989B11CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */; };
+		26E989B31CBFE6C10045D24F /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989B21CBFE6C10045D24F /* InvitationViewController.swift */; };
+		26E989B41CBFE6C10045D24F /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989B21CBFE6C10045D24F /* InvitationViewController.swift */; };
+		26E989BB1CBFE8A50045D24F /* StaticInvitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BA1CBFE8A50045D24F /* StaticInvitations.swift */; };
+		26E989BC1CBFE8A50045D24F /* StaticInvitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BA1CBFE8A50045D24F /* StaticInvitations.swift */; };
+		26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
+		26E989BF1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
 		F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F100A8CF1CBD409400E517C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
 		F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140759C1C85DF1300EEADC1 /* AppDelegate.swift */; };
@@ -30,7 +36,6 @@
 		F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
 		F19D30DE1CBBA42D004A2B07 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F19D30E11CBBC4CE004A2B07 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
-		F19D30E31CBBCE8B004A2B07 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */; };
 		F19D30E61CBBD3EE004A2B07 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E51CBBD3EE004A2B07 /* Users.swift */; };
 		F19D30E91CBBD67D004A2B07 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E81CBBD67D004A2B07 /* Route.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,9 @@
 		26E989A71CBFCC800045D24F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFriendsList.swift; sourceTree = "<group>"; };
 		26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCellTableViewCell.swift; sourceTree = "<group>"; };
+		26E989B21CBFE6C10045D24F /* InvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		26E989BA1CBFE8A50045D24F /* StaticInvitations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticInvitations.swift; sourceTree = "<group>"; };
+		26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationCellViewController.swift; sourceTree = "<group>"; };
 		F100A8CC1CBD404800E517C7 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		F100A8CE1CBD409400E517C7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F14075991C85DF1300EEADC1 /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +77,6 @@
 		F16D234A1CBD254700220218 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../StartViewController.swift; sourceTree = "<group>"; };
 		F19D30E51CBBD3EE004A2B07 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F19D30E81CBBD67D004A2B07 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,13 +105,11 @@
 		26E989AA1CBFCC860045D24F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
-				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
-				26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */,
-				2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */,
-				F16D23481CBD21F000220218 /* RegisterViewController.swift */,
-				F19D30E21CBBCE8B004A2B07 /* StartViewController.swift */,
-				26E989A71CBFCC800045D24F /* FriendListViewController.swift */,
+				26E989B91CBFE7B90045D24F /* Notifications View */,
+				26E989B51CBFE7600045D24F /* Main View */,
+				26E989B61CBFE7740045D24F /* Friends View */,
+				26E989B71CBFE7820045D24F /* Login View */,
+				26E989B81CBFE7880045D24F /* Register View */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -114,8 +119,52 @@
 			children = (
 				265AFFC11CBD7C7400D3F898 /* StaticGames.swift */,
 				26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */,
+				26E989BA1CBFE8A50045D24F /* StaticInvitations.swift */,
 			);
 			name = "Mock data";
+			sourceTree = "<group>";
+		};
+		26E989B51CBFE7600045D24F /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
+				26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		26E989B61CBFE7740045D24F /* Friends View */ = {
+			isa = PBXGroup;
+			children = (
+				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
+				26E989A71CBFCC800045D24F /* FriendListViewController.swift */,
+			);
+			name = "Friends View";
+			sourceTree = "<group>";
+		};
+		26E989B71CBFE7820045D24F /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */,
+			);
+			name = "Login View";
+			sourceTree = "<group>";
+		};
+		26E989B81CBFE7880045D24F /* Register View */ = {
+			isa = PBXGroup;
+			children = (
+				F16D23481CBD21F000220218 /* RegisterViewController.swift */,
+			);
+			name = "Register View";
+			sourceTree = "<group>";
+		};
+		26E989B91CBFE7B90045D24F /* Notifications View */ = {
+			isa = PBXGroup;
+			children = (
+				26E989B21CBFE6C10045D24F /* InvitationViewController.swift */,
+				26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */,
+			);
+			name = "Notifications View";
 			sourceTree = "<group>";
 		};
 		F14075901C85DF1200EEADC1 = {
@@ -308,9 +357,9 @@
 			files = (
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26E989AD1CBFCD520045D24F /* StaticFriendsList.swift in Sources */,
+				26E989BB1CBFE8A50045D24F /* StaticInvitations.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
-				F19D30E31CBBCE8B004A2B07 /* StartViewController.swift in Sources */,
 				264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */,
 				26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */,
 				F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */,
@@ -321,6 +370,8 @@
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
+				26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
+				26E989B31CBFE6C10045D24F /* InvitationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
+				26E989BC1CBFE8A50045D24F /* StaticInvitations.swift in Sources */,
 				26E989AE1CBFCD520045D24F /* StaticFriendsList.swift in Sources */,
 				26E989B11CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
+				26E989B41CBFE6C10045D24F /* InvitationViewController.swift in Sources */,
+				26E989BF1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
 				26E989A91CBFCC800045D24F /* FriendListViewController.swift in Sources */,
 			);

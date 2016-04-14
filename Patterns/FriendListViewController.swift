@@ -10,13 +10,20 @@ import UIKit
 
 class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let friendCellIdentifier = "FriendCell"
-    let dataSource = staticFriendList
+    var dataSource = staticFriendList
+    var inputFieldInAlertView: UITextField = UITextField()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var friendsCountLabel: UILabel!
     
     @IBAction func backButtonTapped(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
         
+    }
+    
+    func dataDidChange(){
+        friendsCountLabel.text = String(dataSource.count)
+        self.tableView.reloadData();
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,4 +54,24 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    @IBAction func addFriendTapped(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Add Friend", message: "Enter friends username", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addTextFieldWithConfigurationHandler { (UITextField) in
+            self.inputFieldInAlertView = UITextField;
+            self.inputFieldInAlertView.placeholder = "Username"
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+            print("Trykket add")
+            self.dataSource.append(self.inputFieldInAlertView.text!)
+            self.dataDidChange();
+            print(self.inputFieldInAlertView.text!)
+        }))
+        self.presentViewController(alertController, animated: true) {
+            // Do something when alert view is shown.
+        }
+        
+    }
+    
 }

@@ -1,35 +1,33 @@
 //
-//  MainFeedViewController.swift
+//  NotificationsViewController.swift
 //  Patterns
 //
-//  Created by Mathias Iden on 12.04.2016.
+//  Created by Mathias Iden on 14.04.2016.
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
 
 import UIKit
 
-class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let textCellIdentifier = "GameCell"
+class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let textCellIdentifier = "InvitationCell"
+    
+    @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var gamesCountLabel: UILabel!
-    let dataSource = staticGames;
+    let dataSource = staticInvitations;
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-        gamesCountLabel.text = String(dataSource.count)
+        invitationCountLabel.text = String(staticInvitations.count)
     }
-    @IBAction func invitationsTapped(sender: AnyObject) {
-        performSegueWithIdentifier("goToInvitations", sender: self)
+    @IBAction func exitTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
-    }
-    @IBAction func newGameTapped(sender: AnyObject) {
-        performSegueWithIdentifier("goToFriendsList", sender: self)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,9 +35,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! GameCellTableViewCell
-        let game = dataSource[indexPath.row]
-        cell.configureCell(game)
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! InvitationCellViewController
+        let from_username = dataSource[indexPath.row]["from_username"] as! String
+        cell.configureCell(from_username)
+        cell.userInteractionEnabled = false
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
     
