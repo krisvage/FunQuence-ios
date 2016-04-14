@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+
     @IBAction func loginButtonTapped(sender: UIButton) {
         self.login(sender)
     }
@@ -57,10 +58,11 @@ class LoginViewController: UIViewController {
         Users.login(username, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
-                print(UserDefaultStorage.getToken())
+
                 self.messageField.hidden = true
                 self.messageHeader.hidden = true
-                // TODO: Go to main feed view.
+
+                self.dismissViewControllerAnimated(true, completion: {})
             } else {
                 self.messageField.text = error
                 self.messageField.hidden = false

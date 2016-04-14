@@ -12,10 +12,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+
     @IBAction func registerButtonTapped(sender: UIButton) {
         self.register(sender)
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +46,12 @@ class RegisterViewController: UIViewController {
         let username = usernameField.text!
         let email = emailField.text!
         let password = passwordField.text!
-        
-        print(username)
-        print(email)
-        print(password)
-        
+
         Users.register(username, email: email, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
                 
-                print(message)
+                self.dismissViewControllerAnimated(true, completion: {})
             } else {
                 print(error)
             }

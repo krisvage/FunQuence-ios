@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vb2-Tj-Xck" id="NLY-vg-itX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up7-qm-kbt">
@@ -89,7 +89,11 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="green label" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Nh-e8U">
                                                     <rect key="frame" x="0.0" y="-27" width="27" height="27"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                         <rect key="frame" x="197" y="24" width="27" height="27"/>
+=======
+                                                        <rect key="frame" x="197" y="24" width="27" height="27.5"/>
+>>>>>>> Adds temporary login flow
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-1X-cTk">
@@ -231,6 +235,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7J-3u-i0v">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" backgroundImage="Settings icon"/>
+                                <connections>
+                                    <action selector="settingsButtonTapped:" destination="3bD-Qb-EAp" eventType="touchUpInside" id="qkP-gn-yTw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiS-Jf-OeB">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -460,6 +467,7 @@
                         <outlet property="tableView" destination="wzE-Il-eVD" id="QyB-ws-ZT2"/>
                         <segue destination="tox-fi-jUh" kind="show" identifier="goToFriendsList" id="ufj-49-RZE"/>
                         <segue destination="4eW-tD-1in" kind="presentation" identifier="goToInvitations" id="OWp-hW-dcu"/>
+                        <segue destination="vPi-68-ekc" kind="presentation" identifier="launchLogin" id="zGp-Lx-8Wp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq3-7o-THo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -529,7 +537,11 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                 <state key="normal" title="Log in" image="24507629-D0F3-4070-A682-D00F82C555E8" backgroundImage="button_bg">
+=======
+                                <state key="normal" title="Log in" image="03E06980-FFC8-46FB-B3F2-F81CE8AFF331" backgroundImage="button_bg">
+>>>>>>> Adds temporary login flow
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -692,11 +704,12 @@ is incorrect.</string>
                         <outlet property="messageHeader" destination="rFb-ke-PIO" id="gmN-Xs-VaG"/>
                         <outlet property="passwordField" destination="X3n-mf-Z8R" id="zf5-kZ-wzF"/>
                         <outlet property="usernameField" destination="izT-fs-XXM" id="oZg-ld-ruP"/>
+                        <segue destination="7ar-XI-pO1" kind="presentation" identifier="goToRegister" id="ca2-i8-9vI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-pV-Ve5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498.5" y="81"/>
+            <point key="canvasLocation" x="1474.5" y="81"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="S96-QA-RjI">
@@ -961,7 +974,7 @@ is incorrect.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wt-MJ-CTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hFd-0K-LKd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="696" y="81"/>
+            <point key="canvasLocation" x="2298" y="81"/>
         </scene>
         <!--Friend List View Controller-->
         <scene sceneID="p1S-07-EDy">
@@ -1030,7 +1043,7 @@ is incorrect.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWr-hb-G71" id="RlM-Xv-n8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27h-gW-c8s">
@@ -1039,6 +1052,9 @@ is incorrect.</string>
                                                     <state key="normal" title="Invite" backgroundImage="Invite_btn_bg">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="150" y="17.5" width="67" height="41"/>
+                                                    </variation>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-cc-Ig0">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1352,7 +1368,7 @@ is incorrect.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nQv-DG-KVP" id="tk7-7Y-RH0">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU2-9B-ICy">
@@ -1436,7 +1452,14 @@ is incorrect.</string>
                                                     <exclude reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="2hU-kg-Tjd"/>
+=======
+                                                    <exclude reference="gKl-H5-TrP"/>
+                                                    <exclude reference="gjf-bm-7PH"/>
+                                                    <exclude reference="m2B-rD-C6V"/>
+                                                    <exclude reference="yAQ-UK-kwL"/>
+>>>>>>> Adds temporary login flow
                                                     <exclude reference="2iT-AD-9DD"/>
                                                     <exclude reference="5vB-3x-yAe"/>
                                                     <exclude reference="96O-8f-nyY"/>
@@ -1447,6 +1470,7 @@ is incorrect.</string>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
                                                     <exclude reference="t9Q-O9-sao"/>
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="2r4-XE-8p6"/>
                                                     <exclude reference="FAO-gh-AZc"/>
                                                     <exclude reference="RgD-3N-guW"/>
@@ -1454,6 +1478,8 @@ is incorrect.</string>
                                                     <exclude reference="gjf-bm-7PH"/>
                                                     <exclude reference="m2B-rD-C6V"/>
                                                     <exclude reference="yAQ-UK-kwL"/>
+=======
+>>>>>>> Adds temporary login flow
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1464,8 +1490,16 @@ is incorrect.</string>
                                                     <include reference="iWK-HM-udQ"/>
                                                 </mask>
                                                 <mask key="constraints">
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <include reference="2hU-kg-Tjd"/>
                                                     <exclude reference="2iT-AD-9DD"/>
+=======
+                                                    <include reference="gKl-H5-TrP"/>
+                                                    <include reference="gjf-bm-7PH"/>
+                                                    <include reference="m2B-rD-C6V"/>
+                                                    <include reference="yAQ-UK-kwL"/>
+                                                    <include reference="2iT-AD-9DD"/>
+>>>>>>> Adds temporary login flow
                                                     <exclude reference="5vB-3x-yAe"/>
                                                     <include reference="96O-8f-nyY"/>
                                                     <exclude reference="9bx-Vf-GJU"/>
@@ -1474,6 +1508,7 @@ is incorrect.</string>
                                                     <exclude reference="XWM-gE-wIZ"/>
                                                     <exclude reference="a2N-Mb-Dh6"/>
                                                     <exclude reference="kr1-fo-oqC"/>
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
                                                     <exclude reference="t9Q-O9-sao"/>
                                                     <include reference="2r4-XE-8p6"/>
                                                     <include reference="FAO-gh-AZc"/>
@@ -1482,6 +1517,9 @@ is incorrect.</string>
                                                     <include reference="gjf-bm-7PH"/>
                                                     <include reference="m2B-rD-C6V"/>
                                                     <include reference="yAQ-UK-kwL"/>
+=======
+                                                    <include reference="t9Q-O9-sao"/>
+>>>>>>> Adds temporary login flow
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1617,11 +1655,15 @@ is incorrect.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkr-E3-kg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="1511"/>
+            <point key="canvasLocation" x="183" y="1543"/>
         </scene>
     </scenes>
     <resources>
+<<<<<<< 6526d92e229e2157e18cd1b28c0183ecfcb86dab
         <image name="24507629-D0F3-4070-A682-D00F82C555E8" width="274" height="54">
+=======
+        <image name="03E06980-FFC8-46FB-B3F2-F81CE8AFF331" width="274" height="54">
+>>>>>>> Adds temporary login flow
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

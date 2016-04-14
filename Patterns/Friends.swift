@@ -11,8 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class Friends: API {
-    static let addFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.POST)
     static let friendsListRoute = Route(path: basePath + "/users/me/friends", method: Method.GET)
+    static let addFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.POST)
     static let deleteFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.DELETE)
     
     // TODO: Finish implementation
