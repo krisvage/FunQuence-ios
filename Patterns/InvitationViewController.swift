@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let textCellIdentifier = "InvitationCell"
@@ -37,7 +38,10 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! InvitationCellViewController
         let from_username = dataSource[indexPath.row]["from_username"] as! String
-        cell.configureCell(from_username)
+        let timeStamp = dataSource[indexPath.row]["invitation_sent"] as! Double
+        let timeObject = NSDate(timeIntervalSince1970: floor(timeStamp/1000))
+        let timeAgo = timeAgoSince(timeObject)
+        cell.configureCell(from_username, time_ago: timeAgo)
         cell.userInteractionEnabled = false
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

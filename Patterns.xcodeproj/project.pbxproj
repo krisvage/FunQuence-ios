@@ -12,6 +12,7 @@
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
+		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
 		26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
 		26E989A91CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
 		26E989AD1CBFCD520045D24F /* StaticFriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */; };
@@ -55,6 +56,7 @@
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
+		26DF8FC61CC001B60005CE2C /* TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		26E989A71CBFCC800045D24F /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		26E989AC1CBFCD520045D24F /* StaticFriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFriendsList.swift; sourceTree = "<group>"; };
 		26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				F19D30E81CBBD67D004A2B07 /* Route.swift */,
 				F16D234A1CBD254700220218 /* UserDefaultStorage.swift */,
+				26DF8FC61CC001B60005CE2C /* TimeAgo.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			files = (
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26E989AD1CBFCD520045D24F /* StaticFriendsList.swift in Sources */,
+				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
 				26E989BB1CBFE8A50045D24F /* StaticInvitations.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,

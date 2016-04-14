@@ -10,9 +10,11 @@ import UIKit
 
 class InvitationCellViewController: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var timeAgoLabel: UILabel!
     
-    func configureCell(from_username: String){
+    func configureCell(from_username: String, time_ago: String){
         usernameLabel.text = from_username
+        timeAgoLabel.text = time_ago
     }
 }
 
