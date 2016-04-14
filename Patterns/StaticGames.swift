@@ -5,7 +5,7 @@
 //  Created by Mathias Iden on 12.04.2016.
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
-var data: [[String: AnyObject]] = [
+var staticGames: [[String: AnyObject]] = [
     [
         "game_id": 4887,
         "game_date": "1460487684108",

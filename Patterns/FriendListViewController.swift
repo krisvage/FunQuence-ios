@@ -1,32 +1,34 @@
 //
-//  MainFeedViewController.swift
+//  FriendListViewController.swift
 //  Patterns
 //
-//  Created by Mathias Iden on 12.04.2016.
+//  Created by Mathias Iden on 14.04.2016.
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
 
 import UIKit
 
-class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let textCellIdentifier = "GameCell"
+class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let friendCellIdentifier = "FriendCell"
+    let dataSource = staticFriendList
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var gamesCountLabel: UILabel!
-    let dataSource = staticGames;
+    @IBOutlet weak var friendsCountLabel: UILabel!
+    
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-        gamesCountLabel.text = String(dataSource.count)
+        friendsCountLabel.text = String(dataSource.count)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
-    }
-    @IBAction func newGameTapped(sender: AnyObject) {
-        performSegueWithIdentifier("goToFriendsList", sender: self)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,9 +36,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! GameCellTableViewCell
-        let game = dataSource[indexPath.row]
-        cell.configureCell(game)
+        let cell = tableView.dequeueReusableCellWithIdentifier(friendCellIdentifier) as! FriendCellTableViewCell
+        let username = dataSource[indexPath.row]
+        cell.configureCell(username)
+        cell.userInteractionEnabled = false
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
     

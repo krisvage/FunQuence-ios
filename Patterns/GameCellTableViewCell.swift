@@ -23,7 +23,9 @@ class GameCellTableViewCell: UITableViewCell {
         let username = game["players"]!![0]["username"] as! String
         let round_number = game["current_round_number"] as! NSNumber
         let status = game["status"]!!["message"] as! String
-        print(status)
+        
+        // TODO: Refactor images. Only need a placeholder and change image uri.
+        // TODO: Make sure all possible states of a game is represented.
         switch status {
         case "Waiting for both players.":
             loseIcon.hidden = true;
