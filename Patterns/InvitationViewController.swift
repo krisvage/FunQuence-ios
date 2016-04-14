@@ -15,23 +15,40 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+
+    var dataSource = staticInvitations;
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Invitations.all { invitations, error in
+            if error == nil {
+                self.dataSource.appendContentsOf(invitations!)
+                self.dataDidChange()
+            } else {
+                print(error)
+            }
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-        invitationCountLabel.text = String(staticInvitations.count)
+        invitationCountLabel.text = String(dataSource.count)
     }
     
+    func dataDidChange() {
+        self.invitationCountLabel.text = String(dataSource.count)
+        self.tableView.reloadData()
+    }
+
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         if(navigationController!.viewControllers.count > 1){
             return true
         }
         return false
     }
-    
+
     @IBAction func exitTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -45,13 +62,19 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let invitation = dataSource[indexPath.row]
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! InvitationCellViewController
-        let from_username = dataSource[indexPath.row]["from_username"] as! String
-        let timeStamp = dataSource[indexPath.row]["invitation_sent"] as! Double
+        let from_username = invitation.fromUsername // ["from_username"] as! String
+        let timeStamp = invitation.invitationSent // ["invitation_sent"] as! Double
+        print(timeStamp)
         let timeObject = NSDate(timeIntervalSince1970: floor(timeStamp/1000))
+        print(timeObject)
+        print(timeObject.timeIntervalSince1970)
         let timeAgo = timeAgoSince(timeObject)
-        cell.configureCell(from_username, time_ago: timeAgo)
-        cell.userInteractionEnabled = false
+        let invitationId = invitation.invitationId
+        cell.configureCell(from_username, time_ago: timeAgo, invitationId: invitationId)
+        cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }

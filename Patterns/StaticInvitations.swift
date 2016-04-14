@@ -6,7 +6,9 @@
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
 
-let staticInvitations: [[String: AnyObject]] = [
+let staticInvitations: [Invitation] = []
+
+/* [[String: AnyObject]] = [
     [
         "accepted":0,
         "from_username":"ragnhild",
@@ -35,4 +37,4 @@ let staticInvitations: [[String: AnyObject]] = [
         "invitation_sent":1460646107724,
         "invitation_id":82
     ]
-]
+]*/

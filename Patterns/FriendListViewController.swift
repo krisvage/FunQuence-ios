@@ -55,7 +55,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(friendCellIdentifier) as! FriendCellTableViewCell
         let username = dataSource[indexPath.row]
-        cell.configureCell(username)
+        cell.configureCell(username, row: indexPath.row)
         cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

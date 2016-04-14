@@ -1110,6 +1110,7 @@ is incorrect.</string>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="inviteButton" destination="27h-gW-c8s" id="GBt-mp-8dd"/>
                                             <outlet property="usernameLabel" destination="yXC-cc-Ig0" id="9Ea-1t-LLX"/>
                                         </connections>
                                     </tableViewCell>
@@ -1498,6 +1499,8 @@ is incorrect.</string>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="acceptButton" destination="84n-to-G5I" id="BcN-V2-Bdo"/>
+                                            <outlet property="declineButton" destination="Gnw-YG-Sgc" id="RAg-i3-I9u"/>
                                             <outlet property="timeAgoLabel" destination="iWK-HM-udQ" id="2tx-qy-8dj"/>
                                             <outlet property="usernameLabel" destination="mU2-9B-ICy" id="ezT-6e-CW2"/>
                                         </connections>
