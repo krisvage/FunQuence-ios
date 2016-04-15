@@ -18,6 +18,13 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
         if UserDefaultStorage.getToken().isEmpty {
             performSegueWithIdentifier("launchLogin", sender: self)
+        } else {
+            print(UserDefaultStorage.getToken())
+            Users.myUser { userJSON, errorOccured in
+                if (!errorOccured) {
+                    print(userJSON)
+                }
+            }
         }
         
         tableView.delegate = self

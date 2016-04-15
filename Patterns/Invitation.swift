@@ -6,8 +6,6 @@
 //  Copyright © 2016 TDT4240G12. All rights reserved.
 //
 
-import SwiftyJSON
-
 struct Invitation {
     var accepted: Bool
     var fromUsername: String

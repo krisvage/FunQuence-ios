@@ -10,7 +10,6 @@
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		265AFFC21CBD7C7400D3F898 /* StaticGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AFFC11CBD7C7400D3F898 /* StaticGames.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
-		2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
 		26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
@@ -22,6 +21,28 @@
 		26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
 		F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F100A8CF1CBD409400E517C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
+		F117FC111CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
+		F117FC121CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
+		F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144A7011CC020CA00CA3772 /* Invitations.swift */; };
+		F117FC141CC0FD6400B383FF /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E51CBBD3EE004A2B07 /* Users.swift */; };
+		F117FC151CC0FD6700B383FF /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
+		F117FC161CC0FD6B00B383FF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
+		F117FC171CC0FD6F00B383FF /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E81CBBD67D004A2B07 /* Route.swift */; };
+		F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
+		F117FC191CC0FD7500B383FF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
+		F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144A7031CC0251600CA3772 /* Invitation.swift */; };
+		F117FC1B1CC0FD7D00B383FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D23481CBD21F000220218 /* RegisterViewController.swift */; };
+		F117FC1C1CC0FD8100B383FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
+		F117FC1D1CC0FD8500B383FF /* FriendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */; };
+		F117FC1E1CC0FD8800B383FF /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
+		F117FC1F1CC0FD8C00B383FF /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
+		F117FC201CC0FD8F00B383FF /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
+		F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
+		F117FC221CC0FD9600B383FF /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989B21CBFE6C10045D24F /* InvitationViewController.swift */; };
+		F117FC231CC0FD9C00B383FF /* StaticGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AFFC11CBD7C7400D3F898 /* StaticGames.swift */; };
+		F117FC241CC0FDA300B383FF /* StaticInvitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BA1CBFE8A50045D24F /* StaticInvitations.swift */; };
+		F117FC271CC0FEB900B383FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC261CC0FEB900B383FF /* Game.swift */; };
+		F117FC281CC0FEB900B383FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC261CC0FEB900B383FF /* Game.swift */; };
 		F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140759C1C85DF1300EEADC1 /* AppDelegate.swift */; };
 		F14075A61C85DF1300EEADC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A41C85DF1300EEADC1 /* Main.storyboard */; };
 		F14075A81C85DF1300EEADC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14075A71C85DF1300EEADC1 /* Assets.xcassets */; };
@@ -62,6 +83,8 @@
 		26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationCellViewController.swift; sourceTree = "<group>"; };
 		F100A8CC1CBD404800E517C7 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		F100A8CE1CBD409400E517C7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F117FC101CC0FD5900B383FF /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		F117FC261CC0FEB900B383FF /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F14075991C85DF1300EEADC1 /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F140759C1C85DF1300EEADC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14075A51C85DF1300EEADC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +191,15 @@
 			name = "Notifications View";
 			sourceTree = "<group>";
 		};
+		F117FC251CC0FE9100B383FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F144A7031CC0251600CA3772 /* Invitation.swift */,
+				F117FC261CC0FEB900B383FF /* Game.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F14075901C85DF1200EEADC1 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +226,7 @@
 			children = (
 				26E989AB1CBFCCA90045D24F /* Mock data */,
 				26E989AA1CBFCC860045D24F /* Controllers */,
+				F117FC251CC0FE9100B383FF /* Models */,
 				F19D30E71CBBD66F004A2B07 /* Utils */,
 				F19D30E41CBBD3CF004A2B07 /* Recallo */,
 				F140759C1C85DF1300EEADC1 /* AppDelegate.swift */,
@@ -219,8 +252,9 @@
 			children = (
 				F100A8CE1CBD409400E517C7 /* API.swift */,
 				F100A8CC1CBD404800E517C7 /* Friends.swift */,
-				F19D30E51CBBD3EE004A2B07 /* Users.swift */,
+				F117FC101CC0FD5900B383FF /* Games.swift */,
 				F144A7011CC020CA00CA3772 /* Invitations.swift */,
+				F19D30E51CBBD3EE004A2B07 /* Users.swift */,
 			);
 			name = Recallo;
 			sourceTree = "<group>";
@@ -231,7 +265,6 @@
 				F19D30E81CBBD67D004A2B07 /* Route.swift */,
 				F16D234A1CBD254700220218 /* UserDefaultStorage.swift */,
 				26DF8FC61CC001B60005CE2C /* TimeAgo.swift */,
-				F144A7031CC0251600CA3772 /* Invitation.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -362,6 +395,7 @@
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26E989AD1CBFCD520045D24F /* StaticFriendsList.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
+				F117FC111CC0FD5900B383FF /* Games.swift in Sources */,
 				26E989BB1CBFE8A50045D24F /* StaticInvitations.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
@@ -375,6 +409,7 @@
 				265AFFC21CBD7C7400D3F898 /* StaticGames.swift in Sources */,
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
+				F117FC271CC0FEB900B383FF /* Game.swift in Sources */,
 				F144A7041CC0251600CA3772 /* Invitation.swift in Sources */,
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
 				26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
@@ -386,9 +421,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2689D14D1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
+				F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */,
+				F117FC221CC0FD9600B383FF /* InvitationViewController.swift in Sources */,
+				F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */,
+				F117FC151CC0FD6700B383FF /* Friends.swift in Sources */,
+				F117FC121CC0FD5900B383FF /* Games.swift in Sources */,
+				F117FC201CC0FD8F00B383FF /* MainFeedViewController.swift in Sources */,
+				F117FC1F1CC0FD8C00B383FF /* GameCellTableViewCell.swift in Sources */,
+				F117FC1B1CC0FD7D00B383FF /* RegisterViewController.swift in Sources */,
+				F117FC141CC0FD6400B383FF /* Users.swift in Sources */,
+				F117FC1E1CC0FD8800B383FF /* FriendListViewController.swift in Sources */,
 				26E989AE1CBFCD520045D24F /* StaticFriendsList.swift in Sources */,
+				F117FC171CC0FD6F00B383FF /* Route.swift in Sources */,
+				F117FC1D1CC0FD8500B383FF /* FriendCellTableViewCell.swift in Sources */,
+				F117FC231CC0FD9C00B383FF /* StaticGames.swift in Sources */,
+				F117FC191CC0FD7500B383FF /* TimeAgo.swift in Sources */,
+				F117FC241CC0FDA300B383FF /* StaticInvitations.swift in Sources */,
+				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
+				F117FC281CC0FEB900B383FF /* Game.swift in Sources */,
+				F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */,
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
+				F117FC1C1CC0FD8100B383FF /* LoginViewController.swift in Sources */,
+				F117FC161CC0FD6B00B383FF /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

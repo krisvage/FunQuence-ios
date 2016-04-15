@@ -15,11 +15,13 @@ class InvitationCellViewController: UITableViewCell {
     @IBOutlet weak var declineButton: UIButton!
     
     var invitationId: Int = 0
+    var delegate: InvitationViewController? = nil
 
-    func configureCell(from_username: String, time_ago: String, invitationId: Int){
+    func configureCell(from_username: String, time_ago: String, invitationId: Int, delegate: InvitationViewController){
         usernameLabel.text = from_username
         timeAgoLabel.text = time_ago
         self.invitationId = invitationId
+        self.delegate = delegate
         
         acceptButton.addTarget(self, action: #selector(self.acceptInvite), forControlEvents: .TouchUpInside)
         declineButton.addTarget(self, action: #selector(self.declineInvite), forControlEvents: .TouchUpInside)
@@ -34,10 +36,10 @@ class InvitationCellViewController: UITableViewCell {
     }
     
     func respondInvite(accepted: Bool) {
-        print("click")
         Invitations.reply(self.invitationId, accepted: accepted) { message, error in
             if error == nil {
                 print(message)
+                self.delegate!.reloadData()
             } else {
                 print(error)
             }

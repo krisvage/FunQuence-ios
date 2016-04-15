@@ -11,24 +11,16 @@ import Foundation
 
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let textCellIdentifier = "InvitationCell"
-    let dataSource = staticInvitations;
+    var dataSource = staticInvitations;
 
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    var dataSource = staticInvitations;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Invitations.all { invitations, error in
-            if error == nil {
-                self.dataSource.appendContentsOf(invitations!)
-                self.dataDidChange()
-            } else {
-                print(error)
-            }
-        }
+        reloadData()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,6 +32,18 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     func dataDidChange() {
         self.invitationCountLabel.text = String(dataSource.count)
         self.tableView.reloadData()
+    }
+    
+    func reloadData() {
+        Invitations.all { invitations, error in
+            if error == nil {
+                self.dataSource.removeAll()
+                self.dataSource.appendContentsOf(invitations!)
+                self.dataDidChange()
+            } else {
+                print(error)
+            }
+        }
     }
 
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -73,7 +77,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         print(timeObject.timeIntervalSince1970)
         let timeAgo = timeAgoSince(timeObject)
         let invitationId = invitation.invitationId
-        cell.configureCell(from_username, time_ago: timeAgo, invitationId: invitationId)
+        cell.configureCell(from_username, time_ago: timeAgo, invitationId: invitationId, delegate: self)
         cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
