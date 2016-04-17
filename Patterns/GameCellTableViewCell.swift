@@ -24,7 +24,7 @@ class GameCellTableViewCell: UITableViewCell {
             game.players[0]["username"] as! String,
             game.players[1]["username"] as! String
         ]
-        
+
         let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         let round_number = game.currentRoundNumber // game["current_round_number"] as! NSNumber
         let status = game.status["status"]!["message"] as! String // game["status"]!!["message"] as! String
