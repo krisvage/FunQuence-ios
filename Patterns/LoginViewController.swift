@@ -37,7 +37,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordField.becomeFirstResponder()
         }
         if textField == passwordField {
-            print("hei")
             self.login()
         }
         return true

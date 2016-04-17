@@ -16,7 +16,7 @@ class Friends: API {
     static let deleteFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.DELETE)
     
     // TODO: Use 'has_pending_invitation' as well
-    static func friendsList(completionHandler: (friends: [String]?, error: String?) -> ()) {
+    static func friendsList(completionHandler: (friends: [(username: String, has_pending_invitation: String)]?, error: String?) -> ()) {
         Alamofire.request(friendsListRoute.method, friendsListRoute.path, headers: headers())
             .responseJSON { response in
                 switch response.result {
@@ -24,8 +24,12 @@ class Friends: API {
                     if let json = response.result.value {
                         let parsed_json = JSON(json)
                         if parsed_json["error"] == nil {
-                            var friendsList = parsed_json["friendList"].arrayValue.map({$0["username"].stringValue})
-                            friendsList.append("testFriend")
+                            let friendsList = parsed_json["friendList"].arrayValue.map {
+                                (friend) -> (username: String, has_pending_invitation: String) in
+                                let username = friend["username"].stringValue
+                                let has_pending_invitation = friend["has_pending_invitation"].stringValue
+                                return (username: username, has_pending_invitation: has_pending_invitation)
+                            }
                             completionHandler(friends: friendsList, error: nil)
                         } else {
                             completionHandler(friends: nil, error: parsed_json["error"].stringValue)

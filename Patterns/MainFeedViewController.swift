@@ -52,7 +52,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         Invitations.allCount { invitationCount, error in
-            if error {
+            if (error != nil) {
                 print(error)
             }
         }

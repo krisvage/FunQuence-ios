@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, FriendCellDelegate {
     let friendCellIdentifier = "FriendCell"
-    var dataSource = staticFriendList
+    var dataSource = [(username: String, has_pending_invitation: String)]()
     var inputFieldInAlertView: UITextField = UITextField()
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,23 +25,42 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         friendsCountLabel.text = String(dataSource.count)
         self.tableView.reloadData();
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        Friends.friendsList() { friends, error in
+    
+    func inviteTapped(username: String) {
+        Invitations.send(username) { message, error in
             if error == nil {
-                self.dataSource.appendContentsOf(friends!)
-                self.dataDidChange()
+                self.getViewData()
+                print(message)
             } else {
                 print(error)
             }
         }
-        
+    }
+    
+    func getViewData(){
+        Friends.friendsList() { friends, error in
+            if error == nil {
+                self.dataSource = friends!
+                self.dataDidChange()
+            } else {
+                print(error)
+            }
+            self.friendsCountLabel.text = String(self.dataSource.count)
+        }
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.getViewData()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-        friendsCountLabel.text = String(dataSource.count)
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -54,8 +73,11 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(friendCellIdentifier) as! FriendCellTableViewCell
-        let username = dataSource[indexPath.row]
-        cell.configureCell(username, row: indexPath.row)
+        let username = dataSource[indexPath.row].username
+        let has_pending_invitation = dataSource[indexPath.row].has_pending_invitation
+
+        cell.configureCell(username, row: indexPath.row, has_pending_invitation: has_pending_invitation)
+        cell.delegate = self;
         cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
@@ -67,12 +89,12 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let username = dataSource[indexPath.row]
-            print(username)
+            let username = dataSource[indexPath.row].username
             Friends.delete(username) { deleted in
                 if deleted {
                     self.dataSource.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    self.getViewData()
                 } else {
                     print("user not deleted")
                 }
@@ -93,8 +115,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             
             Friends.add(username) { added in
                 if added {
-                    self.dataSource.append(username)
-                    self.dataDidChange();
+                    self.getViewData()
                 } else {
                     print("Add friend failed")
                 }
