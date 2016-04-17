@@ -16,14 +16,25 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var friendsCountLabel: UILabel!
     
+    let emptyMessage = UILabel()
+    
     @IBAction func backButtonTapped(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
         
     }
     
     func dataDidChange(){
-        friendsCountLabel.text = String(dataSource.count)
+        let count = dataSource.count
+        friendsCountLabel.text = String(count)
         self.tableView.reloadData();
+
+        if (count == 0) {
+            emptyMessage.hidden = false
+            tableView.separatorStyle = .None
+        } else {
+            emptyMessage.hidden = true
+            tableView.separatorStyle = .SingleLine
+        }
     }
     
     func inviteTapped(username: String) {
@@ -61,6 +72,12 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
+
+        emptyMessage.textAlignment = NSTextAlignment.Center
+        emptyMessage.text = "You do not have any friends yet"
+        emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
+        tableView.backgroundView = emptyMessage
+        tableView.separatorStyle = .None
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

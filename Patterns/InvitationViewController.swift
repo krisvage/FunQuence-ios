@@ -11,8 +11,9 @@ import Foundation
 
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let textCellIdentifier = "InvitationCell"
-    var dataSource = staticInvitations;
+    var dataSource = [Invitation]();
     var refreshControl: UIRefreshControl?
+    let emptyMessage = UILabel()
 
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +21,12 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        emptyMessage.textAlignment = NSTextAlignment.Center
+        emptyMessage.text = "You do not have any invitations yet"
+        emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
+        tableView.backgroundView = emptyMessage
+        tableView.separatorStyle = .None
         
         reloadData()
         
@@ -35,8 +42,18 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func dataDidChange() {
-        self.invitationCountLabel.text = String(dataSource.count)
+        let count = dataSource.count
+        
+        self.invitationCountLabel.text = String(count)
         self.tableView.reloadData()
+        
+        if (count == 0) {
+            emptyMessage.hidden = false
+            tableView.separatorStyle = .None
+        } else {
+            emptyMessage.hidden = true
+            tableView.separatorStyle = .SingleLine
+        }
     }
     
     func reloadData() {

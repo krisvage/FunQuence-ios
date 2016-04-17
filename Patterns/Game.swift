@@ -11,11 +11,11 @@ struct Game {
     var gameDate: String
     var isActive: Int
     var players: [[String: AnyObject]]
-    var gameRounds: [String: [String]]
+    var gameRounds: [[String: AnyObject]]
     var currentRoundNumber: Int
     var status: [String: [String: AnyObject]]
     
-    init(gameId: Int, gameDate: String, isActive: Int, players: [[String: AnyObject]], gameRounds: [String: [String]], currentRoundNumber: Int, status: [String: [String: AnyObject]]) {
+    init(gameId: Int, gameDate: String, isActive: Int, players: [[String: AnyObject]], gameRounds: [[String: AnyObject]], currentRoundNumber: Int, status: [String: [String: AnyObject]]) {
         self.gameId = gameId
         self.gameDate = gameDate
         self.isActive = isActive

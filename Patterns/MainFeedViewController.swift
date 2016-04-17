@@ -14,8 +14,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var gamesCountLabel: UILabel!
     @IBOutlet weak var notificationBadge: UIButton!
 
-    var dataSource = staticGames;
+    var dataSource = [Game]();
     var refreshControl: UIRefreshControl?
+    let emptyMessage = UILabel()
 
     override func viewDidAppear(animated: Bool) {
         reloadData()
@@ -33,6 +34,12 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         
+        emptyMessage.textAlignment = NSTextAlignment.Center
+        emptyMessage.text = "You do not have any games yet"
+        emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
+        tableView.backgroundView = emptyMessage
+        tableView.separatorStyle = .None
+        
         self.notificationBadge.hidden = true
         
         refreshControl = UIRefreshControl()
@@ -45,6 +52,15 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             if error == nil {
                 self.dataSource = games!
                 self.tableView.reloadData()
+                
+                let count = self.dataSource.count
+                if (count == 0) {
+                    self.emptyMessage.hidden = false
+                    self.tableView.separatorStyle = .None
+                } else {
+                    self.emptyMessage.hidden = true
+                    self.tableView.separatorStyle = .SingleLine
+                }
             } else {
                 print(error)
             }

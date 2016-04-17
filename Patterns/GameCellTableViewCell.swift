@@ -38,16 +38,29 @@ class GameCellTableViewCell: UITableViewCell {
             greenIcon.hidden = false;
             greyIcon.hidden = true;
             break;
-        case "Game won.":
+        case "Waiting for other player.":
             loseIcon.hidden = true;
-            winIcon.hidden = false;
+            winIcon.hidden = true;
             greenIcon.hidden = true;
-            greyIcon.hidden = true;
-            break;
+            greyIcon.hidden = false;
+        case "Game won.":
+            let winner = game.status["status"]!["winner"] as! String
 
+            if winner == UserDefaultStorage.getUsername() {
+                loseIcon.hidden = true;
+                winIcon.hidden = false;
+                greenIcon.hidden = true;
+                greyIcon.hidden = true;
+            } else {
+                loseIcon.hidden = false;
+                winIcon.hidden = true;
+                greenIcon.hidden = true;
+                greyIcon.hidden = true;
+            }
+            break;
         default:
             loseIcon.hidden = true;
-            winIcon.hidden = false;
+            winIcon.hidden = true;
             greenIcon.hidden = true;
             greyIcon.hidden = true;
         }
