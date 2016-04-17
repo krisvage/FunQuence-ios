@@ -25,6 +25,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         emptyMessage.textAlignment = NSTextAlignment.Center
         emptyMessage.text = "You do not have any invitations yet"
         emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
+        emptyMessage.hidden = true
         tableView.backgroundView = emptyMessage
         tableView.separatorStyle = .None
         

@@ -37,6 +37,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         emptyMessage.textAlignment = NSTextAlignment.Center
         emptyMessage.text = "You do not have any games yet"
         emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
+        emptyMessage.hidden = true
         tableView.backgroundView = emptyMessage
         tableView.separatorStyle = .None
         
