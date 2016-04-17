@@ -12,6 +12,7 @@ import Foundation
 class InvitationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let textCellIdentifier = "InvitationCell"
     var dataSource = staticInvitations;
+    var refreshControl: UIRefreshControl?
 
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +28,10 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         invitationCountLabel.text = String(dataSource.count)
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl!)
     }
     
     func dataDidChange() {
@@ -43,6 +48,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
             } else {
                 print(error)
             }
+            self.refreshControl?.endRefreshing()
         }
     }
 

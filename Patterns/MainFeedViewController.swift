@@ -12,18 +12,18 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     let textCellIdentifier = "GameCell"
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gamesCountLabel: UILabel!
+    @IBOutlet weak var notificationBadge: UIButton!
 
     var dataSource = staticGames;
     var refreshControl: UIRefreshControl?
 
+    override func viewDidAppear(animated: Bool) {
+        reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if UserDefaultStorage.getToken().isEmpty {
-            performSegueWithIdentifier("launchLogin", sender: self)
-        }
-        
-        reloadData()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,7 +34,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
         
-        gamesCountLabel.text = String(dataSource.count)
+        if UserDefaultStorage.getToken().isEmpty {
+            performSegueWithIdentifier("launchLogin", sender: self)
+        }
     }
     
     func reloadData() {
@@ -45,8 +47,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             } else {
                 print(error)
             }
-            
             self.refreshControl!.endRefreshing()
+            self.gamesCountLabel.text = String(self.dataSource.count)
         }
     }
 

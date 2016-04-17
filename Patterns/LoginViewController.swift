@@ -72,17 +72,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Users.login(username, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
-
                 self.messageField.hidden = true
                 self.messageHeader.hidden = true
-                
+                self.view.endEditing(true)
                 self.getUserData()
-
                 self.dismissViewControllerAnimated(true, completion: {})
             } else {
                 self.messageField.text = error
                 self.messageField.hidden = false
                 self.messageHeader.hidden = false
+                self.view.endEditing(true)
             }
         }
     }
