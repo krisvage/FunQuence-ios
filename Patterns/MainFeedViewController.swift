@@ -14,35 +14,40 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var gamesCountLabel: UILabel!
 
     var dataSource = staticGames;
+    var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if UserDefaultStorage.getToken().isEmpty {
             performSegueWithIdentifier("launchLogin", sender: self)
-        } else {
-            print(UserDefaultStorage.getToken())
-            Users.myUser { userJSON, errorOccured in
-                if (!errorOccured) {
-                    print(userJSON)
-                }
-            }
         }
         
-        Games.all { games, error in
-            if error == nil {
-                self.dataSource.appendContentsOf(games!)
-                self.tableView.reloadData()
-            } else {
-                print(error)
-            }
-        }
+        reloadData()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl!)
+        
         gamesCountLabel.text = String(dataSource.count)
+    }
+    
+    func reloadData() {
+        Games.all { games, error in
+            if error == nil {
+                self.dataSource = games!
+                self.tableView.reloadData()
+            } else {
+                print(error)
+            }
+            
+            self.refreshControl!.endRefreshing()
+        }
     }
 
     // TODO: Fix settings, currently logout
