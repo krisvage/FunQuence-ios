@@ -15,7 +15,8 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var friendsCountLabel: UILabel!
-    
+
+    var refreshControl: UIRefreshControl?
     let emptyMessage = UILabel()
     
     @IBAction func backButtonTapped(sender: AnyObject) {
@@ -57,6 +58,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
                 print(error)
             }
             self.friendsCountLabel.text = String(self.dataSource.count)
+            self.refreshControl?.endRefreshing()
         }
 
     }
@@ -78,6 +80,10 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
         tableView.backgroundView = emptyMessage
         tableView.separatorStyle = .None
+
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(getViewData), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl!)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
