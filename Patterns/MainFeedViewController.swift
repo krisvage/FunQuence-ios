@@ -12,7 +12,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     let textCellIdentifier = "GameCell"
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gamesCountLabel: UILabel!
-    let dataSource = staticGames;
+
+    var dataSource = staticGames;
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,15 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 if (!errorOccured) {
                     print(userJSON)
                 }
+            }
+        }
+        
+        Games.all { games, error in
+            if error == nil {
+                self.dataSource.appendContentsOf(games!)
+                self.tableView.reloadData()
+            } else {
+                print(error)
             }
         }
         

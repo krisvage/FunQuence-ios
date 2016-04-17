@@ -19,10 +19,15 @@ class GameCellTableViewCell: UITableViewCell {
     @IBOutlet weak var roundNumberLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    func configureCell(game: AnyObject){
-        let username = game["players"]!![0]["username"] as! String
-        let round_number = game["current_round_number"] as! NSNumber
-        let status = game["status"]!!["message"] as! String
+    func configureCell(game: Game){
+        let usernames = [
+            game.players[0]["username"] as! String,
+            game.players[1]["username"] as! String
+        ]
+        
+        let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        let round_number = game.currentRoundNumber // game["current_round_number"] as! NSNumber
+        let status = game.status["status"]!["message"] as! String // game["status"]!!["message"] as! String
         
         // TODO: Refactor images. Only need a placeholder and change image uri.
         // TODO: Make sure all possible states of a game is represented.

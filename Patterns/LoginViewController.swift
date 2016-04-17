@@ -75,6 +75,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 self.messageField.hidden = true
                 self.messageHeader.hidden = true
+                
+                self.getUserData()
 
                 self.dismissViewControllerAnimated(true, completion: {})
             } else {
@@ -85,4 +87,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    func getUserData() {
+        Users.myUser { userJSON, errorOccured in
+            if !errorOccured {
+                UserDefaultStorage.saveUsername(userJSON!["username"].stringValue)
+                UserDefaultStorage.saveEmail(userJSON!["email"].stringValue)
+            }
+        }
+    }
 }

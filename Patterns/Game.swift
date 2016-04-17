@@ -10,8 +10,18 @@ struct Game {
     var gameId: Int
     var gameDate: String
     var isActive: Int
-    var players: [String: AnyObject]
-    var gameRound: [String: [String]]
+    var players: [[String: AnyObject]]
+    var gameRounds: [String: [String]]
     var currentRoundNumber: Int
-    var status: [String: AnyObject]
+    var status: [String: [String: AnyObject]]
+    
+    init(gameId: Int, gameDate: String, isActive: Int, players: [[String: AnyObject]], gameRounds: [String: [String]], currentRoundNumber: Int, status: [String: [String: AnyObject]]) {
+        self.gameId = gameId
+        self.gameDate = gameDate
+        self.isActive = isActive
+        self.players = players
+        self.gameRounds = gameRounds
+        self.currentRoundNumber = currentRoundNumber
+        self.status = status
+    }
 }

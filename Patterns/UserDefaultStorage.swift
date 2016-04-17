@@ -18,4 +18,20 @@ class UserDefaultStorage {
     static func getToken() -> String {
         return defaults.objectForKey("userToken") as? String ?? ""
     }
+    
+    static func saveUsername(username: String) {
+        defaults.setObject(username, forKey: "username")
+    }
+    
+    static func getUsername() -> String {
+        return defaults.objectForKey("username") as? String ?? ""
+    }
+    
+    static func saveEmail(email: String) {
+        defaults.setObject(email, forKey: "userEmail")
+    }
+    
+    static func getEmail() -> String {
+        return defaults.objectForKey("userEmail") as? String ?? ""
+    }
 }

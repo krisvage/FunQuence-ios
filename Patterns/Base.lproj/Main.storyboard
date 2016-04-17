@@ -533,7 +533,7 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
-                                <state key="normal" title="Log in" image="62DB7AE8-3D58-45FD-A17E-E1F10B1C933E" backgroundImage="button_bg">
+                                <state key="normal" title="Log in" image="755EEADE-19C0-4E04-99FE-90A4D314BA6C" backgroundImage="button_bg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -1636,7 +1636,7 @@ is incorrect.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="62DB7AE8-3D58-45FD-A17E-E1F10B1C933E" width="274" height="54">
+        <image name="755EEADE-19C0-4E04-99FE-90A4D314BA6C" width="274" height="54">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
