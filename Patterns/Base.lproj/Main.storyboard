@@ -257,9 +257,11 @@
                             <constraint firstAttribute="trailing" secondItem="wzE-Il-eVD" secondAttribute="trailing" id="0gq-Kf-VL6"/>
                             <constraint firstItem="Dpp-KB-Arq" firstAttribute="centerX" secondItem="rsn-f5-sz6" secondAttribute="centerX" id="4c9-dG-cdD"/>
                             <constraint firstItem="egf-56-g3h" firstAttribute="leading" secondItem="OF0-Kq-heR" secondAttribute="trailing" constant="20" id="55b-fq-U01"/>
-                            <constraint firstItem="DiS-Jf-OeB" firstAttribute="top" secondItem="OF0-Kq-heR" secondAttribute="bottom" constant="69" id="5bX-Ea-3Gt"/>
+                            <constraint firstItem="DiS-Jf-OeB" firstAttribute="top" secondItem="OF0-Kq-heR" secondAttribute="bottom" constant="69" id="5bX-Ea-3Gt">
+                                <variation key="widthClass=compact" constant="49"/>
+                            </constraint>
                             <constraint firstItem="egf-56-g3h" firstAttribute="top" secondItem="OF0-Kq-heR" secondAttribute="bottom" constant="66" id="5yr-eq-Zsl">
-                                <variation key="widthClass=compact" constant="69"/>
+                                <variation key="widthClass=compact" constant="49"/>
                             </constraint>
                             <constraint firstItem="wzE-Il-eVD" firstAttribute="centerX" secondItem="DiS-Jf-OeB" secondAttribute="centerX" id="66t-3V-biz">
                                 <variation key="widthClass=compact" constant="162"/>
@@ -300,7 +302,7 @@
                             <constraint firstItem="rsn-f5-sz6" firstAttribute="centerY" secondItem="DiS-Jf-OeB" secondAttribute="centerY" id="ptd-V5-AOU"/>
                             <constraint firstItem="DiS-Jf-OeB" firstAttribute="leading" secondItem="oTj-YU-NAy" secondAttribute="leading" constant="12" id="reB-m5-B2L"/>
                             <constraint firstItem="wzE-Il-eVD" firstAttribute="top" secondItem="OF0-Kq-heR" secondAttribute="bottom" constant="95" id="sZj-2T-oYZ">
-                                <variation key="widthClass=compact" constant="100"/>
+                                <variation key="widthClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="egf-56-g3h" secondAttribute="trailing" constant="22" id="seT-ZH-mD8"/>
                             <constraint firstAttribute="trailing" secondItem="c63-7R-lCb" secondAttribute="trailing" constant="10" id="tcw-rm-wsm"/>
@@ -521,7 +523,7 @@
                                     <constraint firstAttribute="width" constant="254" id="jzg-pk-VnJ"/>
                                     <constraint firstAttribute="height" constant="54" id="lXc-5q-11Y"/>
                                 </constraints>
-                                <state key="normal" title="Log in" image="D9E75965-F488-4DA9-91F5-46B26EAFE8F5" backgroundImage="button_bg">
+                                <state key="normal" title="Log in" image="F3060498-F87E-42F2-8D73-3E21C254688F" backgroundImage="button_bg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -1153,7 +1155,9 @@ is incorrect.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="m9t-jE-gKC" firstAttribute="top" secondItem="YuX-is-FSU" secondAttribute="bottom" constant="69" id="1PD-7V-CGp"/>
+                            <constraint firstItem="m9t-jE-gKC" firstAttribute="top" secondItem="YuX-is-FSU" secondAttribute="bottom" constant="69" id="1PD-7V-CGp">
+                                <variation key="widthClass=compact" constant="49"/>
+                            </constraint>
                             <constraint firstItem="YTO-zF-Au9" firstAttribute="centerY" secondItem="m9t-jE-gKC" secondAttribute="centerY" id="3DU-QB-pem"/>
                             <constraint firstAttribute="trailing" secondItem="dkx-2p-SZ2" secondAttribute="trailing" id="6vl-AJ-Wiv"/>
                             <constraint firstItem="YuX-is-FSU" firstAttribute="top" secondItem="6HV-GY-2pD" secondAttribute="bottom" constant="23" id="9nB-TN-kzI">
@@ -1161,7 +1165,7 @@ is incorrect.</string>
                             </constraint>
                             <constraint firstItem="YTO-zF-Au9" firstAttribute="leading" secondItem="m9t-jE-gKC" secondAttribute="trailing" constant="3" id="B6O-vQ-SBf"/>
                             <constraint firstItem="dLo-y6-f3Y" firstAttribute="top" secondItem="YuX-is-FSU" secondAttribute="bottom" constant="75" id="BEg-SC-9YZ">
-                                <variation key="widthClass=compact" constant="69"/>
+                                <variation key="widthClass=compact" constant="49"/>
                             </constraint>
                             <constraint firstItem="H3B-BX-SNI" firstAttribute="centerX" secondItem="kvr-Qx-d15" secondAttribute="centerX" id="F0G-ql-47a"/>
                             <constraint firstAttribute="trailing" secondItem="YTO-zF-Au9" secondAttribute="trailing" constant="20" id="Gmq-Hn-FGh">
@@ -1173,7 +1177,7 @@ is incorrect.</string>
                             <constraint firstItem="YuX-is-FSU" firstAttribute="centerX" secondItem="EUg-Ku-y2t" secondAttribute="centerX" id="K0w-7Q-Zgg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m9t-jE-gKC" secondAttribute="trailing" constant="22" id="LAP-FI-aEK"/>
                             <constraint firstItem="dkx-2p-SZ2" firstAttribute="top" secondItem="YuX-is-FSU" secondAttribute="bottom" constant="100" id="Psg-7Q-21B">
-                                <variation key="widthClass=compact" constant="100"/>
+                                <variation key="widthClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstItem="MTw-1n-4FN" firstAttribute="top" secondItem="dkx-2p-SZ2" secondAttribute="bottom" id="Qn4-Qj-6EI"/>
                             <constraint firstItem="YTO-zF-Au9" firstAttribute="top" secondItem="YuX-is-FSU" secondAttribute="bottom" constant="72" id="UNu-4u-JxE"/>
@@ -1286,7 +1290,7 @@ is incorrect.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o0-Ct-whe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560" y="778"/>
+            <point key="canvasLocation" x="1489.5" y="758"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24I-7y-5Yt">
@@ -1532,11 +1536,11 @@ is incorrect.</string>
                             <constraint firstItem="1rz-ab-TsQ" firstAttribute="centerX" secondItem="T6h-2W-Um1" secondAttribute="centerX" id="AFl-3D-ZTr"/>
                             <constraint firstItem="1rz-ab-TsQ" firstAttribute="top" secondItem="NeI-kw-O68" secondAttribute="bottom" constant="26" id="E3W-yU-7jv"/>
                             <constraint firstItem="1YK-d7-dkw" firstAttribute="top" secondItem="nbj-Yg-nrE" secondAttribute="bottom" constant="75" id="EBe-iR-5I9">
-                                <variation key="widthClass=compact" constant="69"/>
+                                <variation key="widthClass=compact" constant="49"/>
                             </constraint>
                             <constraint firstItem="DCk-XD-8pc" firstAttribute="top" secondItem="1YK-d7-dkw" secondAttribute="bottom" constant="7" id="F8Q-as-RWI"/>
                             <constraint firstItem="DCk-XD-8pc" firstAttribute="top" secondItem="nbj-Yg-nrE" secondAttribute="bottom" constant="100" id="FwQ-Pm-z0E">
-                                <variation key="widthClass=compact" constant="100"/>
+                                <variation key="widthClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="DCk-XD-8pc" secondAttribute="trailing" id="jkG-f8-QU7"/>
                             <constraint firstItem="4Cq-LA-0he" firstAttribute="centerY" secondItem="xU3-gC-3JY" secondAttribute="centerY" id="jnB-pZ-exF"/>
@@ -1866,12 +1870,12 @@ is incorrect.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jr-AZ-Ttd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5" y="786"/>
+            <point key="canvasLocation" x="2284.5" y="778"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back Chevron" width="13" height="21"/>
-        <image name="D9E75965-F488-4DA9-91F5-46B26EAFE8F5" width="274" height="54">
+        <image name="F3060498-F87E-42F2-8D73-3E21C254688F" width="274" height="54">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
