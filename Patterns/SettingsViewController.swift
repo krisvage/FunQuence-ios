@@ -12,10 +12,14 @@ class SettingsViewController: UIViewController {
     @IBAction func backButtonTapped(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        usernameLabel.text = UserDefaultStorage.getUsername();
+        emailLabel.text = UserDefaultStorage.getEmail();
     }
     
     override func viewDidDisappear(animated: Bool) {

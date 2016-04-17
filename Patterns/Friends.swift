@@ -41,7 +41,7 @@ class Friends: API {
         }
     }
     
-    static func add(username: String, completionHandler: (added: Bool) -> ()) {
+    static func add(username: String, completionHandler: (added: Bool, error: String?) -> ()) {
         let params = ["username": username]
         
         Alamofire.request(addFriendRoute.method, addFriendRoute.path, headers: headers(), parameters: params)
@@ -51,15 +51,14 @@ class Friends: API {
                     if let json = response.result.value {
                         let parsed_json = JSON(json)
                         if parsed_json["error"] == nil {
-                            print(parsed_json["message"].stringValue)
-                            completionHandler(added: true)
+                            completionHandler(added: true, error: nil)
                         } else {
-                            print(parsed_json["error"].stringValue)
-                            completionHandler(added: false)
+                            let error = parsed_json["error"].stringValue
+                            completionHandler(added: false, error: error)
                         }
                     }
                 case .Failure(_):
-                    completionHandler(added: false)
+                    completionHandler(added: false, error: nil)
                 }
         }
     }

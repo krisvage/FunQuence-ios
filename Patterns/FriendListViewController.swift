@@ -101,6 +101,11 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
     }
+    func displayAlertViewError(error: String){
+        let alertController = UIAlertController(title: "Oooops!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 
     @IBAction func addFriendTapped(sender: AnyObject) {
         let alertController = UIAlertController(title: "Add Friend", message: "Enter friends username", preferredStyle: UIAlertControllerStyle.Alert)
@@ -110,14 +115,13 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         }
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
-            print("Trykket add")
             let username = self.inputFieldInAlertView.text!
             
-            Friends.add(username) { added in
+            Friends.add(username) { added, error in
                 if added {
                     self.getViewData()
                 } else {
-                    print("Add friend failed")
+                    self.displayAlertViewError(error!)
                 }
             }
         }))

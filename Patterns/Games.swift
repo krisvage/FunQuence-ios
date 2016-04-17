@@ -22,11 +22,12 @@ class Games: API {
                 switch response.result {
                 case .Success(_):
                     if let json = response.result.value {
+                        let parsed_json = JSON(json)
                         if parsed_json["error"] == nil {
                             let game = parseGame(parsed_json["game"])
                             completionHandler(game: game, error: nil)
                         } else {
-                            completionHandler(game: nil, error: parsed_json["error"])
+                            completionHandler(game: nil, error: parsed_json["error"].stringValue)
                         }
                     }
                 case .Failure(_):
