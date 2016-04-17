@@ -61,8 +61,6 @@ class Games: API {
     }
     
     static func all(completionHandler: (games: [Game]?, error: String?) -> ()) {
-        print("All games")
-        
         Alamofire.request(allGamesRoute.method, allGamesRoute.path, headers: headers())
             .responseJSON { response in
                 switch response.result {

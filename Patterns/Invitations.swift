@@ -56,7 +56,6 @@ class Invitations: API {
                         let parsed_json = JSON(json)
                         if parsed_json["error"] == nil {
                             let invitations = parsed_json["invitations"].arrayValue.map({Invitation(accepted: $0["accepted"].boolValue, fromUsername: $0["from_username"].stringValue, toUsername: $0["to_username"].stringValue, invitationSent: $0["invitation_sent"].doubleValue, invitationId: $0["invitation_id"].intValue)})
-                            print("yo \(invitations.first?.invitationSent)")
                             completionHandler(invitations: invitations, error: nil)
                         } else {
                             completionHandler(invitations: nil, error: parsed_json["error"].stringValue)
@@ -74,8 +73,6 @@ class Invitations: API {
 
         Alamofire.request(replyInvitationRoute.method, fullPath, headers: headers(), parameters: params)
             .responseJSON { response in
-                print(response.request)
-                print(response.request?.HTTPBody)
                 switch response.result {
                 case .Success(_):
                     if let json = response.result.value {

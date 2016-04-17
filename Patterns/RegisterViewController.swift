@@ -29,7 +29,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print("hei")
         textField.resignFirstResponder()
         if textField == usernameField { // Switch focus to other text field
             emailField.becomeFirstResponder()

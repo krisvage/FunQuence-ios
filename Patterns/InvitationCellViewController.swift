@@ -38,7 +38,6 @@ class InvitationCellViewController: UITableViewCell {
     func respondInvite(accepted: Bool) {
         Invitations.reply(self.invitationId, accepted: accepted) { message, error in
             if error == nil {
-                print(message)
                 self.delegate!.reloadData()
             } else {
                 print(error)

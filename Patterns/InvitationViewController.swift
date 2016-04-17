@@ -94,10 +94,9 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! InvitationCellViewController
         let from_username = invitation.fromUsername // ["from_username"] as! String
         let timeStamp = invitation.invitationSent // ["invitation_sent"] as! Double
-        print(timeStamp)
+
         let timeObject = NSDate(timeIntervalSince1970: floor(timeStamp/1000))
-        print(timeObject)
-        print(timeObject.timeIntervalSince1970)
+
         let timeAgo = timeAgoSince(timeObject)
         let invitationId = invitation.invitationId
         cell.configureCell(from_username, time_ago: timeAgo, invitationId: invitationId, delegate: self)
