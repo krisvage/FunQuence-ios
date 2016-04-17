@@ -43,6 +43,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     override func shouldAutorotate() -> Bool {
         return true
     }

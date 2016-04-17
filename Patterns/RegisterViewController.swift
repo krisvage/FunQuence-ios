@@ -33,6 +33,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
@@ -50,8 +54,8 @@ class RegisterViewController: UIViewController {
         Users.register(username, email: email, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
-                
-                self.dismissViewControllerAnimated(true, completion: {})
+
+                self.navigationController?.popToRootViewControllerAnimated(true)
             } else {
                 print(error)
             }

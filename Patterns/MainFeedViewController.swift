@@ -50,6 +50,12 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             self.refreshControl!.endRefreshing()
             self.gamesCountLabel.text = String(self.dataSource.count)
         }
+        
+        Invitations.allCount { invitationCount, error in
+            if error {
+                print(error)
+            }
+        }
     }
 
     // TODO: Fix settings, currently logout

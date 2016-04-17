@@ -37,6 +37,16 @@ class Invitations: API {
         }
     }
     
+    static func allCount(completionHandler: (invitationCount: Int, error: String?) -> ()) {
+        all { invitations, error in
+            if error == nil {
+                completionHandler(invitationCount: invitations!.count, error: nil)
+            } else {
+                completionHandler(invitationCount: 0, error: error)
+            }
+        }
+    }
+    
     static func all(completionHandler: (invitations: [Invitation]?, error: String?) -> ()) {
         Alamofire.request(allInvitationsRoute.method, allInvitationsRoute.path, headers: headers())
             .responseJSON { response in

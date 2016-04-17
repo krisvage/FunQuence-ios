@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vb2-Tj-Xck" id="NLY-vg-itX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up7-qm-kbt">
@@ -1042,7 +1042,7 @@ is incorrect.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWr-hb-G71" id="RlM-Xv-n8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27h-gW-c8s">
@@ -1051,9 +1051,6 @@ is incorrect.</string>
                                                     <state key="normal" title="Invite" backgroundImage="Invite_btn_bg">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="310" y="18" width="67" height="41"/>
-                                                    </variation>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-cc-Ig0">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1370,7 +1367,7 @@ is incorrect.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nQv-DG-KVP" id="tk7-7Y-RH0">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU2-9B-ICy">
@@ -1393,7 +1390,7 @@ is incorrect.</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="301" y="18" width="81" height="41"/>
+                                                        <rect key="frame" x="141" y="17" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="844-c0-UNm"/>
                                                         </mask>
@@ -1413,7 +1410,7 @@ is incorrect.</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="210" y="18" width="81" height="41"/>
+                                                        <rect key="frame" x="50" y="17" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="c03-vg-9j9"/>
                                                         </mask>
@@ -1661,14 +1658,14 @@ is incorrect.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="xlc-KE-kVJ"/>
                                         <exclude reference="3eb-k9-Kuk"/>
+                                        <exclude reference="xlc-KE-kVJ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="xlc-KE-kVJ"/>
                                         <include reference="3eb-k9-Kuk"/>
+                                        <include reference="xlc-KE-kVJ"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -1733,14 +1730,14 @@ is incorrect.</string>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="yn2-SJ-y2D"/>
                                         <exclude reference="54m-ld-D5H"/>
+                                        <exclude reference="yn2-SJ-y2D"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="yn2-SJ-y2D"/>
                                         <include reference="54m-ld-D5H"/>
+                                        <include reference="yn2-SJ-y2D"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1806,33 +1803,33 @@ is incorrect.</string>
                                 <exclude reference="etx-ou-9IZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZAw-pB-6Nx"/>
-                                <exclude reference="ote-oP-FPu"/>
                                 <exclude reference="RVB-Ew-e31"/>
                                 <exclude reference="xen-Pj-WrJ"/>
-                                <exclude reference="Kqc-WS-kyU"/>
-                                <exclude reference="Shu-pb-JG4"/>
-                                <exclude reference="ub5-Gv-WEb"/>
-                                <exclude reference="fUp-M0-rmD"/>
-                                <exclude reference="t9j-ti-xHr"/>
-                                <exclude reference="gbs-8g-ckm"/>
-                                <exclude reference="mF1-0O-jcY"/>
-                                <exclude reference="N9i-uP-o4E"/>
-                                <exclude reference="j9N-zA-wjJ"/>
-                                <exclude reference="4pJ-EJ-gnA"/>
-                                <exclude reference="f33-Zf-BW9"/>
-                                <exclude reference="my2-BG-phc"/>
                                 <exclude reference="mHc-ng-aFV"/>
                                 <exclude reference="vGM-3u-642"/>
-                                <exclude reference="Y7v-Mq-IjH"/>
-                                <exclude reference="jrW-hh-d93"/>
-                                <exclude reference="3IQ-F5-XgL"/>
-                                <exclude reference="WFj-3L-6Oe"/>
+                                <exclude reference="nqF-8o-c4l"/>
                                 <exclude reference="I42-eo-di4"/>
                                 <exclude reference="Xzz-zS-emk"/>
                                 <exclude reference="lkP-hc-Mno"/>
+                                <exclude reference="Kqc-WS-kyU"/>
+                                <exclude reference="Shu-pb-JG4"/>
+                                <exclude reference="ub5-Gv-WEb"/>
+                                <exclude reference="4pJ-EJ-gnA"/>
+                                <exclude reference="f33-Zf-BW9"/>
+                                <exclude reference="my2-BG-phc"/>
                                 <exclude reference="E3a-hs-jWQ"/>
-                                <exclude reference="nqF-8o-c4l"/>
+                                <exclude reference="ZAw-pB-6Nx"/>
+                                <exclude reference="ote-oP-FPu"/>
+                                <exclude reference="3IQ-F5-XgL"/>
+                                <exclude reference="WFj-3L-6Oe"/>
+                                <exclude reference="gbs-8g-ckm"/>
+                                <exclude reference="mF1-0O-jcY"/>
+                                <exclude reference="Y7v-Mq-IjH"/>
+                                <exclude reference="jrW-hh-d93"/>
+                                <exclude reference="N9i-uP-o4E"/>
+                                <exclude reference="j9N-zA-wjJ"/>
+                                <exclude reference="fUp-M0-rmD"/>
+                                <exclude reference="t9j-ti-xHr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1851,33 +1848,33 @@ is incorrect.</string>
                                 <include reference="etx-ou-9IZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZAw-pB-6Nx"/>
-                                <include reference="ote-oP-FPu"/>
                                 <include reference="RVB-Ew-e31"/>
                                 <include reference="xen-Pj-WrJ"/>
-                                <exclude reference="Kqc-WS-kyU"/>
-                                <include reference="Shu-pb-JG4"/>
-                                <include reference="ub5-Gv-WEb"/>
-                                <include reference="fUp-M0-rmD"/>
-                                <include reference="t9j-ti-xHr"/>
-                                <include reference="gbs-8g-ckm"/>
-                                <include reference="mF1-0O-jcY"/>
-                                <include reference="N9i-uP-o4E"/>
-                                <include reference="j9N-zA-wjJ"/>
-                                <include reference="4pJ-EJ-gnA"/>
-                                <include reference="f33-Zf-BW9"/>
-                                <include reference="my2-BG-phc"/>
                                 <include reference="mHc-ng-aFV"/>
                                 <include reference="vGM-3u-642"/>
-                                <include reference="Y7v-Mq-IjH"/>
-                                <include reference="jrW-hh-d93"/>
-                                <include reference="3IQ-F5-XgL"/>
-                                <include reference="WFj-3L-6Oe"/>
+                                <include reference="nqF-8o-c4l"/>
                                 <include reference="I42-eo-di4"/>
                                 <include reference="Xzz-zS-emk"/>
                                 <include reference="lkP-hc-Mno"/>
+                                <exclude reference="Kqc-WS-kyU"/>
+                                <include reference="Shu-pb-JG4"/>
+                                <include reference="ub5-Gv-WEb"/>
+                                <include reference="4pJ-EJ-gnA"/>
+                                <include reference="f33-Zf-BW9"/>
+                                <include reference="my2-BG-phc"/>
                                 <include reference="E3a-hs-jWQ"/>
-                                <include reference="nqF-8o-c4l"/>
+                                <include reference="ZAw-pB-6Nx"/>
+                                <include reference="ote-oP-FPu"/>
+                                <include reference="3IQ-F5-XgL"/>
+                                <include reference="WFj-3L-6Oe"/>
+                                <include reference="gbs-8g-ckm"/>
+                                <include reference="mF1-0O-jcY"/>
+                                <include reference="Y7v-Mq-IjH"/>
+                                <include reference="jrW-hh-d93"/>
+                                <include reference="N9i-uP-o4E"/>
+                                <include reference="j9N-zA-wjJ"/>
+                                <include reference="fUp-M0-rmD"/>
+                                <include reference="t9j-ti-xHr"/>
                             </mask>
                         </variation>
                     </view>
@@ -2885,7 +2882,7 @@ AAMAAAABARIAAAEBAAMAAAABADYAAAECAAMAAAAEAADn5gEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAER
 AAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABADYAAAEXAAQAAAABAADnMAEc
 AAMAAAABAAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAADn7odzAAcAAAxIAADn9gAAAAAACAAIAAgACAAB
 AAEAAQABAAAMSExpbm8CEAAAbW50clJHQiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNS
-R0IAAAAAAAAAAAAAAAEAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+R0IAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAARY3BydAAAAVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAA
 AgQAAAAUclhZWgAAAhgAAAAUZ1hZWgAAAiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAA
 AsQAAACIdnVlZAAAA0wAAACGdmlldwAAA9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAA
