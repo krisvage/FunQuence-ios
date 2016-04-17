@@ -44,6 +44,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    func displayAlertViewError(error: String){
+        let alertController = UIAlertController(title: "Oooops!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return .AllButUpsideDown
@@ -73,10 +79,21 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         Users.register(username, email: email, password: password) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
-
                 self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
             } else {
-                print(error)
+                if error == "Username already exists." {
+                    self.usernameField.background = UIImage(named: "error_input")
+                } else {
+                    self.usernameField.background = UIImage(named: "inputField")
+                }
+                
+                if error == "Email already exists." {
+                    self.emailField.background = UIImage(named: "error_input")
+                } else {
+                    self.emailField.background = UIImage(named: "inputField")
+                }
+                self.displayAlertViewError(error!)
+                
             }
         }
     }
