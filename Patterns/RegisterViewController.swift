@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
 
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
             } else {
                 print(error)
             }

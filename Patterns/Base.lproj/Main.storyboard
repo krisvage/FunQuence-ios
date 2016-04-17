@@ -263,11 +263,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ju-j4-zcN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ju-j4-zcN">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="4" backgroundImage="Notification badge">
+                                <state key="normal" backgroundImage="Notification badge">
                                     <color key="titleColor" red="0.99262624979019165" green="0.99604767560958862" blue="0.99183100461959839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="invitationsTapped:" destination="3bD-Qb-EAp" eventType="touchUpInside" id="REJ-QH-QJX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
@@ -480,7 +483,8 @@
                         <outlet property="tableView" destination="wzE-Il-eVD" id="QyB-ws-ZT2"/>
                         <segue destination="tox-fi-jUh" kind="show" identifier="goToFriendsList" id="ufj-49-RZE"/>
                         <segue destination="4eW-tD-1in" kind="presentation" identifier="goToInvitations" id="OWp-hW-dcu"/>
-                        <segue destination="vPi-68-ekc" kind="show" identifier="launchLogin" id="zGp-Lx-8Wp"/>
+                        <segue destination="vPi-68-ekc" kind="presentation" identifier="launchLogin" id="zGp-Lx-8Wp"/>
+                        <segue destination="mns-Uc-pT7" kind="show" identifier="goToSettings" id="fZp-Di-fSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq3-7o-THo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1906,6 +1910,9 @@ is incorrect.</string>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="zgE-R5-sea"/>
+                    <connections>
+                        <segue destination="vPi-68-ekc" kind="presentation" identifier="settingsToLogin" id="wR8-ER-97O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jr-AZ-Ttd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2992,4 +2999,7 @@ AAAAAAACAQAAAAAAAAA+AAAAAAAAAAAAAAAAAAD11w
         <image name="green label" width="27" height="27"/>
         <image name="inputField" width="274" height="54"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wR8-ER-97O"/>
+    </inferredMetricsTieBreakers>
 </document>

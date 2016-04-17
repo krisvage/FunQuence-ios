@@ -11,7 +11,29 @@ import Alamofire
 import SwiftyJSON
 
 class Games: API {
+    static let gameRoute = Route(path: basePath + "/games", method: .GET)
     static let allGamesRoute = Route(path: basePath + "/users/me/games", method: .GET)
+    
+    static func getById(gameId: Int, completionHandler: (game: Game?, error: String?) -> ()) {
+        let fullPath = "\(gameRoute.path)/\(gameId)"
+        
+        Alamofire.request(gameRoute.method, fullPath, headers: headers())
+            .responseJSON { response in
+                switch response.result {
+                case .Success(_):
+                    if let json = response.result.value {
+                        if parsed_json["error"] == nil {
+                            let game = parseGame(parsed_json["game"])
+                            completionHandler(game: game, error: nil)
+                        } else {
+                            completionHandler(game: nil, error: parsed_json["error"])
+                        }
+                    }
+                case .Failure(_):
+                    completionHandler(game: nil, error: "failed request")
+                }
+        }
+    }
     
     static func all(completionHandler: (games: [Game]?, error: String?) -> ()) {
         print("All games")
@@ -62,9 +84,13 @@ class Games: API {
         ]
     }
     
+    static func parseGame(game: JSON) -> Game {
+        return Game(gameId: game["game_id"].intValue, gameDate: game["game_date"].stringValue, isActive: game["is_active"].intValue, players: parsePlayers(game["players"]), gameRounds: parseGameRounds(game["game_rounds"]), currentRoundNumber: game["current_round_number"].intValue, status: parseStatus(game["status"]))
+    }
+    
     static func parseGames(games: JSON) -> [Game] {
         return games.arrayValue.map({
-            Game(gameId: $0["game_id"].intValue, gameDate: $0["game_date"].stringValue, isActive: $0["is_active"].intValue, players: parsePlayers($0["players"]), gameRounds: parseGameRounds($0["game_rounds"]), currentRoundNumber: $0["current_round_number"].intValue, status: parseStatus($0["status"]))
+            parseGame($0)
         })
     }
 }

@@ -19,8 +19,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidAppear(animated: Bool) {
         reloadData()
+        
+        if UserDefaultStorage.getToken().isEmpty {
+            performSegueWithIdentifier("launchLogin", sender: self)
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +33,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         
+        self.notificationBadge.hidden = true
+        
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
-        
-        if UserDefaultStorage.getToken().isEmpty {
-            performSegueWithIdentifier("launchLogin", sender: self)
-        }
     }
     
     func reloadData() {
@@ -52,16 +53,22 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         Invitations.allCount { invitationCount, error in
-            if (error != nil) {
+            if error != nil {
                 print(error)
+            }
+            
+            if (invitationCount == 0) {
+                self.notificationBadge.hidden = true
+            } else {
+                self.notificationBadge.setTitle(String(invitationCount), forState: .Normal)
+                self.notificationBadge.hidden = false
             }
         }
     }
 
     // TODO: Fix settings, currently logout
     @IBAction func settingsButtonTapped(sender: AnyObject) {
-        UserDefaultStorage.saveToken("")
-        performSegueWithIdentifier("launchLogin", sender: self)
+        performSegueWithIdentifier("goToSettings", sender: self)
     }
 
     @IBAction func invitationsTapped(sender: AnyObject) {

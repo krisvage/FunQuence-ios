@@ -18,8 +18,12 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logOutButtonTapped(sender: AnyObject) {
-        // TODO: Implement logout. Remove token from local storage.
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.popViewControllerAnimated(false)
     }
-
+    
+    @IBAction func logOutButtonTapped(sender: AnyObject) {
+        UserDefaultStorage.saveToken("")
+        self.performSegueWithIdentifier("settingsToLogin", sender: self)
+    }
 }
