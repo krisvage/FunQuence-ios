@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+
         self.navigationController?.viewControllers.popLast()
     }
     
