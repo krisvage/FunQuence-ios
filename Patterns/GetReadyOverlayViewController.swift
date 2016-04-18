@@ -20,8 +20,10 @@ class GetReadyOverlayViewController: UIViewController {
     var delegate: countdownStarter?
     
     override func viewDidLoad() {
+        secondsLabel.hidden = true;
         super.viewDidLoad()
         interval = setInterval(1) {
+            self.secondsLabel.hidden = false;
             if(self.counter == 0){
                 self.dismissViewControllerAnimated(true) {
                     self.interval.invalidate()

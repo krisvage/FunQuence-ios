@@ -11,7 +11,6 @@ import AVFoundation
 
 class SequencePlaybackViewController: UIViewController {
     let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
-    var current_index = 0;
     var sound: SystemSoundID = 0
     var soundUrl: NSURL!
 
@@ -22,10 +21,13 @@ class SequencePlaybackViewController: UIViewController {
     @IBOutlet weak var readyText: UILabel!
     @IBOutlet weak var readyButton: UIButton!
     
-    
     @IBAction func readyButtonTapped(sender: AnyObject) {
         setTimeout(2) {
-            self.startSequence()
+            self.startSequence({ 
+                setTimeout(1, block: {
+                    self.performSegueWithIdentifier("goToSequenceInput", sender: self)
+                })
+            })
         }
         self.readyButton.hidden = true;
         self.readyText.hidden = true;
@@ -55,7 +57,6 @@ class SequencePlaybackViewController: UIViewController {
     
     func resetView(){
         setUpPads();
-        current_index = 0;
         readyText.hidden = false;
         readyButton.hidden = false;
     }
@@ -76,25 +77,28 @@ class SequencePlaybackViewController: UIViewController {
         return nil;
     }
     
-    func startSequence(){
-        let currentColorString = self.light_sequence[current_index];
-        let currentButton = self.getPadByColorString(currentColorString)
-        if currentButton == nil {
-            print("OOOPS. Something wrong with the light_sequence")
-            return;
-        }
-        self.playBoopSound()
-        self.turnLightOn(currentButton!)
-        setTimeout(1) {
-            self.turnLightOff(currentButton!)
-            if(self.current_index != self.light_sequence.count-1){
-                self.current_index += 1;
-                self.startSequence()
-            } else {
-                self.resetView();
+    func startSequence(completion: (() -> Void)?) {
+        var current_index = 0;
+        
+        func playSequence(){
+            let currentColorString = self.light_sequence[current_index];
+            let currentButton = self.getPadByColorString(currentColorString)
+            
+            self.playBoopSound()
+            self.turnLightOn(currentButton!)
+            setTimeout(1) {
+                self.turnLightOff(currentButton!)
+                if(current_index != self.light_sequence.count-1){
+                    current_index += 1;
+                    playSequence()
+                } else {
+                    if completion != nil {
+                        completion!()
+                    }
+                }
             }
         }
-       
+        playSequence();
     }
     
     func turnLightOn(button: UIButton){

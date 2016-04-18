@@ -493,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq3-7o-THo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="622"/>
+            <point key="canvasLocation" x="-759" y="458"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JUD-2P-PxG">
@@ -734,7 +734,7 @@ is incorrect.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-pV-Ve5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1474.5" y="81"/>
+            <point key="canvasLocation" x="-847.5" y="-451"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="S96-QA-RjI">
@@ -1001,7 +1001,7 @@ is incorrect.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wt-MJ-CTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hFd-0K-LKd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="37"/>
+            <point key="canvasLocation" x="267" y="-575"/>
         </scene>
         <!--Friend List View Controller-->
         <scene sceneID="p1S-07-EDy">
@@ -1356,7 +1356,7 @@ is incorrect.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o0-Ct-whe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.5" y="758"/>
+            <point key="canvasLocation" x="391.5" y="710"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24I-7y-5Yt">
@@ -1369,12 +1369,12 @@ is incorrect.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OiR-UG-b1t" kind="relationship" relationship="rootViewController" id="oHo-hR-OMc"/>
+                        <segue destination="3bD-Qb-EAp" kind="relationship" relationship="rootViewController" id="woq-Y6-wcb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmT-5l-y6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1150.5" y="806"/>
+            <point key="canvasLocation" x="-2278.5" y="318"/>
         </scene>
         <!--Sequence Playback View Controller-->
         <scene sceneID="nmU-r4-hrj">
@@ -1679,11 +1679,12 @@ to see the sequence playback.</string>
                         <outlet property="readyText" destination="cc4-Cw-ZcF" id="mg6-LT-OtF"/>
                         <outlet property="redPad" destination="2jC-Hq-cxh" id="4wW-nl-08v"/>
                         <outlet property="yellowPad" destination="hqx-f5-Uuw" id="cd0-Xg-BpK"/>
+                        <segue destination="OiR-UG-b1t" kind="show" identifier="goToSequenceInput" id="dhu-7U-R2I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhY-Mj-Zfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1142.25" y="1633.5"/>
+            <point key="canvasLocation" x="-2259.75" y="1657.5"/>
         </scene>
         <!--Invitation View Controller-->
         <scene sceneID="XmK-XQ-KbQ">
@@ -2010,7 +2011,7 @@ to see the sequence playback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkr-E3-kg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="1587"/>
+            <point key="canvasLocation" x="1365" y="-473"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="RRs-6d-6PK">
@@ -2262,7 +2263,7 @@ to see the sequence playback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jr-AZ-Ttd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2284.5" y="778"/>
+            <point key="canvasLocation" x="1678.5" y="262"/>
         </scene>
         <!--Sequence Input View Controller-->
         <scene sceneID="ikG-rE-9eT">
@@ -2600,11 +2601,12 @@ to see the sequence playback.</string>
                         <outlet property="redPad" destination="c5q-wm-hHy" id="pmf-yU-suf"/>
                         <outlet property="yellowPad" destination="l5y-ej-dKX" id="ebV-Ql-Ttn"/>
                         <segue destination="HTg-B9-DUB" kind="presentation" identifier="goToReadyOverlay" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="TJT-U8-aez"/>
+                        <segue destination="2ff-cB-dDi" kind="show" identifier="goToResults" id="bfH-Pq-DnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wri-pn-Ks4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555.75" y="1633.5"/>
+            <point key="canvasLocation" x="-1482.75" y="1657.5"/>
         </scene>
         <!--Get Ready Overlay View Controller-->
         <scene sceneID="AZG-ks-NqV">
@@ -2671,12 +2673,12 @@ to see the sequence playback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJS-we-FbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530.25" y="2425.5"/>
+            <point key="canvasLocation" x="-1527.75" y="2481.5"/>
         </scene>
-        <!--Sequence Input View Controller-->
+        <!--Sequence Result View Controller-->
         <scene sceneID="iel-HB-Rtz">
             <objects>
-                <viewController id="2ff-cB-dDi" customClass="SequenceInputViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ff-cB-dDi" customClass="SequenceResultViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9df-AK-8PF"/>
                         <viewControllerLayoutGuide type="bottom" id="lhS-qZ-CgH"/>
@@ -2715,20 +2717,61 @@ to see the sequence playback.</string>
                                 <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Zc-Xuv">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You were the first to answer the sequence, wait for kristian to complete it and move on to the next round. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-3F-9SW">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="sjE-Rp-Ra5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sjE-Rp-Ra5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sjE-Rp-Ra5"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Correct icon" translatesAutoresizingMaskIntoConstraints="NO" id="bTZ-yV-76q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="m6m-Zc-Xuv" firstAttribute="top" secondItem="bTZ-yV-76q" secondAttribute="bottom" constant="11" id="2T9-n8-R0I">
+                                <variation key="widthClass=compact" constant="4"/>
+                            </constraint>
                             <constraint firstItem="5vr-aS-Khw" firstAttribute="leading" secondItem="P4s-YL-Hgp" secondAttribute="trailing" constant="8" id="3OM-QF-J0w"/>
                             <constraint firstItem="nNg-E4-Oyi" firstAttribute="top" secondItem="9df-AK-8PF" secondAttribute="bottom" constant="26" id="8Hf-JK-ftM"/>
+                            <constraint firstItem="WGq-3F-9SW" firstAttribute="centerX" secondItem="68q-HO-YcK" secondAttribute="centerX" id="FQF-7j-5aB"/>
                             <constraint firstItem="5vr-aS-Khw" firstAttribute="centerY" secondItem="P4s-YL-Hgp" secondAttribute="centerY" id="Gmn-6Q-qob"/>
                             <constraint firstItem="7a3-hQ-fat" firstAttribute="top" secondItem="nNg-E4-Oyi" secondAttribute="bottom" constant="36" id="HuS-1C-y1R">
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
+                            <constraint firstItem="bTZ-yV-76q" firstAttribute="top" secondItem="P4s-YL-Hgp" secondAttribute="bottom" constant="30" id="Qkq-sJ-iVt"/>
                             <constraint firstItem="7a3-hQ-fat" firstAttribute="centerX" secondItem="68q-HO-YcK" secondAttribute="centerX" id="UK4-mN-utg"/>
                             <constraint firstItem="7a3-hQ-fat" firstAttribute="top" secondItem="9df-AK-8PF" secondAttribute="bottom" constant="10" id="Z21-14-Rdm">
                                 <variation key="widthClass=compact" constant="100"/>
                             </constraint>
+                            <constraint firstItem="WGq-3F-9SW" firstAttribute="top" secondItem="m6m-Zc-Xuv" secondAttribute="bottom" constant="12" id="a3v-Qs-ewf">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="m6m-Zc-Xuv" firstAttribute="top" secondItem="7a3-hQ-fat" secondAttribute="bottom" constant="200" id="ckB-7y-R5C">
+                                <variation key="widthClass=compact" constant="130"/>
+                            </constraint>
+                            <constraint firstItem="m6m-Zc-Xuv" firstAttribute="centerX" secondItem="68q-HO-YcK" secondAttribute="centerX" id="iup-br-fJj"/>
                             <constraint firstItem="nNg-E4-Oyi" firstAttribute="centerX" secondItem="68q-HO-YcK" secondAttribute="centerX" id="lEH-Ke-60q"/>
+                            <constraint firstItem="bTZ-yV-76q" firstAttribute="centerX" secondItem="68q-HO-YcK" secondAttribute="centerX" id="lJt-fw-rcD"/>
                             <constraint firstItem="gsR-Rf-sFu" firstAttribute="centerY" secondItem="P4s-YL-Hgp" secondAttribute="centerY" id="mAx-X8-OQ0"/>
                             <constraint firstItem="P4s-YL-Hgp" firstAttribute="leading" secondItem="gsR-Rf-sFu" secondAttribute="trailing" constant="8" id="rG7-2d-Zv4"/>
                             <constraint firstItem="P4s-YL-Hgp" firstAttribute="top" secondItem="7a3-hQ-fat" secondAttribute="bottom" id="xGb-qO-g0Y"/>
@@ -2741,6 +2784,9 @@ to see the sequence playback.</string>
                                 <exclude reference="P4s-YL-Hgp"/>
                                 <exclude reference="5vr-aS-Khw"/>
                                 <exclude reference="nNg-E4-Oyi"/>
+                                <exclude reference="m6m-Zc-Xuv"/>
+                                <exclude reference="WGq-3F-9SW"/>
+                                <exclude reference="bTZ-yV-76q"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8Hf-JK-ftM"/>
@@ -2754,6 +2800,13 @@ to see the sequence playback.</string>
                                 <exclude reference="xza-D8-Mot"/>
                                 <exclude reference="3OM-QF-J0w"/>
                                 <exclude reference="Gmn-6Q-qob"/>
+                                <exclude reference="Qkq-sJ-iVt"/>
+                                <exclude reference="lJt-fw-rcD"/>
+                                <exclude reference="2T9-n8-R0I"/>
+                                <exclude reference="ckB-7y-R5C"/>
+                                <exclude reference="iup-br-fJj"/>
+                                <exclude reference="FQF-7j-5aB"/>
+                                <exclude reference="a3v-Qs-ewf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2763,6 +2816,9 @@ to see the sequence playback.</string>
                                 <include reference="P4s-YL-Hgp"/>
                                 <include reference="5vr-aS-Khw"/>
                                 <include reference="nNg-E4-Oyi"/>
+                                <include reference="m6m-Zc-Xuv"/>
+                                <include reference="WGq-3F-9SW"/>
+                                <include reference="bTZ-yV-76q"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8Hf-JK-ftM"/>
@@ -2776,6 +2832,13 @@ to see the sequence playback.</string>
                                 <include reference="xza-D8-Mot"/>
                                 <include reference="3OM-QF-J0w"/>
                                 <include reference="Gmn-6Q-qob"/>
+                                <include reference="Qkq-sJ-iVt"/>
+                                <include reference="lJt-fw-rcD"/>
+                                <include reference="2T9-n8-R0I"/>
+                                <exclude reference="ckB-7y-R5C"/>
+                                <include reference="iup-br-fJj"/>
+                                <include reference="FQF-7j-5aB"/>
+                                <include reference="a3v-Qs-ewf"/>
                             </mask>
                         </variation>
                     </view>
@@ -2784,11 +2847,12 @@ to see the sequence playback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj5-kh-MnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.75" y="1633.5"/>
+            <point key="canvasLocation" x="-656.25" y="1657.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back Chevron" width="13" height="21"/>
+        <image name="Correct icon" width="63" height="63"/>
         <image name="Grey badge" width="23" height="23"/>
         <image name="Grey label" width="27" height="27"/>
         <image name="Inbox icon" width="30" height="26"/>

@@ -17,6 +17,7 @@
 		264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		26827F101CC577780053F9E5 /* GetReadyOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */; };
+		26827F121CC58C260053F9E5 /* SequenceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
@@ -85,6 +86,7 @@
 		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
 		264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
 		26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetReadyOverlayViewController.swift; sourceTree = "<group>"; };
+		26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceResultViewController.swift; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,19 +148,12 @@
 		2643D1A01CC4F71C0092458A /* GamePlay */ = {
 			isa = PBXGroup;
 			children = (
-				2643D1A11CC4F7240092458A /* Sequence playback */,
-				26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */,
-			);
-			name = GamePlay;
-			sourceTree = "<group>";
-		};
-		2643D1A11CC4F7240092458A /* Sequence playback */ = {
-			isa = PBXGroup;
-			children = (
 				2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */,
 				264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */,
+				26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */,
+				26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */,
 			);
-			name = "Sequence playback";
+			name = GamePlay;
 			sourceTree = "<group>";
 		};
 		26E7B93F1CC3BE9400976344 /* Settings View */ = {
@@ -439,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26827F121CC58C260053F9E5 /* SequenceResultViewController.swift in Sources */,
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
 				2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,

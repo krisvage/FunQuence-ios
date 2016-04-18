@@ -66,6 +66,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
             print("Incorrect answer")
             // Handle incorrect answer. Go to next view.
         }
+        performSegueWithIdentifier("goToResults", sender: self)
     }
     
     func playBoopSound(){
