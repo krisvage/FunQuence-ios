@@ -90,10 +90,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func getUserData() {
-        Users.myUser { userJSON, errorOccured in
+        Users.me { username, email, errorOccured in
             if !errorOccured {
-                UserDefaultStorage.saveUsername(userJSON!["username"].stringValue)
-                UserDefaultStorage.saveEmail(userJSON!["email"].stringValue)
+                UserDefaultStorage.saveUsername(username!)
+                UserDefaultStorage.saveEmail(email!)
             }
         }
     }

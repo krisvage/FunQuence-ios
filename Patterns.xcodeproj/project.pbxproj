@@ -59,6 +59,9 @@
 		F19D30E11CBBC4CE004A2B07 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
 		F19D30E61CBBD3EE004A2B07 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E51CBBD3EE004A2B07 /* Users.swift */; };
 		F19D30E91CBBD67D004A2B07 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E81CBBD67D004A2B07 /* Route.swift */; };
+		F1A9EDB61CC447E100CD289E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; };
+		F1A9EDB71CC447E600CD289E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
+		F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F142BE0C1CBD3C320052E6C9 /* Spring.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A9EDB71CC447E600CD289E /* SwiftyJSON.framework in Frameworks */,
+				F1A9EDB61CC447E100CD289E /* Alamofire.framework in Frameworks */,
+				F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +346,7 @@
 				TargetAttributes = {
 					F14075981C85DF1200EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 7NJ6KBWBYD;
+						DevelopmentTeam = KJSBU737CR;
 					};
 					F14075B01C85DF1300EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -584,6 +590,7 @@
 		F14075BB1C85DF1300EEADC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -593,7 +600,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -602,6 +609,7 @@
 		F14075BC1C85DF1300EEADC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -611,7 +619,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -622,6 +630,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatternsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.PatternsTests;
@@ -634,6 +646,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatternsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.PatternsTests;

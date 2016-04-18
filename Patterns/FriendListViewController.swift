@@ -42,7 +42,6 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         Invitations.send(username) { message, error in
             if error == nil {
                 self.getViewData()
-                print(message)
             } else {
                 print(error)
             }
@@ -114,13 +113,13 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             let username = dataSource[indexPath.row].username
-            Friends.delete(username) { deleted in
+            Friends.delete(username) { deleted, error in
                 if deleted {
                     self.dataSource.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                     self.getViewData()
                 } else {
-                    print("user not deleted")
+                    print(error)
                 }
             }
         }
@@ -137,6 +136,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             self.inputFieldInAlertView = UITextField;
             self.inputFieldInAlertView.placeholder = "Username"
         }
+
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
             let username = self.inputFieldInAlertView.text!

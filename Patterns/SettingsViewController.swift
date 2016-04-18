@@ -17,17 +17,20 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         usernameLabel.text = UserDefaultStorage.getUsername();
         emailLabel.text = UserDefaultStorage.getEmail();
     }
     
     override func viewDidDisappear(animated: Bool) {
-        self.navigationController?.popViewControllerAnimated(false)
+        super.viewDidDisappear(animated)
+        self.navigationController?.viewControllers.popLast()
     }
     
     @IBAction func logOutButtonTapped(sender: AnyObject) {
         UserDefaultStorage.saveToken("")
+        UserDefaultStorage.saveUsername("")
+        UserDefaultStorage.saveEmail("")
         self.performSegueWithIdentifier("settingsToLogin", sender: self)
     }
 }
