@@ -11,76 +11,82 @@ import Alamofire
 import SwiftyJSON
 
 class Users: API {
-    static let loginRoute = Route(path: basePath + "/login", method: Method.POST)
-    static let registerRoute = Route(path: basePath + "/users", method: Method.POST)
-    static let myUserRoute = Route(path: basePath + "/users/me", method: Method.GET)
+    static let loginRoute = Route(path: basePath + "/login", method: .POST)
+    static let registerRoute = Route(path: basePath + "/users", method: .POST)
+    static let meRoute = Route(path: basePath + "/users/me", method: .GET)
     
-    static func login(username: String, password: String, completionHandler: (token: String?, message: String?, error: String?) -> ()) {
+    typealias loginRegisterHandler = (token: String?, message: String?, error: String?) -> ()
+    typealias meHandler = (username: String?, email: String?, errorOccured: Bool) -> ()
+    
+    static let loginRegisterClosure: (Response<AnyObject, NSError>, loginRegisterHandler) -> () = { response, completionHandler in
+        switch response.result {
+        case .Success(_):
+            let json = JSON(response.result.value!)
+            
+            if json["error"] == nil {
+                let token = json["token"].stringValue
+                let message = json["message"].stringValue
+                
+                completionHandler(token: token, message: message, error: nil)
+            } else {
+                completionHandler(token: nil, message: nil, error: json["error"].stringValue)
+            }
+        case .Failure(_):
+            completionHandler(token: nil, message: nil, error: "failed request")
+        }
+    }
+
+    /**
+     POST /login
+     
+     Log a user in and get a JWT (token).
+     
+     => token, message, error
+     */
+    static func login(username: String, password: String, completionHandler: loginRegisterHandler) {
         let params = ["username": username, "password": password]
         
-        Alamofire.request(loginRoute.method, loginRoute.path, parameters: params)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let token = parsed_json["token"].stringValue
-                            let message = parsed_json["message"].stringValue
-
-                            completionHandler(token: token, message: message, error: nil)
-                        } else {
-                            let error = parsed_json["error"].stringValue
-                            
-                            completionHandler(token: nil, message: nil, error: error)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(token: nil, message: nil, error: "failed request")
-                }
+        request(loginRoute, parameters: params) { response in
+            loginRegisterClosure(response, completionHandler)
         }
     }
     
-    static func register(username: String, email: String, password: String, completionHandler: (token: String?, message: String?, error: String?) -> ()) {
+    /**
+     POST /users
+     
+     Register a new account.
+     
+     => token, message, error
+     */
+    static func register(username: String, email: String, password: String, completionHandler: loginRegisterHandler) {
         let params = ["username": username, "email": email, "password": password]
-
-        Alamofire.request(registerRoute.method, registerRoute.path, parameters: params)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        
-                        if parsed_json["error"] == nil {
-                            let token = parsed_json["token"].stringValue
-                            let message = parsed_json["message"].stringValue
-
-                            completionHandler(token: token, message: message, error: nil)
-                        } else {
-                            let error = parsed_json["error"].stringValue
-                            
-                            completionHandler(token: nil, message: nil, error: error)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(token: nil, message: nil, error: "failed request")
-                }
+        
+        request(registerRoute, parameters: params) { response in
+            loginRegisterClosure(response, completionHandler)
         }
     }
 
-    static func myUser(completionHandler: (userJSON: JSON?, errorOccured: Bool) -> ()) {
-        Alamofire.request(myUserRoute.method, myUserRoute.path, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        
-                        completionHandler(userJSON: parsed_json["user"], errorOccured: false)
-                    }
-                case .Failure(_):
-                    completionHandler(userJSON: nil, errorOccured: true)
-                }
+    /**
+     GET /users/me
+
+     Get current user.
+     
+     => username, email, errorOccured
+     */
+    static func me(completionHandler: meHandler) {
+        request(meRoute) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                completionHandler(
+                    username: json["user"]["username"].stringValue,
+                    email: json["user"]["email"].stringValue,
+                    errorOccured: false
+                )
+            case .Failure(_):
+                completionHandler(username: nil, email: nil, errorOccured: true)
+            }
         }
     }
 }

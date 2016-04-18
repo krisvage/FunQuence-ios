@@ -15,29 +15,44 @@ class Invitations: API {
     static let allInvitationsRoute = Route(path: basePath + "/users/me/invitations", method: .GET)
     static let replyInvitationRoute = Route(path: basePath + "/users/me/invitations", method: .PUT)
     
-    static func send(username: String, completionHandler: (message: String?, error: String?) -> ()) {
+    typealias sendHandler = (message: String?, error: String?) -> ()
+    typealias allCountHandler = (invitationCount: Int, error: String?) -> ()
+    typealias allInvitationsHandler = (invitations: [Invitation]?, error: String?) -> ()
+    typealias replyInvitationHandler = (message: String?, error: String?) -> ()
+    
+    /**
+     POST /users/:username/invitations
+
+     Sends a game invitation to :username
+     
+     => message, error
+     */
+    static func send(username: String, completionHandler: sendHandler) {
         let fullPath = "\(sendInvitationRoute.path)/\(username)/invitations"
+        let route = Route(path: fullPath, method: sendInvitationRoute.method)
         
-        Alamofire.request(sendInvitationRoute.method, fullPath, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        
-                        if parsed_json["error"] == nil {
-                            completionHandler(message: parsed_json["message"].stringValue, error: nil)
-                        } else {
-                            completionHandler(message: nil, error: parsed_json["error"].stringValue)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(message: nil, error: "failed request")
+        request(route) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(message: json["message"].stringValue, error: nil)
+                } else {
+                    completionHandler(message: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(message: nil, error: "failed request")
+            }
         }
     }
     
-    static func allCount(completionHandler: (invitationCount: Int, error: String?) -> ()) {
+    /**
+     Returns the count of .all()
+     
+     => invitationCount, erorr
+     */
+    static func allCount(completionHandler: allCountHandler) {
         all { invitations, error in
             if error == nil {
                 completionHandler(invitationCount: invitations!.count, error: nil)
@@ -47,45 +62,68 @@ class Invitations: API {
         }
     }
     
-    static func all(completionHandler: (invitations: [Invitation]?, error: String?) -> ()) {
-        Alamofire.request(allInvitationsRoute.method, allInvitationsRoute.path, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let invitations = parsed_json["invitations"].arrayValue.map({Invitation(accepted: $0["accepted"].boolValue, fromUsername: $0["from_username"].stringValue, toUsername: $0["to_username"].stringValue, invitationSent: $0["invitation_sent"].doubleValue, invitationId: $0["invitation_id"].intValue)})
-                            completionHandler(invitations: invitations, error: nil)
-                        } else {
-                            completionHandler(invitations: nil, error: parsed_json["error"].stringValue)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(invitations: nil, error: "request failed")
+    /**
+     GET /users/me/invitations
+
+     Gets all invitations sent to user.
+     
+     => invitations, error
+     */
+    static func all(completionHandler: allInvitationsHandler) {
+        request(allInvitationsRoute) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    let invitations = parseInvitations(json["invitations"])
+                    completionHandler(invitations: invitations, error: nil)
+                } else {
+                    completionHandler(invitations: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(invitations: nil, error: "request failed")
+            }
         }
     }
     
-    static func reply(id: Int, accepted: Bool, completionHandler: (message: String?, error: String?) -> ()) {
-        let fullPath = "\(replyInvitationRoute.path)/\(id)"
-        let params = ["accepted": String(accepted)]
+    private static func parseInvitations(invitations: JSON) -> [Invitation] {
+        return invitations.arrayValue.map({ invitation in
+            Invitation(
+                accepted: invitation["accepted"].boolValue,
+                fromUsername: invitation["from_username"].stringValue,
+                toUsername: invitation["to_username"].stringValue,
+                invitationSent: invitation["invitation_sent"].doubleValue,
+                invitationId: invitation["invitation_id"].intValue
+            )
+        })
+    }
 
-        Alamofire.request(replyInvitationRoute.method, fullPath, headers: headers(), parameters: params)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            completionHandler(message: parsed_json["message"].stringValue, error: nil)
-                        } else {
-                            completionHandler(message: nil, error: parsed_json["error"].stringValue)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(message: nil, error: "request failed")
+    /**
+     PUT /users/me/invitations/:invitation_id
+     
+     Accepts or declines a game invitation to :username
+
+     => message, error
+     */
+    static func reply(id: Int, accepted: Bool, completionHandler: replyInvitationHandler) {
+        let fullPath = "\(replyInvitationRoute.path)/\(id)"
+        let route = Route(path: fullPath, method: replyInvitationRoute.method)
+        let params = ["accepted": String(accepted)]
+        
+        request(route, parameters: params) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(message: json["message"].stringValue, error: nil)
+                } else {
+                    completionHandler(message: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(message: nil, error: "request failed")
+            }
         }
     }
 }
