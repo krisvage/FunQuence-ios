@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
-		2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
+		2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */; };
+		2643D1A41CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */; };
 		2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
 		2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
 		2643D1A91CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
@@ -25,6 +25,8 @@
 		26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
 		F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F100A8CF1CBD409400E517C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
+		F10D4C9A1CC53F0C00B3C359 /* EmptyTableViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */; };
+		F10D4C9B1CC542D400B3C359 /* EmptyTableViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */; };
 		F117FC111CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
 		F117FC121CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
 		F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144A7011CC020CA00CA3772 /* Invitations.swift */; };
@@ -75,7 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaynackViewController.swift; sourceTree = "<group>"; };
+		2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaybackViewController.swift; sourceTree = "<group>"; };
 		2643D1A51CC4FC8C0092458A /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationCellViewController.swift; sourceTree = "<group>"; };
 		F100A8CC1CBD404800E517C7 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		F100A8CE1CBD409400E517C7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewLabel.swift; sourceTree = "<group>"; };
 		F117FC101CC0FD5900B383FF /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F117FC261CC0FEB900B383FF /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F14075991C85DF1300EEADC1 /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +149,7 @@
 		2643D1A11CC4F7240092458A /* Sequence playback */ = {
 			isa = PBXGroup;
 			children = (
-				2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */,
+				2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */,
 			);
 			name = "Sequence playback";
 			sourceTree = "<group>";
@@ -163,12 +166,12 @@
 			isa = PBXGroup;
 			children = (
 				2643D1A01CC4F71C0092458A /* Game Play */,
-				26E7B93F1CC3BE9400976344 /* Settings View */,
-				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B51CBFE7600045D24F /* Main View */,
 				26E989B61CBFE7740045D24F /* Friends View */,
+				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B71CBFE7820045D24F /* Login View */,
 				26E989B81CBFE7880045D24F /* Register View */,
+				26E7B93F1CC3BE9400976344 /* Settings View */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -176,8 +179,8 @@
 		26E989B51CBFE7600045D24F /* Main View */ = {
 			isa = PBXGroup;
 			children = (
-				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
 				26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */,
+				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -185,8 +188,8 @@
 		26E989B61CBFE7740045D24F /* Friends View */ = {
 			isa = PBXGroup;
 			children = (
-				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
 				26E989A71CBFCC800045D24F /* FriendListViewController.swift */,
+				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
 			);
 			name = "Friends View";
 			sourceTree = "<group>";
@@ -214,6 +217,14 @@
 				26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */,
 			);
 			name = "Notifications View";
+			sourceTree = "<group>";
+		};
+		F10D4C981CC53EB300B3C359 /* UIelements */ = {
+			isa = PBXGroup;
+			children = (
+				F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */,
+			);
+			name = UIelements;
 			sourceTree = "<group>";
 		};
 		F117FC251CC0FE9100B383FF /* Models */ = {
@@ -252,8 +263,9 @@
 				2643D1A81CC500FB0092458A /* boop.wav */,
 				26E989AA1CBFCC860045D24F /* Controllers */,
 				F117FC251CC0FE9100B383FF /* Models */,
-				F19D30E71CBBD66F004A2B07 /* Utils */,
 				F19D30E41CBBD3CF004A2B07 /* Recallo */,
+				F10D4C981CC53EB300B3C359 /* UIelements */,
+				F19D30E71CBBD66F004A2B07 /* Utils */,
 				F140759C1C85DF1300EEADC1 /* AppDelegate.swift */,
 				F14075A41C85DF1300EEADC1 /* Main.storyboard */,
 				F14075A71C85DF1300EEADC1 /* Assets.xcassets */,
@@ -422,7 +434,7 @@
 			files = (
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
-				2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
+				2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,
 				F117FC111CC0FD5900B383FF /* Games.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
@@ -437,6 +449,7 @@
 				2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
+				F10D4C9A1CC53F0C00B3C359 /* EmptyTableViewLabel.swift in Sources */,
 				F117FC271CC0FEB900B383FF /* Game.swift in Sources */,
 				F144A7041CC0251600CA3772 /* Invitation.swift in Sources */,
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
@@ -451,7 +464,7 @@
 			files = (
 				F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */,
 				F117FC221CC0FD9600B383FF /* InvitationViewController.swift in Sources */,
-				2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
+				2643D1A41CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,
 				F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */,
 				F117FC151CC0FD6700B383FF /* Friends.swift in Sources */,
 				F117FC121CC0FD5900B383FF /* Games.swift in Sources */,
@@ -466,6 +479,7 @@
 				2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
 				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
+				F10D4C9B1CC542D400B3C359 /* EmptyTableViewLabel.swift in Sources */,
 				F117FC281CC0FEB900B383FF /* Game.swift in Sources */,
 				F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */,
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,

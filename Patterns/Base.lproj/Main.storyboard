@@ -243,7 +243,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-KB-Arq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-KB-Arq">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1358,15 +1358,16 @@ is incorrect.</string>
             </objects>
             <point key="canvasLocation" x="-1150.5" y="806"/>
         </scene>
-        <!--Sequence Playnack View Controller-->
+        <!--Sequence Playback View Controller-->
         <scene sceneID="nmU-r4-hrj">
             <objects>
-                <viewController id="dKC-zP-CHX" customClass="SequencePlaynackViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dKC-zP-CHX" customClass="SequencePlaybackViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5r8-Yq-XFZ"/>
                         <viewControllerLayoutGuide type="bottom" id="2nA-nb-WW1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Gn-xN-W2t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw6-Oj-LeS">
@@ -1469,14 +1470,14 @@ is incorrect.</string>
                                         <state key="normal" backgroundImage="green_pad_button"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="gdG-eE-xTi"/>
                                                 <exclude reference="ext-fJ-4Ou"/>
+                                                <exclude reference="gdG-eE-xTi"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="gdG-eE-xTi"/>
                                                 <include reference="ext-fJ-4Ou"/>
+                                                <include reference="gdG-eE-xTi"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -1513,10 +1514,10 @@ is incorrect.</string>
                                         <exclude reference="dqZ-w9-Y14"/>
                                         <exclude reference="5kU-EV-pMQ"/>
                                         <exclude reference="6KU-tA-cQx"/>
-                                        <exclude reference="gtk-43-tSE"/>
-                                        <exclude reference="vLb-wH-7GA"/>
                                         <exclude reference="GZY-D6-xpN"/>
                                         <exclude reference="TqW-Uf-ZPb"/>
+                                        <exclude reference="gtk-43-tSE"/>
+                                        <exclude reference="vLb-wH-7GA"/>
                                         <exclude reference="Hls-n2-bXZ"/>
                                         <exclude reference="bEh-dz-A0z"/>
                                     </mask>
@@ -1533,10 +1534,10 @@ is incorrect.</string>
                                         <include reference="dqZ-w9-Y14"/>
                                         <include reference="5kU-EV-pMQ"/>
                                         <include reference="6KU-tA-cQx"/>
-                                        <include reference="gtk-43-tSE"/>
-                                        <include reference="vLb-wH-7GA"/>
                                         <include reference="GZY-D6-xpN"/>
                                         <include reference="TqW-Uf-ZPb"/>
+                                        <include reference="gtk-43-tSE"/>
+                                        <include reference="vLb-wH-7GA"/>
                                         <include reference="Hls-n2-bXZ"/>
                                         <include reference="bEh-dz-A0z"/>
                                     </mask>
@@ -1605,21 +1606,21 @@ to see the sequence playback.</string>
                                 <exclude reference="HAv-kL-9Qs"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="pMi-IB-Fry"/>
-                                <exclude reference="meP-48-2kO"/>
-                                <exclude reference="xte-m8-Aws"/>
+                                <exclude reference="KW4-ZT-7fr"/>
+                                <exclude reference="Mde-jw-kuj"/>
+                                <exclude reference="YJ9-zi-MjI"/>
+                                <exclude reference="Clc-rQ-dD4"/>
+                                <exclude reference="eqL-FH-Xaw"/>
                                 <exclude reference="6RU-9S-IxY"/>
                                 <exclude reference="qkm-95-SPz"/>
+                                <exclude reference="0fP-vs-LNI"/>
+                                <exclude reference="lQa-on-iyn"/>
+                                <exclude reference="pMi-IB-Fry"/>
                                 <exclude reference="Gs2-GE-OjW"/>
                                 <exclude reference="VKd-P3-PGu"/>
                                 <exclude reference="d1W-64-Vtf"/>
-                                <exclude reference="Clc-rQ-dD4"/>
-                                <exclude reference="eqL-FH-Xaw"/>
-                                <exclude reference="YJ9-zi-MjI"/>
-                                <exclude reference="0fP-vs-LNI"/>
-                                <exclude reference="lQa-on-iyn"/>
-                                <exclude reference="KW4-ZT-7fr"/>
-                                <exclude reference="Mde-jw-kuj"/>
+                                <exclude reference="meP-48-2kO"/>
+                                <exclude reference="xte-m8-Aws"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1633,21 +1634,21 @@ to see the sequence playback.</string>
                                 <include reference="HAv-kL-9Qs"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="pMi-IB-Fry"/>
-                                <include reference="meP-48-2kO"/>
-                                <include reference="xte-m8-Aws"/>
+                                <exclude reference="KW4-ZT-7fr"/>
+                                <include reference="Mde-jw-kuj"/>
+                                <include reference="YJ9-zi-MjI"/>
+                                <include reference="Clc-rQ-dD4"/>
+                                <include reference="eqL-FH-Xaw"/>
                                 <include reference="6RU-9S-IxY"/>
                                 <include reference="qkm-95-SPz"/>
+                                <include reference="0fP-vs-LNI"/>
+                                <include reference="lQa-on-iyn"/>
+                                <include reference="pMi-IB-Fry"/>
                                 <include reference="Gs2-GE-OjW"/>
                                 <include reference="VKd-P3-PGu"/>
                                 <include reference="d1W-64-Vtf"/>
-                                <include reference="Clc-rQ-dD4"/>
-                                <include reference="eqL-FH-Xaw"/>
-                                <include reference="YJ9-zi-MjI"/>
-                                <include reference="0fP-vs-LNI"/>
-                                <include reference="lQa-on-iyn"/>
-                                <exclude reference="KW4-ZT-7fr"/>
-                                <include reference="Mde-jw-kuj"/>
+                                <include reference="meP-48-2kO"/>
+                                <include reference="xte-m8-Aws"/>
                             </mask>
                         </variation>
                     </view>
@@ -1729,8 +1730,7 @@ to see the sequence playback.</string>
                                                             <exclude reference="844-c0-UNm"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="141" y="17" width="81" height="41"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="844-c0-UNm"/>
                                                         </mask>
@@ -1750,8 +1750,7 @@ to see the sequence playback.</string>
                                                             <exclude reference="c03-vg-9j9"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="50" y="17" width="81" height="41"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="c03-vg-9j9"/>
                                                         </mask>
@@ -1864,7 +1863,7 @@ to see the sequence playback.</string>
                                     <outlet property="delegate" destination="T6h-2W-Um1" id="8fC-1j-gj7"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-LA-0he">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-LA-0he">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

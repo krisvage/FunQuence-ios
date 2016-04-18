@@ -32,7 +32,7 @@ class Users: API {
                 completionHandler(token: nil, message: nil, error: json["error"].stringValue)
             }
         case .Failure(_):
-            completionHandler(token: nil, message: nil, error: "failed request")
+            completionHandler(token: nil, message: nil, error: "API http request failed")
         }
     }
 

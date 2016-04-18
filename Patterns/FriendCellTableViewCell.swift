@@ -13,6 +13,9 @@ protocol FriendCellDelegate {
 }
 
 class FriendCellTableViewCell: UITableViewCell {
+    
+    // MARK: Properties
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var inviteButton: UIButton!
     @IBOutlet weak var sentInvitationButton: UIImageView!
@@ -20,10 +23,14 @@ class FriendCellTableViewCell: UITableViewCell {
     var username:String?
     var has_pending_invitation: String?;
     
-    func configureCell(username: String, row: Int, has_pending_invitation: String){
-        self.username = username;
+    typealias Friend = (username: String, has_pending_invitation: String)
+
+    // MARK: Configuration
+    
+    func configureCell(user: Friend, row: Int){
+        self.username = user.username;
         usernameLabel.text = self.username
-        self.has_pending_invitation = has_pending_invitation;
+        self.has_pending_invitation = user.has_pending_invitation;
         inviteButton.addTarget(self, action: #selector(self.sendInvite), forControlEvents: .TouchUpInside)
         if(has_pending_invitation == "true"){
             sentInvitationButton.hidden = false;
@@ -34,8 +41,9 @@ class FriendCellTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: Navigation
+    
     func sendInvite() {
        delegate?.inviteTapped(self.username!)
     }
 }
-

@@ -9,20 +9,17 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: Properties
+    
     @IBOutlet weak var messageHeader: UILabel!
     @IBOutlet weak var messageField: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
-    @IBAction func loginButtonTapped(sender: UIButton) {
-        self.login()
-    }
-    
-    @IBAction func registerNewAccountTapped(sender: AnyObject) {
-        performSegueWithIdentifier("goToRegister", sender: self)
-    }
-    
+    // MARK: View Controller Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         messageField.hidden = true;
@@ -31,16 +28,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField?.delegate = self;
     }
     
+    // MARK: Navigation
+
+    @IBAction func loginButtonTapped(sender: UIButton) {
+        let username = usernameField.text!
+        let password = passwordField.text!
+
+        Users.login(username, password: password) { token, message, error in
+            if error == nil {
+                UserDefaultStorage.saveToken(token ?? "")
+                self.messageField.hidden = true
+                self.messageHeader.hidden = true
+                self.view.endEditing(true)
+                self.getUserData()
+                self.dismissViewControllerAnimated(true, completion: {})
+            } else {
+                self.messageField.text = error
+                self.messageField.hidden = false
+                self.messageHeader.hidden = false
+                self.view.endEditing(true)
+            }
+        }
+    }
+
+    private func getUserData() {
+        Users.me { username, email, errorOccured in
+            if !errorOccured {
+                UserDefaultStorage.saveUsername(username!)
+                UserDefaultStorage.saveEmail(email!)
+            }
+        }
+    }
+    
+    @IBAction func registerNewAccountTapped(sender: AnyObject) {
+        performSegueWithIdentifier("goToRegister", sender: self)
+    }
+    
+    // MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if textField == usernameField { // Switch focus to other text field
             passwordField.becomeFirstResponder()
         }
         if textField == passwordField {
-            self.login()
+            self.loginButtonTapped(loginButton)
         }
         return true
     }
+
+    // MARK: View Controller Configuration
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
@@ -65,36 +102,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-    
-    // MARK: Button action
-    
-    func login() {
-        let username = usernameField.text!
-        let password = passwordField.text!
-        Users.login(username, password: password) { token, message, error in
-            if error == nil {
-                UserDefaultStorage.saveToken(token ?? "")
-                self.messageField.hidden = true
-                self.messageHeader.hidden = true
-                self.view.endEditing(true)
-                self.getUserData()
-                self.dismissViewControllerAnimated(true, completion: {})
-            } else {
-                self.messageField.text = error
-                self.messageField.hidden = false
-                self.messageHeader.hidden = false
-                self.view.endEditing(true)
-            }
-        }
-    }
-
-    func getUserData() {
-        Users.me { username, email, errorOccured in
-            if !errorOccured {
-                UserDefaultStorage.saveUsername(username!)
-                UserDefaultStorage.saveEmail(email!)
-            }
-        }
     }
 }

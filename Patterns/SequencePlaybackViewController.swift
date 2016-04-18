@@ -1,5 +1,5 @@
 //
-//  SequencePlaynackViewController.swift
+//  SequencePlaybackViewController.swift
 //  Patterns
 //
 //  Created by Mathias Iden on 18.04.2016.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SequencePlaynackViewController: UIViewController {
+class SequencePlaybackViewController: UIViewController {
     let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
     var current_index = 0;
     var sound: SystemSoundID = 0

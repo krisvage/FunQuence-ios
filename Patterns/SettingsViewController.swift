@@ -9,11 +9,13 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
+    
+    // MARK: Properties
+
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+
+    // MARK: View Controller Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,16 @@ class SettingsViewController: UIViewController {
         usernameLabel.text = UserDefaultStorage.getUsername();
         emailLabel.text = UserDefaultStorage.getEmail();
     }
-    
+
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.viewControllers.popLast()
+    }
+    
+    // MARK: Navigation
+
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func logOutButtonTapped(sender: AnyObject) {

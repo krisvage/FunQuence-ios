@@ -42,7 +42,7 @@ class Invitations: API {
                     completionHandler(message: nil, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(message: nil, error: "failed request")
+                completionHandler(message: nil, error: "API http request failed")
             }
         }
     }
@@ -82,7 +82,7 @@ class Invitations: API {
                     completionHandler(invitations: nil, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(invitations: nil, error: "request failed")
+                completionHandler(invitations: nil, error: "API http request failed")
             }
         }
     }
@@ -122,7 +122,7 @@ class Invitations: API {
                     completionHandler(message: nil, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(message: nil, error: "request failed")
+                completionHandler(message: nil, error: "API http request failed")
             }
         }
     }

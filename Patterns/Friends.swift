@@ -45,7 +45,7 @@ class Friends: API {
                     completionHandler(friends: nil, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(friends: nil, error: "request failed")
+                completionHandler(friends: nil, error: "API http request failed")
             }
         }
     }
@@ -71,7 +71,7 @@ class Friends: API {
                     completionHandler(added: false, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(added: false, error: "request failed")
+                completionHandler(added: false, error: "API http request failed")
             }
         }
     }
@@ -98,7 +98,7 @@ class Friends: API {
                     completionHandler(deleted: false, error: json["error"].stringValue)
                 }
             case .Failure(_):
-                completionHandler(deleted: false, error: "failed request")
+                completionHandler(deleted: false, error: "API http request failed")
             }
         }
     }
