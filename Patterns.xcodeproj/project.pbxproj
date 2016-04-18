@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
-		2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
+		2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */; };
+		2643D1A41CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */; };
 		2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
 		2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
 		2643D1A91CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
 		2643D1AA1CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
+		264BB4EB1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
+		264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
@@ -72,9 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaynackViewController.swift; sourceTree = "<group>"; };
+		2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaybackViewController.swift; sourceTree = "<group>"; };
 		2643D1A51CC4FC8C0092458A /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
+		264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,18 +132,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2643D1A01CC4F71C0092458A /* Game Play */ = {
+		2643D1A01CC4F71C0092458A /* GamePlay */ = {
 			isa = PBXGroup;
 			children = (
 				2643D1A11CC4F7240092458A /* Sequence playback */,
 			);
-			name = "Game Play";
+			name = GamePlay;
 			sourceTree = "<group>";
 		};
 		2643D1A11CC4F7240092458A /* Sequence playback */ = {
 			isa = PBXGroup;
 			children = (
-				2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */,
+				2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */,
+				264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */,
 			);
 			name = "Sequence playback";
 			sourceTree = "<group>";
@@ -156,7 +160,7 @@
 		26E989AA1CBFCC860045D24F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2643D1A01CC4F71C0092458A /* Game Play */,
+				2643D1A01CC4F71C0092458A /* GamePlay */,
 				26E7B93F1CC3BE9400976344 /* Settings View */,
 				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B51CBFE7600045D24F /* Main View */,
@@ -416,7 +420,7 @@
 			files = (
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
-				2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
+				2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,
 				F117FC111CC0FD5900B383FF /* Games.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
@@ -436,6 +440,7 @@
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
 				26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
 				26E989B31CBFE6C10045D24F /* InvitationViewController.swift in Sources */,
+				264BB4EB1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +450,7 @@
 			files = (
 				F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */,
 				F117FC221CC0FD9600B383FF /* InvitationViewController.swift in Sources */,
-				2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
+				2643D1A41CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,
 				F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */,
 				F117FC151CC0FD6700B383FF /* Friends.swift in Sources */,
 				F117FC121CC0FD5900B383FF /* Games.swift in Sources */,
@@ -465,6 +470,7 @@
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
 				F117FC1C1CC0FD8100B383FF /* LoginViewController.swift in Sources */,
 				F117FC161CC0FD6B00B383FF /* API.swift in Sources */,
+				264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

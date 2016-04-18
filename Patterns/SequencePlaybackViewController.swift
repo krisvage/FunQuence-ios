@@ -9,10 +9,11 @@
 import UIKit
 import AVFoundation
 
-class SequencePlaynackViewController: UIViewController {
+class SequencePlaybackViewController: UIViewController {
     let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
     var current_index = 0;
     var sound: SystemSoundID = 0
+    var soundUrl: NSURL!
 
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
@@ -23,9 +24,8 @@ class SequencePlaynackViewController: UIViewController {
     
     
     @IBAction func readyButtonTapped(sender: AnyObject) {
-        setTimeout(1) { 
+        setTimeout(2) {
             self.startSequence()
-
         }
         self.readyButton.hidden = true;
         self.readyText.hidden = true;
@@ -38,9 +38,8 @@ class SequencePlaynackViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let soundURL = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav") {
-            AudioServicesCreateSystemSoundID(soundURL, &sound)
-        }
+        self.soundUrl = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav")
+        AudioServicesCreateSystemSoundID(self.soundUrl, &sound)
     }
 
     func playBoopSound(){
