@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
+		2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */; };
+		2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
+		2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
+		2643D1A91CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
+		2643D1AA1CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
@@ -66,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaynackViewController.swift; sourceTree = "<group>"; };
+		2643D1A51CC4FC8C0092458A /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
+		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +129,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2643D1A01CC4F71C0092458A /* Game Play */ = {
+			isa = PBXGroup;
+			children = (
+				2643D1A11CC4F7240092458A /* Sequence playback */,
+			);
+			name = "Game Play";
+			sourceTree = "<group>";
+		};
+		2643D1A11CC4F7240092458A /* Sequence playback */ = {
+			isa = PBXGroup;
+			children = (
+				2643D1A21CC4F73B0092458A /* SequencePlaynackViewController.swift */,
+			);
+			name = "Sequence playback";
+			sourceTree = "<group>";
+		};
 		26E7B93F1CC3BE9400976344 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +156,7 @@
 		26E989AA1CBFCC860045D24F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2643D1A01CC4F71C0092458A /* Game Play */,
 				26E7B93F1CC3BE9400976344 /* Settings View */,
 				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B51CBFE7600045D24F /* Main View */,
@@ -217,6 +243,7 @@
 		F140759B1C85DF1300EEADC1 /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				2643D1A81CC500FB0092458A /* boop.wav */,
 				26E989AA1CBFCC860045D24F /* Controllers */,
 				F117FC251CC0FE9100B383FF /* Models */,
 				F19D30E71CBBD66F004A2B07 /* Utils */,
@@ -257,6 +284,7 @@
 				F19D30E81CBBD67D004A2B07 /* Route.swift */,
 				F16D234A1CBD254700220218 /* UserDefaultStorage.swift */,
 				26DF8FC61CC001B60005CE2C /* TimeAgo.swift */,
+				2643D1A51CC4FC8C0092458A /* TimeUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -345,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2643D1A91CC500FB0092458A /* boop.wav in Resources */,
 				F14075AB1C85DF1300EEADC1 /* LaunchScreen.storyboard in Resources */,
 				F14075A81C85DF1300EEADC1 /* Assets.xcassets in Resources */,
 				F14075A61C85DF1300EEADC1 /* Main.storyboard in Resources */,
@@ -355,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2643D1AA1CC500FB0092458A /* boop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +416,7 @@
 			files = (
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
+				2643D1A31CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
 				F117FC111CC0FD5900B383FF /* Games.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
@@ -397,6 +428,7 @@
 				F16D23491CBD21F000220218 /* RegisterViewController.swift in Sources */,
 				F19D30E91CBBD67D004A2B07 /* Route.swift in Sources */,
 				26E7B9411CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
+				2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
 				F117FC271CC0FEB900B383FF /* Game.swift in Sources */,
@@ -413,6 +445,7 @@
 			files = (
 				F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */,
 				F117FC221CC0FD9600B383FF /* InvitationViewController.swift in Sources */,
+				2643D1A41CC4F73B0092458A /* SequencePlaynackViewController.swift in Sources */,
 				F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */,
 				F117FC151CC0FD6700B383FF /* Friends.swift in Sources */,
 				F117FC121CC0FD5900B383FF /* Games.swift in Sources */,
@@ -424,6 +457,7 @@
 				F117FC171CC0FD6F00B383FF /* Route.swift in Sources */,
 				F117FC1D1CC0FD8500B383FF /* FriendCellTableViewCell.swift in Sources */,
 				F117FC191CC0FD7500B383FF /* TimeAgo.swift in Sources */,
+				2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
 				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
 				F117FC281CC0FEB900B383FF /* Game.swift in Sources */,
