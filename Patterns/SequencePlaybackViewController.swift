@@ -1,5 +1,5 @@
 //
-//  SequencePlaynackViewController.swift
+//  SequencePlaybackViewController.swift
 //  Patterns
 //
 //  Created by Mathias Iden on 18.04.2016.

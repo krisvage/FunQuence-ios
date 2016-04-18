@@ -9,20 +9,90 @@
 import UIKit
 
 class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, FriendCellDelegate {
-    let friendCellIdentifier = "FriendCell"
-    var dataSource = [(username: String, has_pending_invitation: String)]()
-    var inputFieldInAlertView: UITextField = UITextField()
     
+    // MARK: Properties
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var friendsCountLabel: UILabel!
 
+    let friendCellIdentifier = "FriendCell"
+    var dataSource = [(username: String, has_pending_invitation: String)]()
+    var inputFieldInAlertView: UITextField = UITextField()
     var refreshControl: UIRefreshControl?
-    let emptyMessage = UILabel()
+    let emptyMessage = EmptyTableViewLabel(text: "You do not have any friends yet")
+    
+    // MARK: View Controller Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 76;
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
+        
+        tableView.backgroundView = emptyMessage
+        tableView.separatorStyle = .None
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl!)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        reloadData()
+    }
+
+    // MARK: Navigation
     
     @IBAction func backButtonTapped(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
         
     }
+
+    func inviteTapped(username: String) {
+        Invitations.send(username) { message, error in
+            if error == nil {
+                self.reloadData()
+            } else {
+                NSLog("error: %@", error!)
+            }
+        }
+    }
+    
+    @IBAction func addFriendTapped(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Add Friend", message: "Enter friends username", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addTextFieldWithConfigurationHandler { (UITextField) in
+            self.inputFieldInAlertView = UITextField;
+            self.inputFieldInAlertView.placeholder = "Username"
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+            let username = self.inputFieldInAlertView.text!
+            
+            Friends.add(username) { added, error in
+                if added {
+                    self.reloadData()
+                } else {
+                    self.displayAlertViewError(error!)
+                }
+            }
+        }))
+        self.presentViewController(alertController, animated: true) {
+            // Do something when alert view is shown.
+        }
+    }
+
+    // MARK: UIAlertController
+
+    func displayAlertViewError(error: String){
+        let alertController = UIAlertController(title: "Oooops!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
+    // MARK: UITableViewDataSource
     
     func dataDidChange(){
         let count = dataSource.count
@@ -37,56 +107,21 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
             tableView.separatorStyle = .SingleLine
         }
     }
-    
-    func inviteTapped(username: String) {
-        Invitations.send(username) { message, error in
-            if error == nil {
-                self.getViewData()
-                print(message)
-            } else {
-                print(error)
-            }
-        }
-    }
-    
-    func getViewData(){
+
+    func reloadData(){
         Friends.friendsList() { friends, error in
             if error == nil {
                 self.dataSource = friends!
                 self.dataDidChange()
             } else {
-                print(error)
+                NSLog("error: %@", error!)
             }
-            self.friendsCountLabel.text = String(self.dataSource.count)
             self.refreshControl?.endRefreshing()
         }
-
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.getViewData()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 76;
-        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
+    // MARK: UITableViewDelegate
 
-        emptyMessage.textAlignment = NSTextAlignment.Center
-        emptyMessage.text = "You do not have any friends yet"
-        emptyMessage.font = UIFont(name: "Helvetica Neue Thin", size: 16)
-        emptyMessage.hidden = true
-        tableView.backgroundView = emptyMessage
-        tableView.separatorStyle = .None
-
-        refreshControl = UIRefreshControl()
-        refreshControl!.addTarget(self, action: #selector(getViewData), forControlEvents: .ValueChanged)
-        tableView.addSubview(refreshControl!)
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
     }
@@ -97,16 +132,14 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(friendCellIdentifier) as! FriendCellTableViewCell
-        let username = dataSource[indexPath.row].username
-        let has_pending_invitation = dataSource[indexPath.row].has_pending_invitation
-
-        cell.configureCell(username, row: indexPath.row, has_pending_invitation: has_pending_invitation)
+        let user = dataSource[indexPath.row]
+        cell.configureCell(user, row: indexPath.row)
         cell.delegate = self;
         cell.userInteractionEnabled = true
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -114,45 +147,15 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             let username = dataSource[indexPath.row].username
-            Friends.delete(username) { deleted in
+            Friends.delete(username) { deleted, error in
                 if deleted {
                     self.dataSource.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                    self.getViewData()
+                    self.reloadData()
                 } else {
-                    print("user not deleted")
+                    NSLog("error: %@", error!)
                 }
             }
         }
     }
-    func displayAlertViewError(error: String){
-        let alertController = UIAlertController(title: "Oooops!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Okey", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-
-    @IBAction func addFriendTapped(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Add Friend", message: "Enter friends username", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addTextFieldWithConfigurationHandler { (UITextField) in
-            self.inputFieldInAlertView = UITextField;
-            self.inputFieldInAlertView.placeholder = "Username"
-        }
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
-            let username = self.inputFieldInAlertView.text!
-            
-            Friends.add(username) { added, error in
-                if added {
-                    self.getViewData()
-                } else {
-                    self.displayAlertViewError(error!)
-                }
-            }
-        }))
-        self.presentViewController(alertController, animated: true) {
-            // Do something when alert view is shown.
-        }
-        
-    }
-    
 }

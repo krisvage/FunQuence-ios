@@ -9,12 +9,16 @@
 import UIKit
 import AVFoundation
 
-class SequenceInputViewController: UIViewController {
+class SequenceInputViewController: UIViewController, countdownStarter {
     let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
     var answer_sequence = [String]()
     var current_index = 0
     var sound: SystemSoundID = 0
+    let circleLayer = CAShapeLayer()
+    var secondInterval = NSTimer();
+    var countdownTimer = NSTimer();
     
+
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
     @IBOutlet weak var bluePad: UIButton!
@@ -25,21 +29,42 @@ class SequenceInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpPads();        addCircle()
+        setPadAlpha(1)
+        countdownLabel.hidden = true;
     }
     @IBAction func padTapped(sender: AnyObject) {
         playBoopSound()
+        // Start the counter if this was the first entry.
         let senderPad = sender as! UIButton;
         let colorString = self.getColorStringByPad(senderPad)
         answer_sequence.append(colorString!)
         if(answer_sequence.count == light_sequence.count){
-            // GO TO RESULTS
+            checkResult();
+            cancelCountDown()
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let soundURL = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav") {
-            AudioServicesCreateSystemSoundID(soundURL, &sound)
+        performSegueWithIdentifier("goToReadyOverlay", sender: self)
+        let soundURL = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav")
+        AudioServicesCreateSystemSoundID(soundURL!, &sound)
+        print("Appeared")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goToReadyOverlay"){
+            let toView = segue.destinationViewController as! GetReadyOverlayViewController;
+            toView.delegate = self;
+        }
+    }
+    
+    func checkResult(){
+        if(answer_sequence == light_sequence){
+            // Handle correct answer. Go to next view.
+            print("Correct answer")
+        } else {
+            print("Incorrect answer")
+            // Handle incorrect answer. Go to next view.
         }
     }
     
@@ -47,26 +72,70 @@ class SequenceInputViewController: UIViewController {
         AudioServicesPlaySystemSound(sound);
     }
     
-    func setUpPads(){
-        greenPad.alpha = 1
-        redPad.alpha = 1
-        bluePad.alpha = 1
-        yellowPad.alpha = 1
+    func setPadAlpha(alpha: CGFloat){
+        greenPad.alpha = alpha
+        redPad.alpha = alpha
+        bluePad.alpha = alpha
+        yellowPad.alpha = alpha
     }
     
     func resetView(){
-        setUpPads();
+        setPadAlpha(1);
         current_index = 0;
     }
     
-    func addCircle(){
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 160,y: 240), radius: CGFloat(100), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.CGPath
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        shapeLayer.strokeColor = UIColor.redColor().CGColor
-        shapeLayer.lineWidth = 1.0
-        countdownAnchor.layer.addSublayer(shapeLayer)
+    func freezeButtons(){
+        greenPad.userInteractionEnabled = false;
+        redPad.userInteractionEnabled = false;
+        bluePad.userInteractionEnabled = false;
+        yellowPad.userInteractionEnabled = false;
+        setPadAlpha(0.3)
+    }
+    
+    func startCountDown(){
+        var counter = 0;
+        let countdownDuration = Double(self.light_sequence.count * 3);
+        self.addCircleWithAnimation(countdownDuration)
+        
+        secondInterval = setInterval(1) {
+            counter += 1
+            self.countdownLabel.text = String(counter)
+        }
+        
+        countdownTimer = setTimeout(countdownDuration) {
+            self.checkResult();
+            self.cancelCountDown()
+        }
+        countdownLabel.hidden = false;
+    }
+    
+    func cancelCountDown(){
+        secondInterval.invalidate()
+        countdownTimer.invalidate()
+        cancelCircleAnimation()
+        freezeButtons();
+        countdownLabel.text = "Done"
+    }
+    
+    func addCircleWithAnimation(duration: Double){
+        circleLayer.removeFromSuperlayer();
+        let circlePath = UIBezierPath(arcCenter: countdownAnchor.center, radius: CGFloat(50), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        circleLayer.path = circlePath.CGPath
+        circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.strokeColor = UIColor.grayColor().CGColor
+        circleLayer.lineWidth = 10.0
+        view.layer.addSublayer(circleLayer)
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = duration;
+        animation.fillMode = kCAFillModeForwards
+        animation.removedOnCompletion = false
+        circleLayer.addAnimation(animation, forKey: "ani")
+    }
+    
+    func cancelCircleAnimation(){
+        circleLayer.removeAnimationForKey("ani")
     }
     
     func getPadByColorString(colorString: String) -> UIButton?{

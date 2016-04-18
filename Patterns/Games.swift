@@ -12,80 +12,94 @@ import SwiftyJSON
 
 class Games: API {
     static let gameRoute = Route(path: basePath + "/games", method: .GET)
-    static let allGamesRoute = Route(path: basePath + "/users/me/games", method: .GET)
     static let answerGameRoundRoute = Route(path: basePath + "/games", method: .POST)
+    static let allGamesRoute = Route(path: basePath + "/users/me/games", method: .GET)
     
+    /**
+     GET /games/:game_id
+     
+     Get a game by id.
+     
+     => game, error
+     */
     static func getById(gameId: Int, completionHandler: (game: Game?, error: String?) -> ()) {
         let fullPath = "\(gameRoute.path)/\(gameId)"
+        let route = Route(path: fullPath, method: gameRoute.method)
         
-        Alamofire.request(gameRoute.method, fullPath, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let game = parseGame(parsed_json["game"])
-                            completionHandler(game: game, error: nil)
-                        } else {
-                            completionHandler(game: nil, error: parsed_json["error"].stringValue)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(game: nil, error: "failed request")
+        request(route) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(game: parseGame(json["game"]), error: nil)
+                } else {
+                    completionHandler(game: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(game: nil, error: "API http request failed")
+            }
         }
     }
-    
+
+    /**
+     POST /games/:game_id/rounds/:round_number
+
+     Submit an answer to the round of a game.
+     
+     => message, error
+     */
     static func answerGameRound(answer: [String], gameId: Int, roundNumber: Int, completionHandler: (message: String?, error: String?) -> ()) {
         let fullPath = "\(answerGameRoundRoute.path)/\(gameId)/rounds/\(roundNumber)"
+        let route = Route(path: fullPath, method: answerGameRoundRoute.method)
         let params = ["answer": answer]
 
-        Alamofire.request(answerGameRoundRoute.method, fullPath, headers: headers(), parameters: params)
-            .responseJSON { response in
+        request(route, parameters: params) { response in
                 switch response.result {
                 case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let message = parsed_json["message"].stringValue
-                            completionHandler(message: message, error: nil)
-                        } else {
-                            completionHandler(message: nil, error: parsed_json["error"].stringValue)
-                        }
+                    let json = JSON(response.result.value!)
+                    
+                    if json["error"] == nil {
+                        completionHandler(message: json["message"].stringValue, error: nil)
+                    } else {
+                        completionHandler(message: nil, error: json["error"].stringValue)
                     }
                 case .Failure(_):
-                    completionHandler(message: nil, error: "failed request")
+                    completionHandler(message: nil, error: "API http request failed")
                 }
         }
     }
     
+    /**
+     GET /users/me/games
+     
+     Get a list of games that you are a part of.
+     
+     => games, error
+     */
     static func all(completionHandler: (games: [Game]?, error: String?) -> ()) {
-        Alamofire.request(allGamesRoute.method, allGamesRoute.path, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let games = parseGames(parsed_json["games"])
-                            completionHandler(games: games, error: nil)
-                        } else {
-                            completionHandler(games: nil, error: parsed_json["error"].stringValue)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(games: nil, error: "failed request")
+        request(allGamesRoute) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(games: parseGames(json["games"]), error: nil)
+                } else {
+                    completionHandler(games: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(games: nil, error: "API http request failed")
+            }
         }
     }
 
     private static func parsePlayers(players: JSON) -> [[String: AnyObject]] {
-        return players.arrayValue.map({
+        return players.arrayValue.map({ player in
             [
-                "username": $0["username"].stringValue,
-                "owner": $0["owner"].intValue,
-                "winner": $0["winner"].intValue
+                "username": player["username"].stringValue,
+                "owner": player["owner"].intValue,
+                "winner": player["winner"].intValue
             ]
         })
     }
@@ -113,12 +127,20 @@ class Games: API {
     }
     
     private static func parseGame(game: JSON) -> Game {
-        return Game(gameId: game["game_id"].intValue, gameDate: game["game_date"].stringValue, isActive: game["is_active"].intValue, players: parsePlayers(game["players"]), gameRounds: parseGameRounds(game["game_rounds"]), currentRoundNumber: game["current_round_number"].intValue, status: parseStatus(game["status"]))
+        return Game(
+            gameId: game["game_id"].intValue,
+            gameDate: game["game_date"].stringValue,
+            isActive: game["is_active"].intValue,
+            players: parsePlayers(game["players"]),
+            gameRounds: parseGameRounds(game["game_rounds"]),
+            currentRoundNumber: game["current_round_number"].intValue,
+            status: parseStatus(game["status"])
+        )
     }
-    
+
     private static func parseGames(games: JSON) -> [Game] {
-        return games.arrayValue.map({
-            parseGame($0)
+        return games.arrayValue.map({ game in
+            parseGame(game)
         })
     }
 }

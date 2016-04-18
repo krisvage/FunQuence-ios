@@ -11,78 +11,95 @@ import Alamofire
 import SwiftyJSON
 
 class Friends: API {
-    static let friendsListRoute = Route(path: basePath + "/users/me/friends", method: Method.GET)
-    static let addFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.POST)
-    static let deleteFriendRoute = Route(path: basePath + "/users/me/friends", method: Method.DELETE)
+    static let friendsListRoute = Route(path: basePath + "/users/me/friends", method: .GET)
+    static let addFriendRoute = Route(path: basePath + "/users/me/friends", method: .POST)
+    static let deleteFriendRoute = Route(path: basePath + "/users/me/friends", method: .DELETE)
     
-    // TODO: Use 'has_pending_invitation' as well
-    static func friendsList(completionHandler: (friends: [(username: String, has_pending_invitation: String)]?, error: String?) -> ()) {
-        Alamofire.request(friendsListRoute.method, friendsListRoute.path, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            let friendsList = parsed_json["friendList"].arrayValue.map {
-                                (friend) -> (username: String, has_pending_invitation: String) in
-                                let username = friend["username"].stringValue
-                                let has_pending_invitation = friend["has_pending_invitation"].stringValue
-                                return (username: username, has_pending_invitation: has_pending_invitation)
-                            }
-                            completionHandler(friends: friendsList, error: nil)
-                        } else {
-                            completionHandler(friends: nil, error: parsed_json["error"].stringValue)
-                        }
+    typealias friendsListHandler = (friends: [(username: String, has_pending_invitation: String)]?, error: String?) -> ()
+    typealias addFriendHandler = (added: Bool, error: String?) -> ()
+    typealias deleteFriendHandler = (deleted: Bool, error: String?) -> ()
+
+    /**
+     GET /users/me/friends
+     
+     Get userlist for current user
+     
+     => friends, error
+     */
+    static func friendsList(completionHandler: friendsListHandler) {
+        request(friendsListRoute) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    let friendsList = json["friendList"].arrayValue.map {
+                        (friend) -> (username: String, has_pending_invitation: String) in
+                        
+                        let username = friend["username"].stringValue
+                        let has_pending_invitation = friend["has_pending_invitation"].stringValue
+                        return (username: username, has_pending_invitation: has_pending_invitation)
                     }
-                case .Failure(_):
-                    completionHandler(friends: nil, error: "request failed")
+                    completionHandler(friends: friendsList, error: nil)
+                } else {
+                    completionHandler(friends: nil, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(friends: nil, error: "API http request failed")
+            }
         }
     }
     
-    static func add(username: String, completionHandler: (added: Bool, error: String?) -> ()) {
+    /**
+     POST /users/me/friends
+     
+     Add a new user to your friendlist.
+     
+     => added, error
+     */
+    static func add(username: String, completionHandler: addFriendHandler) {
         let params = ["username": username]
         
-        Alamofire.request(addFriendRoute.method, addFriendRoute.path, headers: headers(), parameters: params)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            completionHandler(added: true, error: nil)
-                        } else {
-                            let error = parsed_json["error"].stringValue
-                            completionHandler(added: false, error: error)
-                        }
-                    }
-                case .Failure(_):
-                    completionHandler(added: false, error: nil)
+        request(addFriendRoute, parameters: params) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(added: true, error: nil)
+                } else {
+                    completionHandler(added: false, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(added: false, error: "API http request failed")
+            }
         }
     }
 
-    static func delete(username: String, completionHandler: (deleted: Bool) -> ()) {
+    /**
+     DELETE /users/me/friends/:username
+
+     Delete :username from friend list.
+     
+     => deleted, error
+     */
+    static func delete(username: String, completionHandler: deleteFriendHandler) {
         let fullPath = deleteFriendRoute.path + "/" + username
+        let route = Route(path: fullPath, method: deleteFriendRoute.method)
         
-        Alamofire.request(deleteFriendRoute.method, fullPath, headers: headers())
-            .responseJSON { response in
-                switch response.result {
-                case .Success(_):
-                    if let json = response.result.value {
-                        let parsed_json = JSON(json)
-                        if parsed_json["error"] == nil {
-                            completionHandler(deleted: true)
-                        } else {
-                            print(parsed_json["error"].stringValue)
-                            completionHandler(deleted: false)
-                        }
-                    }
-                case .Failure(_):
-                    print("request failed")
-                    completionHandler(deleted: false)
+        request(route) { response in
+            switch response.result {
+            case .Success(_):
+                let json = JSON(response.result.value!)
+                
+                if json["error"] == nil {
+                    completionHandler(deleted: true, error: nil)
+                } else {
+                    completionHandler(deleted: false, error: json["error"].stringValue)
                 }
+            case .Failure(_):
+                completionHandler(deleted: false, error: "API http request failed")
+            }
         }
     }
 }

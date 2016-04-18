@@ -16,6 +16,7 @@
 		264BB4EB1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
+		26827F101CC577780053F9E5 /* GetReadyOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
@@ -27,6 +28,8 @@
 		26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */; };
 		F100A8CD1CBD404800E517C7 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F100A8CF1CBD409400E517C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
+		F10D4C9A1CC53F0C00B3C359 /* EmptyTableViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */; };
+		F10D4C9B1CC542D400B3C359 /* EmptyTableViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */; };
 		F117FC111CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
 		F117FC121CC0FD5900B383FF /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117FC101CC0FD5900B383FF /* Games.swift */; };
 		F117FC131CC0FD6000B383FF /* Invitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144A7011CC020CA00CA3772 /* Invitations.swift */; };
@@ -61,6 +64,9 @@
 		F19D30E11CBBC4CE004A2B07 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
 		F19D30E61CBBD3EE004A2B07 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E51CBBD3EE004A2B07 /* Users.swift */; };
 		F19D30E91CBBD67D004A2B07 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E81CBBD67D004A2B07 /* Route.swift */; };
+		F1A9EDB61CC447E100CD289E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; };
+		F1A9EDB71CC447E600CD289E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
+		F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F142BE0C1CBD3C320052E6C9 /* Spring.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,7 @@
 		2643D1A51CC4FC8C0092458A /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
 		264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
+		26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetReadyOverlayViewController.swift; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationCellViewController.swift; sourceTree = "<group>"; };
 		F100A8CC1CBD404800E517C7 /* Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		F100A8CE1CBD409400E517C7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewLabel.swift; sourceTree = "<group>"; };
 		F117FC101CC0FD5900B383FF /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F117FC261CC0FEB900B383FF /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F14075991C85DF1300EEADC1 /* Patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A9EDB71CC447E600CD289E /* SwiftyJSON.framework in Frameworks */,
+				F1A9EDB61CC447E100CD289E /* Alamofire.framework in Frameworks */,
+				F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2643D1A11CC4F7240092458A /* Sequence playback */,
+				26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */,
 			);
 			name = GamePlay;
 			sourceTree = "<group>";
@@ -161,12 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				2643D1A01CC4F71C0092458A /* GamePlay */,
-				26E7B93F1CC3BE9400976344 /* Settings View */,
-				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B51CBFE7600045D24F /* Main View */,
 				26E989B61CBFE7740045D24F /* Friends View */,
+				26E989B91CBFE7B90045D24F /* Notifications View */,
 				26E989B71CBFE7820045D24F /* Login View */,
 				26E989B81CBFE7880045D24F /* Register View */,
+				26E7B93F1CC3BE9400976344 /* Settings View */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -174,8 +186,8 @@
 		26E989B51CBFE7600045D24F /* Main View */ = {
 			isa = PBXGroup;
 			children = (
-				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
 				26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */,
+				26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -183,8 +195,8 @@
 		26E989B61CBFE7740045D24F /* Friends View */ = {
 			isa = PBXGroup;
 			children = (
-				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
 				26E989A71CBFCC800045D24F /* FriendListViewController.swift */,
+				26E989AF1CBFCE850045D24F /* FriendCellTableViewCell.swift */,
 			);
 			name = "Friends View";
 			sourceTree = "<group>";
@@ -212,6 +224,14 @@
 				26E989BD1CBFE9F80045D24F /* InvitationCellViewController.swift */,
 			);
 			name = "Notifications View";
+			sourceTree = "<group>";
+		};
+		F10D4C981CC53EB300B3C359 /* UIelements */ = {
+			isa = PBXGroup;
+			children = (
+				F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */,
+			);
+			name = UIelements;
 			sourceTree = "<group>";
 		};
 		F117FC251CC0FE9100B383FF /* Models */ = {
@@ -250,8 +270,9 @@
 				2643D1A81CC500FB0092458A /* boop.wav */,
 				26E989AA1CBFCC860045D24F /* Controllers */,
 				F117FC251CC0FE9100B383FF /* Models */,
-				F19D30E71CBBD66F004A2B07 /* Utils */,
 				F19D30E41CBBD3CF004A2B07 /* Recallo */,
+				F10D4C981CC53EB300B3C359 /* UIelements */,
+				F19D30E71CBBD66F004A2B07 /* Utils */,
 				F140759C1C85DF1300EEADC1 /* AppDelegate.swift */,
 				F14075A41C85DF1300EEADC1 /* Main.storyboard */,
 				F14075A71C85DF1300EEADC1 /* Assets.xcassets */,
@@ -344,7 +365,7 @@
 				TargetAttributes = {
 					F14075981C85DF1200EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 7NJ6KBWBYD;
+						DevelopmentTeam = KJSBU737CR;
 					};
 					F14075B01C85DF1300EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -435,10 +456,12 @@
 				2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
+				F10D4C9A1CC53F0C00B3C359 /* EmptyTableViewLabel.swift in Sources */,
 				F117FC271CC0FEB900B383FF /* Game.swift in Sources */,
 				F144A7041CC0251600CA3772 /* Invitation.swift in Sources */,
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
 				26E989BE1CBFE9F80045D24F /* InvitationCellViewController.swift in Sources */,
+				26827F101CC577780053F9E5 /* GetReadyOverlayViewController.swift in Sources */,
 				26E989B31CBFE6C10045D24F /* InvitationViewController.swift in Sources */,
 				264BB4EB1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */,
 			);
@@ -465,6 +488,7 @@
 				2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
 				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
+				F10D4C9B1CC542D400B3C359 /* EmptyTableViewLabel.swift in Sources */,
 				F117FC281CC0FEB900B383FF /* Game.swift in Sources */,
 				F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */,
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
@@ -590,6 +614,7 @@
 		F14075BB1C85DF1300EEADC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -599,7 +624,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -608,6 +633,7 @@
 		F14075BC1C85DF1300EEADC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -617,7 +643,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -628,6 +654,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatternsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.PatternsTests;
@@ -640,6 +670,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatternsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.PatternsTests;

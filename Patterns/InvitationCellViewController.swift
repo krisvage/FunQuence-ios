@@ -9,6 +9,9 @@
 import UIKit
 
 class InvitationCellViewController: UITableViewCell {
+    
+    // MARK: Properties
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
@@ -16,16 +19,23 @@ class InvitationCellViewController: UITableViewCell {
     
     var invitationId: Int = 0
     var delegate: InvitationViewController? = nil
+    
+    // MARK: Configuration
 
-    func configureCell(from_username: String, time_ago: String, invitationId: Int, delegate: InvitationViewController){
-        usernameLabel.text = from_username
-        timeAgoLabel.text = time_ago
-        self.invitationId = invitationId
+    func configureCell(invitation: Invitation, delegate: InvitationViewController){
+        let timeStamp = invitation.invitationSent
+        let timeObject = NSDate(timeIntervalSince1970: floor(timeStamp/1000))
+        
+        usernameLabel.text = invitation.fromUsername
+        timeAgoLabel.text = timeAgoSince(timeObject)
+        self.invitationId = invitation.invitationId
         self.delegate = delegate
         
         acceptButton.addTarget(self, action: #selector(self.acceptInvite), forControlEvents: .TouchUpInside)
         declineButton.addTarget(self, action: #selector(self.declineInvite), forControlEvents: .TouchUpInside)
     }
+    
+    // MARK: Navigation
     
     func acceptInvite() {
         respondInvite(true)
@@ -40,7 +50,7 @@ class InvitationCellViewController: UITableViewCell {
             if error == nil {
                 self.delegate!.reloadData()
             } else {
-                print(error)
+                NSLog("error: %@", error!)
             }
         }
     }

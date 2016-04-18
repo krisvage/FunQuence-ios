@@ -9,15 +9,20 @@
 import UIKit
 
 class GameCellTableViewCell: UITableViewCell {
-    // Game status icons
+
+    // MARK: Game status icons
+
     @IBOutlet weak var loseIcon: UIImageView!
     @IBOutlet weak var winIcon: UIImageView!
     @IBOutlet weak var greyIcon: UIImageView!
     @IBOutlet weak var greenIcon: UIImageView!
     
-    // Game info
+    // MARK :Game info
+
     @IBOutlet weak var roundNumberLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    // MARK: Configuration
     
     func configureCell(game: Game){
         let usernames = [
@@ -26,8 +31,8 @@ class GameCellTableViewCell: UITableViewCell {
         ]
 
         let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
-        let round_number = game.currentRoundNumber // game["current_round_number"] as! NSNumber
-        let status = game.status["status"]!["message"] as! String // game["status"]!!["message"] as! String
+        let round_number = game.currentRoundNumber
+        let status = game.status["status"]!["message"] as! String
         
         // TODO: Refactor images. Only need a placeholder and change image uri.
         // TODO: Make sure all possible states of a game is represented.
