@@ -25,6 +25,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -40,6 +41,8 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
         reloadData()
     }
 

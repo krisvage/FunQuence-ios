@@ -40,6 +40,8 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
         reloadData()
     }
     

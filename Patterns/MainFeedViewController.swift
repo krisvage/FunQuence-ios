@@ -43,6 +43,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
         reloadData()
         reloadInvitationCount()
         
