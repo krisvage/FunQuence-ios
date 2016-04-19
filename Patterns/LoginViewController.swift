@@ -9,25 +9,68 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    private var keyboardHeight: CGFloat?
+    private var initialContentHeight: Int?
+
     
     // MARK: Properties
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var messageHeader: UILabel!
     @IBOutlet weak var messageField: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-
+    @IBOutlet weak var contentHeight: NSLayoutConstraint!
+    @IBOutlet weak var contentView: UIView!
+    
     // MARK: View Controller Lifecycle
 
     override func viewDidLoad() {
+        initialContentHeight = Int(contentView.frame.height);
+
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegisterViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegisterViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         messageField.hidden = true;
         messageHeader.hidden = true;
         usernameField?.delegate = self;
         passwordField?.delegate = self;
     }
     
+    func keyboardWillShow(notification: NSNotification){
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        keyboardHeight = keyboardRectangle.height
+        contentHeight.constant = CGFloat(initialContentHeight!) + keyboardHeight!/2
+        
+        // If iPhone 5S or lower
+        if(view.frame.height < 667){
+            scrollOffset(100)
+            return;
+        }
+    }
+    
+    func scrollOffset(offset: Int){
+        scrollView.contentOffset = CGPoint(x: 0, y: offset)
+    }
+    
+    func keyboardWillHide(notification: NSNotification){
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        keyboardHeight = keyboardRectangle.height
+        contentHeight.constant = CGFloat(initialContentHeight!) - keyboardHeight!/2 - 20
+    }
+    
+    func dismissKeyboard(){
+        view.endEditing(false)
+        scrollOffset(0)
+    }
+
     // MARK: Navigation
 
     @IBAction func loginButtonTapped(sender: UIButton) {
@@ -50,7 +93,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
+    
     private func getUserData() {
         Users.me { username, email, errorOccured in
             if !errorOccured {
