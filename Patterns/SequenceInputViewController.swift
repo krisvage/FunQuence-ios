@@ -10,15 +10,19 @@ import UIKit
 import AVFoundation
 
 class SequenceInputViewController: UIViewController, countdownStarter {
-    let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
-    var answer_sequence = [String]()
-    var current_index = 0
-    var sound: SystemSoundID = 0
-    let circleLayer = CAShapeLayer()
-    var secondInterval = NSTimer();
-    var countdownTimer = NSTimer();
+    var currentGame: Game?
+    var light_sequence: [String]?
     
-
+    // Private state variables
+    private var answer_sequence = [String]()
+    private var current_index = 0
+    private var sound: SystemSoundID = 0
+    private let circleLayer = CAShapeLayer()
+    private var secondInterval = NSTimer();
+    private var countdownTimer = NSTimer();
+    private var roundResult: String?
+    
+    // Outlets and Actions
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
     @IBOutlet weak var bluePad: UIButton!
@@ -26,47 +30,82 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     @IBOutlet weak var infoText: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var countdownAnchor: UIView!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var opponentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if currentGame != nil {
+            light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
+            
+            
+        } else {
+            print("Game was not loaded")
+            return
+        }
         setPadAlpha(1)
+        setUpView()
         countdownLabel.hidden = true;
+        
     }
+    
     @IBAction func padTapped(sender: AnyObject) {
         playBoopSound()
         // Start the counter if this was the first entry.
         let senderPad = sender as! UIButton;
         let colorString = self.getColorStringByPad(senderPad)
         answer_sequence.append(colorString!)
-        if(answer_sequence.count == light_sequence.count){
+        currentGame?.gameRounds[0]
+        
+        if(answer_sequence.count == light_sequence!.count){
             checkResult();
             cancelCountDown()
         }
     }
     
+    func setUpView(){
+        roundLabel.text = "Round " + String(currentGame!.currentRoundNumber)
+        currentUserLabel.text = UserDefaultStorage.getUsername()
+        let usernames = [
+            currentGame!.players[0]["username"] as! String,
+            currentGame!.players[1]["username"] as! String
+        ]
+        let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        opponentLabel.text = username;
+    }
+
+    
     override func viewDidAppear(animated: Bool) {
         performSegueWithIdentifier("goToReadyOverlay", sender: self)
         let soundURL = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav")
         AudioServicesCreateSystemSoundID(soundURL!, &sound)
-        print("Appeared")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToReadyOverlay"){
-            let toView = segue.destinationViewController as! GetReadyOverlayViewController;
-            toView.delegate = self;
+            let destinationVC = segue.destinationViewController as! GetReadyOverlayViewController;
+            destinationVC.delegate = self;
+        }
+        if(segue.identifier == "goToResults"){
+            let destinationVC = segue.destinationViewController as! SequenceResultViewController;
+            destinationVC.currentGame = self.currentGame!
+            destinationVC.roundResult = self.roundResult!
         }
     }
     
+    //
     func checkResult(){
-        if(answer_sequence == light_sequence){
-            // Handle correct answer. Go to next view.
-            print("Correct answer")
-        } else {
-            print("Incorrect answer")
-            // Handle incorrect answer. Go to next view.
+        freezeButtons()
+        Games.answerGameRound(answer_sequence, gameId: currentGame!.gameId, roundNumber: currentGame!.currentRoundNumber) { (message, error) in
+            if message != nil {
+                self.roundResult = message!
+            } else {
+                self.roundResult = error!
+            }
+            self.performSegueWithIdentifier("goToResults", sender: self)
         }
-        performSegueWithIdentifier("goToResults", sender: self)
+        
     }
     
     func playBoopSound(){
@@ -95,7 +134,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     
     func startCountDown(){
         var counter = 0;
-        let countdownDuration = Double(self.light_sequence.count * 3);
+        let countdownDuration = Double(self.light_sequence!.count * 3);
         self.addCircleWithAnimation(countdownDuration)
         
         secondInterval = setInterval(1) {

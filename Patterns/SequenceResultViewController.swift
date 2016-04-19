@@ -9,27 +9,61 @@
 import UIKit
 
 class SequenceResultViewController: UIViewController {
-
+    var currentGame: Game?
+    var roundResult: String?
+    @IBOutlet weak var answerStatusIcon: UIImageView!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var opponentLabel: UILabel!
+    @IBOutlet weak var roundResultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if(roundResult! != "Correct answer."){
+            answerStatusIcon.image = UIImage(named: "Wrong_icon")
+        }
+        
+        Games.getById(currentGame!.gameId) { (game, error) in
+            let usernames = [
+                self.currentGame!.players[0]["username"] as! String,
+                self.currentGame!.players[1]["username"] as! String
+            ]
+            let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+            let status = game!.status["status"]!["message"] as! String
+            print(status)
+            self.roundResultLabel.text = self.getResultText(status, opponentUsername: username)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getResultText(gameStatus: String, opponentUsername: String) -> String {
+        if(gameStatus == "Waiting for other player.") {
+            if(roundResult == "Correct answer."){
+                return "You answer is correct!. Wait for \(opponentUsername) to answer and move on to the next round."
+            } else {
+                return "You answer is wrong!. If \(opponentUsername) answers correctly he will win the game!"
+            }
+        }
+        if(gameStatus == "Game won."){
+            return "Someone has won the game!"
+        }
+        if(gameStatus == "Game draw."){
+            return "You and \(opponentUsername) both got the answer wrong! Game is drawn."
+        }
+        return "";
     }
-    */
-
+    
+    @IBAction func toMenuTapped(sender: AnyObject) {
+        performSegueWithIdentifier("goToMain", sender: self)
+    }
+    
+    func setUpView(){
+        roundLabel.text = "Round " + String(currentGame!.currentRoundNumber)
+        currentUserLabel.text = UserDefaultStorage.getUsername()
+        let usernames = [
+            currentGame!.players[0]["username"] as! String,
+            currentGame!.players[1]["username"] as! String
+        ]
+        let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        opponentLabel.text = username;
+    }
 }

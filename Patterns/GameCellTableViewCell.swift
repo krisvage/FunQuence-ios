@@ -11,64 +11,46 @@ import UIKit
 class GameCellTableViewCell: UITableViewCell {
 
     // MARK: Game status icons
-
-    @IBOutlet weak var loseIcon: UIImageView!
-    @IBOutlet weak var winIcon: UIImageView!
-    @IBOutlet weak var greyIcon: UIImageView!
-    @IBOutlet weak var greenIcon: UIImageView!
     
     // MARK :Game info
 
     @IBOutlet weak var roundNumberLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var gameStatusIcon: UIImageView!
     
     // MARK: Configuration
+    
     
     func configureCell(game: Game){
         let usernames = [
             game.players[0]["username"] as! String,
             game.players[1]["username"] as! String
         ]
-
         let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         let round_number = game.currentRoundNumber
         let status = game.status["status"]!["message"] as! String
-        
         // TODO: Refactor images. Only need a placeholder and change image uri.
         // TODO: Make sure all possible states of a game is represented.
+        var gameStatusIconString: String?
+        print(status)
         switch status {
-        case "Waiting for both players.":
-            loseIcon.hidden = true;
-            winIcon.hidden = true;
-            greenIcon.hidden = false;
-            greyIcon.hidden = true;
-            break;
-        case "Waiting for other player.":
-            loseIcon.hidden = true;
-            winIcon.hidden = true;
-            greenIcon.hidden = true;
-            greyIcon.hidden = false;
-        case "Game won.":
-            let winner = game.status["status"]!["winner"] as! String
-
-            if winner == UserDefaultStorage.getUsername() {
-                loseIcon.hidden = true;
-                winIcon.hidden = false;
-                greenIcon.hidden = true;
-                greyIcon.hidden = true;
-            } else {
-                loseIcon.hidden = false;
-                winIcon.hidden = true;
-                greenIcon.hidden = true;
-                greyIcon.hidden = true;
-            }
-            break;
-        default:
-            loseIcon.hidden = true;
-            winIcon.hidden = true;
-            greenIcon.hidden = true;
-            greyIcon.hidden = true;
+            case "Waiting for other player.":
+                gameStatusIconString = "Grey badge";
+                break;
+            case "Game won.":
+                let winner = game.status["status"]!["winner"] as! String
+                if winner == UserDefaultStorage.getUsername() {
+                    gameStatusIconString = "Win label"
+                } else {
+                    gameStatusIconString = "Lose label"
+                }
+                break;
+            case "Game draw.":
+                gameStatusIconString = "draw_badge";
+            default:
+                gameStatusIconString = "Grey badge"
         }
+        gameStatusIcon = UIImageView(image: UIImage(named: gameStatusIconString!))
         self.usernameLabel.text = username
         self.roundNumberLabel.text = String(round_number)
     }

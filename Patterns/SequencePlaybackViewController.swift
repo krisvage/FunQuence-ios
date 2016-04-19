@@ -10,9 +10,12 @@ import UIKit
 import AVFoundation
 
 class SequencePlaybackViewController: UIViewController {
-    let light_sequence = ["red", "blue", "green", "blue", "yellow", "green", "red"]
-    var sound: SystemSoundID = 0
-    var soundUrl: NSURL!
+    var currentGame: Game?
+    var light_sequence: [String]?
+    
+    // Private state variables
+    private var sound: SystemSoundID = 0
+    private var soundUrl: NSURL!
 
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
@@ -20,6 +23,9 @@ class SequencePlaybackViewController: UIViewController {
     @IBOutlet weak var yellowPad: UIButton!
     @IBOutlet weak var readyText: UILabel!
     @IBOutlet weak var readyButton: UIButton!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var opponentLabel: UILabel!
+    @IBOutlet weak var currentUserLabel: UILabel!
     
     @IBAction func readyButtonTapped(sender: AnyObject) {
         setTimeout(2) {
@@ -32,11 +38,25 @@ class SequencePlaybackViewController: UIViewController {
         self.readyButton.hidden = true;
         self.readyText.hidden = true;
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goToSequenceInput"){
+            let destinationVC = segue.destinationViewController as! SequenceInputViewController
+            destinationVC.currentGame = self.currentGame;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpPads();
+        if currentGame != nil {
+            light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
+            
+            
+        } else {
+            print("Game was not loaded")
+        }
+        setUpPads()
+        setUpView()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,6 +66,17 @@ class SequencePlaybackViewController: UIViewController {
 
     func playBoopSound(){
         AudioServicesPlaySystemSound(sound);
+    }
+    
+    func setUpView(){
+        roundLabel.text = "Round " + String(currentGame!.currentRoundNumber)
+        currentUserLabel.text = UserDefaultStorage.getUsername()
+        let usernames = [
+            currentGame!.players[0]["username"] as! String,
+            currentGame!.players[1]["username"] as! String
+        ]
+        let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        opponentLabel.text = username;
     }
     
     func setUpPads(){
@@ -81,14 +112,14 @@ class SequencePlaybackViewController: UIViewController {
         var current_index = 0;
         
         func playSequence(){
-            let currentColorString = self.light_sequence[current_index];
+            let currentColorString = self.light_sequence![current_index];
             let currentButton = self.getPadByColorString(currentColorString)
             
             self.playBoopSound()
             self.turnLightOn(currentButton!)
             setTimeout(1) {
                 self.turnLightOff(currentButton!)
-                if(current_index != self.light_sequence.count-1){
+                if(current_index != self.light_sequence!.count-1){
                     current_index += 1;
                     playSequence()
                 } else {

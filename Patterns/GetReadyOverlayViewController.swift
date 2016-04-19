@@ -15,7 +15,7 @@ protocol countdownStarter {
 class GetReadyOverlayViewController: UIViewController {
     
     @IBOutlet weak var secondsLabel: UILabel!
-    var counter = 5;
+    var counter = 3;
     var interval = NSTimer();
     var delegate: countdownStarter?
     

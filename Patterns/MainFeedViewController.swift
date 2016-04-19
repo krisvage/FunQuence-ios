@@ -17,7 +17,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var notificationBadge: UIButton!
 
     let textCellIdentifier = "GameCell"
-    var dataSource = [Game]();
+    var gamesList = [Game]();
     var invitationCount = 0
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any games yet")
@@ -94,7 +94,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDataSource
     
     func dataDidChange() {
-        let count = self.dataSource.count
+        let count = self.gamesList.count
 
         if (count == 0) {
             self.emptyMessage.hidden = false
@@ -111,7 +111,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     func reloadData() {
         Games.all { games, error in
             if error == nil {
-                self.dataSource = games!
+                self.gamesList = games!
                 self.dataDidChange()
             } else {
                 NSLog("error: %@", error!)
@@ -127,17 +127,27 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return gamesList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier) as! GameCellTableViewCell
-        let game = dataSource[indexPath.row]
+        let game = gamesList[indexPath.row]
         cell.configureCell(game)
         return cell
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("goToGame", sender: indexPath.row)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goToGame"){
+            let tappedIndex = sender as! Int;
+            let currentGame = gamesList[tappedIndex]
+            let destinationVC = segue.destinationViewController as! SequencePlaybackViewController
+            destinationVC.currentGame = currentGame
+        }
     }
 }

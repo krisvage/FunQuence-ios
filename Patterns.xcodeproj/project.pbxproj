@@ -360,7 +360,7 @@
 				TargetAttributes = {
 					F14075981C85DF1200EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = KJSBU737CR;
+						DevelopmentTeam = 7NJ6KBWBYD;
 					};
 					F14075B01C85DF1300EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -620,7 +620,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -639,7 +639,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.Patterns;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.Patterns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
