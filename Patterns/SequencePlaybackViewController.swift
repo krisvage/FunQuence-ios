@@ -108,27 +108,37 @@ class SequencePlaybackViewController: UIViewController {
         return nil;
     }
     
+    func flashPad(pad: UIButton, completion: () -> Void ){
+        self.playBoopSound()
+        self.turnLightOn(pad)
+        setTimeout(0.8) {
+            self.turnLightOff(pad)
+        }
+        setTimeout(1) {
+            completion()
+        }
+      
+    }
+    
     func startSequence(completion: (() -> Void)?) {
         var current_index = 0;
         
         func playSequence(){
             let currentColorString = self.light_sequence![current_index];
-            let currentButton = self.getPadByColorString(currentColorString)
-            
-            self.playBoopSound()
-            self.turnLightOn(currentButton!)
-            setTimeout(1) {
-                self.turnLightOff(currentButton!)
-                if(current_index != self.light_sequence!.count-1){
-                    current_index += 1;
-                    playSequence()
-                } else {
+            let currentPad = self.getPadByColorString(currentColorString)
+            flashPad(currentPad!) { 
+                current_index += 1;
+                if(current_index == self.light_sequence?.count){
                     if completion != nil {
                         completion!()
                     }
+                } else {
+                    playSequence();
                 }
             }
         }
+        
+        
         playSequence();
     }
     
