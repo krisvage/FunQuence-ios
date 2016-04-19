@@ -164,7 +164,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     
     func addCircleWithAnimation(duration: Double){
         circleLayer.removeFromSuperlayer();
-        let circlePath = UIBezierPath(arcCenter: countdownAnchor.center, radius: CGFloat(50), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: countdownAnchor.center, radius: CGFloat(40), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
         circleLayer.path = circlePath.CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = UIColor.grayColor().CGColor

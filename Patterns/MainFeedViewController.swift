@@ -26,7 +26,6 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -94,6 +93,23 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDataSource
     
     func dataDidChange() {
+        gamesList.sortInPlace { (game1, game2) -> Bool in
+            let status = game1.status["status"]!["message"] as! String
+            let usernames = [
+                game1.players[0]["username"] as! String,
+                game1.players[1]["username"] as! String
+            ]
+            let opponentUsername = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+            if(status ==  "Waiting for both players." || status == "Waiting for \(UserDefaultStorage.getUsername())."){
+                return true;
+            }
+            if(status == "Waiting for \(opponentUsername)."){
+                return true;
+            }
+            return false;
+            
+        }
+        
         let count = self.gamesList.count
 
         if (count == 0) {
@@ -118,6 +134,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             self.refreshControl!.endRefreshing()
         }
+        reloadInvitationCount()
     }
 
     // MARK: UITableViewDelegate

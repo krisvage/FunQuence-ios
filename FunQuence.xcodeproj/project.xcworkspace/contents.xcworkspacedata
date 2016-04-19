@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Patterns.xcodeproj">
+      location = "self:/Users/mattiden/Dev/TDT4240g12/FunQuence.xcodeproj">
    </FileRef>
 </Workspace>

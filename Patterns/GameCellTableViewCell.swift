@@ -26,13 +26,12 @@ class GameCellTableViewCell: UITableViewCell {
             game.players[0]["username"] as! String,
             game.players[1]["username"] as! String
         ]
-        let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        let opponentUsername = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         let round_number = game.currentRoundNumber
         let status = game.status["status"]!["message"] as! String
         // TODO: Refactor images. Only need a placeholder and change image uri.
         // TODO: Make sure all possible states of a game is represented.
         var gameStatusIconString: String?
-        print(status)
         switch status {
             case "Waiting for both players.":
                 gameStatusIconString = "green label"
@@ -40,7 +39,7 @@ class GameCellTableViewCell: UITableViewCell {
                 gameStatusIconString = "green label"
                 break;
             
-            case "Waiting for other player.":
+            case "Waiting for \(opponentUsername).":
                 gameStatusIconString = "Grey label";
                 break;
             
@@ -60,7 +59,7 @@ class GameCellTableViewCell: UITableViewCell {
                 gameStatusIconString = "Grey label"
         }
         gameStatusIcon.image = UIImage(named: gameStatusIconString!)
-        self.usernameLabel.text = username
+        self.usernameLabel.text = opponentUsername
         self.roundNumberLabel.text = String(round_number)
     }
 }

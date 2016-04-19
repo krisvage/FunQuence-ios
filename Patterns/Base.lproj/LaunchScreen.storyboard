@@ -14,14 +14,48 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zg-7G-JjF">
+                                <rect key="frame" x="90" y="241" width="195" height="186"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FunQuence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDI-Wd-Lml">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="48"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-bL-x1N">
+                                        <rect key="frame" x="33" y="46" width="129" height="131"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="G3E-bL-x1N" firstAttribute="top" secondItem="UDI-Wd-Lml" secondAttribute="bottom" constant="-2" id="882-Ck-vh8"/>
+                                    <constraint firstAttribute="height" constant="186" id="WpD-v7-DKU"/>
+                                    <constraint firstItem="G3E-bL-x1N" firstAttribute="centerX" secondItem="5Zg-7G-JjF" secondAttribute="centerX" id="Z2f-zs-7Mt"/>
+                                    <constraint firstItem="UDI-Wd-Lml" firstAttribute="top" secondItem="5Zg-7G-JjF" secondAttribute="top" id="eLF-Ej-wSK"/>
+                                    <constraint firstItem="UDI-Wd-Lml" firstAttribute="leading" secondItem="5Zg-7G-JjF" secondAttribute="leading" id="hDm-By-jk9"/>
+                                    <constraint firstAttribute="width" constant="195" id="nr2-3V-wNM"/>
+                                    <constraint firstAttribute="trailing" secondItem="UDI-Wd-Lml" secondAttribute="trailing" id="vAf-oK-c9A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Zg-7G-JjF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PDf-qg-wsv"/>
+                            <constraint firstItem="5Zg-7G-JjF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vYk-Le-gij"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-44.5" y="366.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="129" height="131"/>
+    </resources>
 </document>
