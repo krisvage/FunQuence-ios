@@ -139,11 +139,15 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        performSegueWithIdentifier("goToGame", sender: indexPath.row)
+        let game = gamesList[indexPath.row]
+        let status = game.status["status"]!["message"] as! String
+        if(status == "Waiting for \(UserDefaultStorage.getUsername())." || status == "Waiting for both players."){
+            performSegueWithIdentifier("goToGame", sender: indexPath.row)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "goToGame"){
+        if(segue.identifier == "goToGame") {
             let tappedIndex = sender as! Int;
             let currentGame = gamesList[tappedIndex]
             let destinationVC = segue.destinationViewController as! SequencePlaybackViewController

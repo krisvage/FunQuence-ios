@@ -97,7 +97,12 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     //
     func checkResult(){
         freezeButtons()
+        if(answer_sequence.count == 0){
+            answer_sequence.append("wronganswer")
+        }
         Games.answerGameRound(answer_sequence, gameId: currentGame!.gameId, roundNumber: currentGame!.currentRoundNumber) { (message, error) in
+            print(message)
+            print(error)
             if message != nil {
                 self.roundResult = message!
             } else {

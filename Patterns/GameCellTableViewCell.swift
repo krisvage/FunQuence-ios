@@ -34,9 +34,16 @@ class GameCellTableViewCell: UITableViewCell {
         var gameStatusIconString: String?
         print(status)
         switch status {
-            case "Waiting for other player.":
-                gameStatusIconString = "Grey badge";
+            case "Waiting for both players.":
+                gameStatusIconString = "green label"
+            case "Waiting for \(UserDefaultStorage.getUsername()).":
+                gameStatusIconString = "green label"
                 break;
+            
+            case "Waiting for other player.":
+                gameStatusIconString = "Grey label";
+                break;
+            
             case "Game won.":
                 let winner = game.status["status"]!["winner"] as! String
                 if winner == UserDefaultStorage.getUsername() {
@@ -45,12 +52,14 @@ class GameCellTableViewCell: UITableViewCell {
                     gameStatusIconString = "Lose label"
                 }
                 break;
+            
             case "Game draw.":
                 gameStatusIconString = "draw_badge";
+            
             default:
-                gameStatusIconString = "Grey badge"
+                gameStatusIconString = "Grey label"
         }
-        gameStatusIcon = UIImageView(image: UIImage(named: gameStatusIconString!))
+        gameStatusIcon.image = UIImage(named: gameStatusIconString!)
         self.usernameLabel.text = username
         self.roundNumberLabel.text = String(round_number)
     }

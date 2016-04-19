@@ -16,13 +16,11 @@ class SequenceResultViewController: UIViewController {
     @IBOutlet weak var currentUserLabel: UILabel!
     @IBOutlet weak var opponentLabel: UILabel!
     @IBOutlet weak var roundResultLabel: UILabel!
+    @IBOutlet weak var answerResultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(roundResult! != "Correct answer."){
-            answerStatusIcon.image = UIImage(named: "Wrong_icon")
-        }
-        
+        setUpView()
         Games.getById(currentGame!.gameId) { (game, error) in
             let usernames = [
                 self.currentGame!.players[0]["username"] as! String,
@@ -30,21 +28,30 @@ class SequenceResultViewController: UIViewController {
             ]
             let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
             let status = game!.status["status"]!["message"] as! String
-            print(status)
-            self.roundResultLabel.text = self.getResultText(status, opponentUsername: username)
+            let winner = game!.status["status"]!["winner"] as! String
+            self.roundResultLabel.text = self.getResultText(status, opponentUsername: username, winner: winner)
         }
     }
     
-    func getResultText(gameStatus: String, opponentUsername: String) -> String {
-        if(gameStatus == "Waiting for other player.") {
+    func getResultText(gameStatus: String, opponentUsername: String, winner: String?) -> String {
+        print(gameStatus)
+        if(gameStatus == "Waiting for both players."){
+            return "You have both answered the round correctly and move on to the next round"
+        }
+        
+        if(gameStatus == "Waiting for \(opponentUsername).") {
             if(roundResult == "Correct answer."){
-                return "You answer is correct!. Wait for \(opponentUsername) to answer and move on to the next round."
+                return "You answer is correct! Wait for \(opponentUsername) to answer and move on to the next round."
             } else {
-                return "You answer is wrong!. If \(opponentUsername) answers correctly he will win the game!"
+                return "You answer is wrong! If \(opponentUsername) answers correctly he will win the game! If not the game will be draw."
             }
         }
         if(gameStatus == "Game won."){
-            return "Someone has won the game!"
+            if(winner == UserDefaultStorage.getUsername()){
+                return "\(opponentUsername) has answered incorrectly and you have won the game!";
+            } else {
+                return "\(opponentUsername) answered this round corretly and has won the game!"
+            }
         }
         if(gameStatus == "Game draw."){
             return "You and \(opponentUsername) both got the answer wrong! Game is drawn."
@@ -57,6 +64,7 @@ class SequenceResultViewController: UIViewController {
     }
     
     func setUpView(){
+        answerResultLabel.text = (roundResult == "Correct answer." ? "Correct" : "Wrong")
         roundLabel.text = "Round " + String(currentGame!.currentRoundNumber)
         currentUserLabel.text = UserDefaultStorage.getUsername()
         let usernames = [
@@ -65,5 +73,8 @@ class SequenceResultViewController: UIViewController {
         ]
         let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         opponentLabel.text = username;
+        if(roundResult! != "Correct answer."){
+            answerStatusIcon.image = UIImage(named: "Wrong_icon")
+        }
     }
 }

@@ -15,7 +15,7 @@ protocol countdownStarter {
 class GetReadyOverlayViewController: UIViewController {
     
     @IBOutlet weak var secondsLabel: UILabel!
-    var counter = 3;
+    var counter = 1;
     var interval = NSTimer();
     var delegate: countdownStarter?
     
@@ -23,7 +23,6 @@ class GetReadyOverlayViewController: UIViewController {
         secondsLabel.hidden = true;
         super.viewDidLoad()
         interval = setInterval(1) {
-            self.secondsLabel.hidden = false;
             if(self.counter == 0){
                 self.dismissViewControllerAnimated(true) {
                     self.interval.invalidate()
