@@ -105,7 +105,8 @@
                                                             <exclude reference="sC9-4k-I6Z"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="201" y="24.5" width="27" height="27"/>
                                                         <mask key="constraints">
                                                             <include reference="K6J-N7-Z7z"/>
                                                             <include reference="sC9-4k-I6Z"/>

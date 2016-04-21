@@ -45,7 +45,7 @@
             BlueprintIdentifier = "F14075981C85DF1200EEADC1"
             BuildableName = "Patterns.app"
             BlueprintName = "Patterns"
-            ReferencedContainer = "container:Patterns.xcodeproj">
+            ReferencedContainer = "container:FunQuence.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "F14075981C85DF1200EEADC1"
             BuildableName = "Patterns.app"
             BlueprintName = "Patterns"
-            ReferencedContainer = "container:Patterns.xcodeproj">
+            ReferencedContainer = "container:FunQuence.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
