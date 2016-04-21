@@ -14,8 +14,7 @@ class SequencePlaybackViewController: UIViewController {
     var light_sequence: [String]?
     
     // Private state variables
-    private var sound: SystemSoundID = 0
-    private var soundUrl: NSURL!
+    private var audioPlayer: GameAudioPlayer?
 
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
@@ -60,12 +59,7 @@ class SequencePlaybackViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.soundUrl = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav")
-        AudioServicesCreateSystemSoundID(self.soundUrl, &sound)
-    }
-
-    func playBoopSound(){
-        AudioServicesPlaySystemSound(sound);
+        audioPlayer = GameAudioPlayer(buttons: [greenPad, redPad, bluePad, yellowPad])
     }
     
     func setUpView(){
@@ -109,7 +103,7 @@ class SequencePlaybackViewController: UIViewController {
     }
     
     func flashPad(pad: UIButton, completion: () -> Void ){
-        self.playBoopSound()
+        audioPlayer!.play(pad)
         self.turnLightOn(pad)
         setTimeout(0.8) {
             self.turnLightOff(pad)

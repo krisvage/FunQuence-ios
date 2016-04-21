@@ -11,8 +11,6 @@
 		2643D1A41CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */; };
 		2643D1A61CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
 		2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643D1A51CC4FC8C0092458A /* TimeUtils.swift */; };
-		2643D1A91CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
-		2643D1AA1CC500FB0092458A /* boop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2643D1A81CC500FB0092458A /* boop.wav */; };
 		264BB4EB1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */; };
 		264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */; };
@@ -68,6 +66,8 @@
 		F1A9EDB61CC447E100CD289E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30DD1CBBA42D004A2B07 /* Alamofire.framework */; };
 		F1A9EDB71CC447E600CD289E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */; };
 		F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F142BE0C1CBD3C320052E6C9 /* Spring.framework */; };
+		F1E9E5E31CC9218C0067131A /* GameAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */; };
+		F1E9E5E41CC921950067131A /* GameAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,6 @@
 /* Begin PBXFileReference section */
 		2643D1A21CC4F73B0092458A /* SequencePlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencePlaybackViewController.swift; sourceTree = "<group>"; };
 		2643D1A51CC4FC8C0092458A /* TimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
-		2643D1A81CC500FB0092458A /* boop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boop.wav; sourceTree = "<group>"; };
 		264BB4EA1CC52E19003508D9 /* SequenceInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceInputViewController.swift; sourceTree = "<group>"; };
 		26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetReadyOverlayViewController.swift; sourceTree = "<group>"; };
 		26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceResultViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		F19D30E01CBBC4CE004A2B07 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		F19D30E51CBBD3EE004A2B07 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F19D30E81CBBD67D004A2B07 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +262,6 @@
 		F140759B1C85DF1300EEADC1 /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
-				2643D1A81CC500FB0092458A /* boop.wav */,
 				26E989AA1CBFCC860045D24F /* Controllers */,
 				F117FC251CC0FE9100B383FF /* Models */,
 				F19D30E41CBBD3CF004A2B07 /* Recallo */,
@@ -305,6 +304,7 @@
 				F16D234A1CBD254700220218 /* UserDefaultStorage.swift */,
 				26DF8FC61CC001B60005CE2C /* TimeAgo.swift */,
 				2643D1A51CC4FC8C0092458A /* TimeUtils.swift */,
+				F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 				TargetAttributes = {
 					F14075981C85DF1200EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 7NJ6KBWBYD;
+						DevelopmentTeam = KJSBU737CR;
 					};
 					F14075B01C85DF1300EEADC1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -393,7 +393,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2643D1A91CC500FB0092458A /* boop.wav in Resources */,
 				F14075AB1C85DF1300EEADC1 /* LaunchScreen.storyboard in Resources */,
 				F14075A81C85DF1300EEADC1 /* Assets.xcassets in Resources */,
 				F14075A61C85DF1300EEADC1 /* Main.storyboard in Resources */,
@@ -404,7 +403,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2643D1AA1CC500FB0092458A /* boop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +437,7 @@
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
 				2643D1A31CC4F73B0092458A /* SequencePlaybackViewController.swift in Sources */,
 				F117FC111CC0FD5900B383FF /* Games.swift in Sources */,
+				F1E9E5E31CC9218C0067131A /* GameAudioPlayer.swift in Sources */,
 				26E989B01CBFCE850045D24F /* FriendCellTableViewCell.swift in Sources */,
 				2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */,
 				264FE9151CBD4C6B008C853D /* MainFeedViewController.swift in Sources */,
@@ -481,6 +480,7 @@
 				F117FC171CC0FD6F00B383FF /* Route.swift in Sources */,
 				F117FC1D1CC0FD8500B383FF /* FriendCellTableViewCell.swift in Sources */,
 				F117FC191CC0FD7500B383FF /* TimeAgo.swift in Sources */,
+				F1E9E5E41CC921950067131A /* GameAudioPlayer.swift in Sources */,
 				2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
 				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
@@ -620,7 +620,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.funquence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -639,7 +639,7 @@
 				);
 				INFOPLIST_FILE = Patterns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathias.funquence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krisvage.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

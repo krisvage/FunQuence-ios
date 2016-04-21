@@ -16,7 +16,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     // Private state variables
     private var answer_sequence = [String]()
     private var current_index = 0
-    private var sound: SystemSoundID = 0
+    private var audioPlayer: GameAudioPlayer?
     private let circleLayer = CAShapeLayer()
     private var secondInterval = NSTimer();
     private var countdownTimer = NSTimer();
@@ -51,9 +51,9 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     }
     
     @IBAction func padTapped(sender: AnyObject) {
-        playBoopSound()
         // Start the counter if this was the first entry.
         let senderPad = sender as! UIButton;
+        audioPlayer!.play(senderPad)
         let colorString = self.getColorStringByPad(senderPad)
         answer_sequence.append(colorString!)
         currentGame?.gameRounds[0]
@@ -63,7 +63,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
             cancelCountDown()
         }
     }
-    
+
     func setUpView(){
         roundLabel.text = "Round " + String(currentGame!.currentRoundNumber)
         currentUserLabel.text = UserDefaultStorage.getUsername()
@@ -78,10 +78,10 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     
     override func viewDidAppear(animated: Bool) {
         performSegueWithIdentifier("goToReadyOverlay", sender: self)
-        let soundURL = NSBundle.mainBundle().URLForResource("boop", withExtension: "wav")
-        AudioServicesCreateSystemSoundID(soundURL!, &sound)
+        
+        audioPlayer = GameAudioPlayer(buttons: [greenPad, redPad, bluePad, yellowPad])
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToReadyOverlay"){
             let destinationVC = segue.destinationViewController as! GetReadyOverlayViewController;
@@ -112,11 +112,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
         }
         
     }
-    
-    func playBoopSound(){
-        AudioServicesPlaySystemSound(sound);
-    }
-    
+
     func setPadAlpha(alpha: CGFloat){
         greenPad.alpha = alpha
         redPad.alpha = alpha
