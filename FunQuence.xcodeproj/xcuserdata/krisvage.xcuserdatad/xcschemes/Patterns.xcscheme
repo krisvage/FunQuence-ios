@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F14075981C85DF1200EEADC1"
-            BuildableName = "Patterns.app"
-            BlueprintName = "Patterns"
+            BuildableName = "FunQuence.app"
+            BlueprintName = "FunQuence"
             ReferencedContainer = "container:FunQuence.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F14075981C85DF1200EEADC1"
-            BuildableName = "Patterns.app"
-            BlueprintName = "Patterns"
+            BuildableName = "FunQuence.app"
+            BlueprintName = "FunQuence"
             ReferencedContainer = "container:FunQuence.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

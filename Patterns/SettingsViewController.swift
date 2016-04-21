@@ -14,6 +14,8 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var soundSwitch: UISwitch!
+    @IBOutlet weak var bwSwitch: UISwitch!
 
     // MARK: View Controller Lifecycle
 
@@ -22,6 +24,9 @@ class SettingsViewController: UIViewController {
 
         usernameLabel.text = UserDefaultStorage.getUsername();
         emailLabel.text = UserDefaultStorage.getEmail();
+        
+        soundSwitch.setOn(UserDefaultStorage.getSound(), animated: false)
+        bwSwitch.setOn(UserDefaultStorage.getBW(), animated: false)
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -41,5 +46,13 @@ class SettingsViewController: UIViewController {
         UserDefaultStorage.saveUsername("")
         UserDefaultStorage.saveEmail("")
         self.performSegueWithIdentifier("settingsToLogin", sender: self)
+    }
+
+    @IBAction func soundChanged(sender: UISwitch) {
+        UserDefaultStorage.saveSound(sender.on)
+    }
+
+    @IBAction func bwChanged(sender: UISwitch) {
+        UserDefaultStorage.saveBW(sender.on)
     }
 }

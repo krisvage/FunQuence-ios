@@ -19,7 +19,7 @@ class Users: API {
     
     typealias loginRegisterHandler = (token: String?, message: String?, error: String?) -> ()
     typealias meHandler = (username: String?, email: String?, errorOccured: Bool) -> ()
-    
+
     static let loginRegisterClosure: (Response<AnyObject, NSError>, loginRegisterHandler) -> () = { response, completionHandler in
         switch response.result {
         case .Success(_):
