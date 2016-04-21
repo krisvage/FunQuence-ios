@@ -9,6 +9,8 @@
 import UIKit
 
 class EmptyTableViewLabel: UILabel {
+    var emptyText: String?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -21,8 +23,13 @@ class EmptyTableViewLabel: UILabel {
         self.init(frame: CGRectZero)
         
         self.text = text
+        self.emptyText = text
         self.textAlignment = .Center
         self.font = UIFont(name: "Helvetica Neue Thin", size: 16)
         self.hidden = true
+    }
+    
+    func resetText() {
+        self.text = self.emptyText
     }
 }

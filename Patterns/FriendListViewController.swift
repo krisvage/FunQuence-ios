@@ -21,6 +21,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any friends yet")
     let spinner = TableActivityIndicatorView()
+    var networkError = false
     
     // MARK: View Controller Lifecycle
     
@@ -111,6 +112,11 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         if (count == 0) {
             emptyMessage.hidden = false
             tableView.separatorStyle = .None
+            if (networkError) {
+                emptyMessage.text = "No internet connection. Reconnect and reload."
+            } else {
+                emptyMessage.resetText()
+            }
         } else {
             emptyMessage.hidden = true
             tableView.separatorStyle = .SingleLine
@@ -121,9 +127,16 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         Friends.friendsList() { friends, error in
             if error == nil {
                 self.dataSource = friends!
+                self.networkError = false
                 self.dataDidChange()
             } else {
-                NSLog("error: %@", error!)
+                if error == "API http request failed" {
+                    self.networkError = true
+                    self.dataDidChange()
+                } else {
+                    self.networkError = false
+                    NSLog("error: %@", error!)
+                }
             }
             self.refreshControl?.endRefreshing()
             self.spinner.stopAnimating()
