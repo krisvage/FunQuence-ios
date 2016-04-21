@@ -20,8 +20,10 @@ class GetReadyOverlayViewController: UIViewController {
     var delegate: countdownStarter?
     
     override func viewDidLoad() {
-        secondsLabel.hidden = true;
         super.viewDidLoad()
+        secondsLabel.hidden = true;
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GetReadyOverlayViewController.overlayTapped))
+        view.addGestureRecognizer(tap)
         interval = setInterval(1) {
             if(self.counter == 0){
                 self.dismissViewControllerAnimated(true) {
@@ -31,6 +33,13 @@ class GetReadyOverlayViewController: UIViewController {
             }
             self.secondsLabel.text = String(self.counter)
             self.counter -= 1
+        }
+    }
+    
+    func overlayTapped(){
+        self.dismissViewControllerAnimated(true) {
+            self.interval.invalidate()
+            self.delegate?.startCountDown()
         }
     }
 

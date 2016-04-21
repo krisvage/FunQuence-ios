@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SequencePlaybackViewController: UIViewController {
+class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDelegate {
     var currentGame: Game?
     var light_sequence: [String]?
     
@@ -46,8 +46,10 @@ class SequencePlaybackViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         if currentGame != nil {
             light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
             
@@ -57,6 +59,9 @@ class SequencePlaybackViewController: UIViewController {
         }
         setUpPads()
         setUpView()
+    }
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
     
     override func viewDidAppear(animated: Bool) {

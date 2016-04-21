@@ -16,6 +16,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var invitationCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var unsubscribe: (() -> Void)?
     let textCellIdentifier = "InvitationCell"
     var dataSource = [Invitation]();
     var refreshControl: UIRefreshControl?
@@ -37,12 +38,18 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
+        self.unsubscribe = NotificationEvents.sharedInstance.subscribe(function: reloadData)
+        print("Notification subscribet")
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
         reloadData()
+    }
+    override func viewDidDisappear(animated: Bool) {
+        self.unsubscribe!();
+        print("Notification subscribet")
+
     }
     
     // MARK: Navigation

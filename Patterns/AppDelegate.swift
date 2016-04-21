@@ -40,6 +40,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var deviceTokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            deviceTokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        UserDefaultStorage.setDeviceToken(deviceTokenString)
+        if(UserDefaultStorage.getToken() != "" && UserDefaultStorage.getDeviceToken() != nil){
+            Users.setDeviceToken(deviceTokenString){
+                errorOccured in
+                print(errorOccured)
+            }
+        }
+        print("Token string: " + deviceTokenString)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NotificationEvents.sharedInstance.newNotificationReceived()
+    }
 
 
 }

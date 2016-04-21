@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SequenceResultViewController: UIViewController {
+class SequenceResultViewController: UIViewController, UIGestureRecognizerDelegate {
     var currentGame: Game?
     var roundResult: String?
     @IBOutlet weak var answerStatusIcon: UIImageView!
@@ -20,6 +20,7 @@ class SequenceResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         setUpView()
         Games.getById(currentGame!.gameId) { (game, error) in
             let usernames = [
@@ -31,6 +32,10 @@ class SequenceResultViewController: UIViewController {
             let winner = game!.status["status"]!["winner"] as! String
             self.roundResultLabel.text = self.getResultText(status, opponentUsername: username, winner: winner)
         }
+    }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
     
     func getResultText(gameStatus: String, opponentUsername: String, winner: String?) -> String {

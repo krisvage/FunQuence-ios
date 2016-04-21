@@ -75,7 +75,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         let email = emailField.text!
         let password = passwordField.text!
         
-        Users.register(username, email: email, password: password) { token, message, error in
+        Users.register(username, email: email, password: password, device_token: UserDefaultStorage.getDeviceToken()) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
                 self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})

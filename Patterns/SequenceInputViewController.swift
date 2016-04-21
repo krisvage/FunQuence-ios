@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SequenceInputViewController: UIViewController, countdownStarter {
+class SequenceInputViewController: UIViewController, countdownStarter, UIGestureRecognizerDelegate {
     var currentGame: Game?
     var light_sequence: [String]?
     
@@ -36,6 +36,8 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
+
         if currentGame != nil {
             light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
             
@@ -48,6 +50,10 @@ class SequenceInputViewController: UIViewController, countdownStarter {
         setUpView()
         countdownLabel.hidden = true;
         
+    }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
     
     @IBAction func padTapped(sender: AnyObject) {
@@ -138,12 +144,12 @@ class SequenceInputViewController: UIViewController, countdownStarter {
     }
     
     func startCountDown(){
-        var counter = 0;
         let countdownDuration = Double(self.light_sequence!.count * 3);
+        var counter = Int(countdownDuration);
         self.addCircleWithAnimation(countdownDuration)
         
         secondInterval = setInterval(1) {
-            counter += 1
+            counter -= 1
             self.countdownLabel.text = String(counter)
         }
         
@@ -159,7 +165,7 @@ class SequenceInputViewController: UIViewController, countdownStarter {
         countdownTimer.invalidate()
         cancelCircleAnimation()
         freezeButtons();
-        countdownLabel.text = "Done"
+        countdownLabel.hidden = true;
     }
     
     func addCircleWithAnimation(duration: Double){

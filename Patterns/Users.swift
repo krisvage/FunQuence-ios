@@ -14,6 +14,8 @@ class Users: API {
     static let loginRoute = Route(path: basePath + "/login", method: .POST)
     static let registerRoute = Route(path: basePath + "/users", method: .POST)
     static let meRoute = Route(path: basePath + "/users/me", method: .GET)
+    static let setDeviceTokenRoute = Route(path: basePath + "/users/me", method: .PUT)
+
     
     typealias loginRegisterHandler = (token: String?, message: String?, error: String?) -> ()
     typealias meHandler = (username: String?, email: String?, errorOccured: Bool) -> ()
@@ -58,11 +60,34 @@ class Users: API {
      
      => token, message, error
      */
-    static func register(username: String, email: String, password: String, completionHandler: loginRegisterHandler) {
-        let params = ["username": username, "email": email, "password": password]
+    
+    static func register(username: String, email: String, password: String, device_token: String?, completionHandler: loginRegisterHandler) {
+        var device_token_string = ""
+        if device_token != nil {
+            device_token_string = device_token!;
+        }
+        
+        let params = ["username": username, "email": email, "password": password, "device_token": device_token_string]
         
         request(registerRoute, parameters: params) { response in
             loginRegisterClosure(response, completionHandler)
+        }
+    }
+    
+    /**
+     PUT /users/me
+     
+     Set new device_token for user
+     
+     => token, message, error
+     */
+    static func setDeviceToken(device_token: String, completionHandler: ((errorOccured: Bool) -> Void)?) {
+        let params = [ "device_token": device_token]
+        
+        request(setDeviceTokenRoute, parameters: params) { response in
+            if(completionHandler != nil){
+                completionHandler!(errorOccured: false)
+            }
         }
     }
 

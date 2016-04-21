@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate {
     
     // MARK: Properties
 
@@ -16,6 +16,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var gamesCountLabel: UILabel!
     @IBOutlet weak var notificationBadge: UIButton!
 
+    var unsubscribe: (() -> Void)?
     let textCellIdentifier = "GameCell"
     var gamesList = [Game]();
     var invitationCount = 0
@@ -30,27 +31,33 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-
         tableView.backgroundView = emptyMessage
         tableView.separatorStyle = .None
-        
         self.notificationBadge.hidden = true
-
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        self.unsubscribe = NotificationEvents.sharedInstance.subscribe(function: reloadData)
     }
+
     
+    func reloadData(){
+        reloadGames()
+        reloadInvitationCount()
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        reloadData()
-        reloadInvitationCount()
-        
         if UserDefaultStorage.getToken().isEmpty {
             performSegueWithIdentifier("launchLogin", sender: self)
+            return;
         }
+        reloadData()
     }
+    
 
     // MARK: Navigation
     
@@ -124,7 +131,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         self.gamesCountLabel.text = String(count)
     }
     
-    func reloadData() {
+    func reloadGames() {
         Games.all { games, error in
             if error == nil {
                 self.gamesList = games!

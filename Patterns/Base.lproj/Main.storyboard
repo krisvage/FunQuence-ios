@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvD-rp-1kC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -10,7 +10,7 @@
         <!--Main Feed View Controller-->
         <scene sceneID="Rah-Rz-ezN">
             <objects>
-                <viewController id="3bD-Qb-EAp" customClass="MainFeedViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3bD-Qb-EAp" customClass="MainFeedViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sd8-vw-Egx"/>
                         <viewControllerLayoutGuide type="bottom" id="HfF-xB-6ku"/>
@@ -68,11 +68,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="76" id="vb2-Tj-Xck" customClass="GameCellTableViewCell" customModule="Patterns" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="76" id="vb2-Tj-Xck" customClass="GameCellTableViewCell" customModule="FunQuence" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vb2-Tj-Xck" id="NLY-vg-itX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up7-qm-kbt">
@@ -314,14 +314,28 @@
                                 <exclude reference="8As-UH-ZF6"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ywd-bO-Hi5"/>
+                                <exclude reference="zMx-db-xzo"/>
+                                <exclude reference="OQE-Ry-XCa"/>
+                                <exclude reference="e2F-Ew-dAU"/>
+                                <exclude reference="8Xk-hX-5Ok"/>
+                                <exclude reference="9Uk-7s-rWD"/>
+                                <exclude reference="gqG-Uo-RSs"/>
+                                <exclude reference="ptd-V5-AOU"/>
+                                <exclude reference="5xw-Ye-YRX"/>
+                                <exclude reference="7dm-xC-nGp"/>
+                                <exclude reference="xHF-6v-t29"/>
+                                <exclude reference="UE8-uw-8ub"/>
+                                <exclude reference="aG3-0f-lpu"/>
+                                <exclude reference="tcw-rm-wsm"/>
+                                <exclude reference="55b-fq-U01"/>
+                                <exclude reference="5yr-eq-Zsl"/>
+                                <exclude reference="ptD-aZ-hGo"/>
+                                <exclude reference="seT-ZH-mD8"/>
                                 <exclude reference="gvh-Iy-AzC"/>
                                 <exclude reference="i2D-0C-g2i"/>
                                 <exclude reference="kjh-cd-tks"/>
                                 <exclude reference="ybW-8X-e1m"/>
-                                <exclude reference="lOx-cC-icr"/>
-                                <exclude reference="sdJ-wB-KcV"/>
-                                <exclude reference="OQE-Ry-XCa"/>
-                                <exclude reference="e2F-Ew-dAU"/>
                                 <exclude reference="5bX-Ea-3Gt"/>
                                 <exclude reference="8G5-Vd-lGh"/>
                                 <exclude reference="ChT-cz-Ovn"/>
@@ -330,12 +344,10 @@
                                 <exclude reference="aS3-Qq-KPb"/>
                                 <exclude reference="ebc-wD-5N8"/>
                                 <exclude reference="reB-m5-B2L"/>
-                                <exclude reference="8Xk-hX-5Ok"/>
-                                <exclude reference="9Uk-7s-rWD"/>
-                                <exclude reference="gqG-Uo-RSs"/>
-                                <exclude reference="ptd-V5-AOU"/>
                                 <exclude reference="4c9-dG-cdD"/>
                                 <exclude reference="CHv-Rd-TwR"/>
+                                <exclude reference="lOx-cC-icr"/>
+                                <exclude reference="sdJ-wB-KcV"/>
                                 <exclude reference="0gq-Kf-VL6"/>
                                 <exclude reference="66t-3V-biz"/>
                                 <exclude reference="9Wn-0L-Ob0"/>
@@ -344,18 +356,6 @@
                                 <exclude reference="kbS-9y-iEs"/>
                                 <exclude reference="nk5-6o-OVW"/>
                                 <exclude reference="sZj-2T-oYZ"/>
-                                <exclude reference="UE8-uw-8ub"/>
-                                <exclude reference="aG3-0f-lpu"/>
-                                <exclude reference="tcw-rm-wsm"/>
-                                <exclude reference="5xw-Ye-YRX"/>
-                                <exclude reference="55b-fq-U01"/>
-                                <exclude reference="5yr-eq-Zsl"/>
-                                <exclude reference="ptD-aZ-hGo"/>
-                                <exclude reference="seT-ZH-mD8"/>
-                                <exclude reference="7dm-xC-nGp"/>
-                                <exclude reference="xHF-6v-t29"/>
-                                <exclude reference="ywd-bO-Hi5"/>
-                                <exclude reference="zMx-db-xzo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -373,14 +373,28 @@
                                 <include reference="8As-UH-ZF6"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ywd-bO-Hi5"/>
+                                <include reference="zMx-db-xzo"/>
+                                <include reference="OQE-Ry-XCa"/>
+                                <include reference="e2F-Ew-dAU"/>
+                                <include reference="8Xk-hX-5Ok"/>
+                                <exclude reference="9Uk-7s-rWD"/>
+                                <include reference="gqG-Uo-RSs"/>
+                                <exclude reference="ptd-V5-AOU"/>
+                                <include reference="5xw-Ye-YRX"/>
+                                <include reference="7dm-xC-nGp"/>
+                                <include reference="xHF-6v-t29"/>
+                                <include reference="UE8-uw-8ub"/>
+                                <include reference="aG3-0f-lpu"/>
+                                <include reference="tcw-rm-wsm"/>
+                                <exclude reference="55b-fq-U01"/>
+                                <include reference="5yr-eq-Zsl"/>
+                                <include reference="ptD-aZ-hGo"/>
+                                <exclude reference="seT-ZH-mD8"/>
                                 <exclude reference="gvh-Iy-AzC"/>
                                 <include reference="i2D-0C-g2i"/>
                                 <include reference="kjh-cd-tks"/>
                                 <exclude reference="ybW-8X-e1m"/>
-                                <include reference="lOx-cC-icr"/>
-                                <include reference="sdJ-wB-KcV"/>
-                                <include reference="OQE-Ry-XCa"/>
-                                <include reference="e2F-Ew-dAU"/>
                                 <include reference="5bX-Ea-3Gt"/>
                                 <include reference="8G5-Vd-lGh"/>
                                 <exclude reference="ChT-cz-Ovn"/>
@@ -389,12 +403,10 @@
                                 <exclude reference="aS3-Qq-KPb"/>
                                 <exclude reference="ebc-wD-5N8"/>
                                 <exclude reference="reB-m5-B2L"/>
-                                <include reference="8Xk-hX-5Ok"/>
-                                <exclude reference="9Uk-7s-rWD"/>
-                                <include reference="gqG-Uo-RSs"/>
-                                <exclude reference="ptd-V5-AOU"/>
                                 <include reference="4c9-dG-cdD"/>
                                 <include reference="CHv-Rd-TwR"/>
+                                <include reference="lOx-cC-icr"/>
+                                <include reference="sdJ-wB-KcV"/>
                                 <include reference="0gq-Kf-VL6"/>
                                 <exclude reference="66t-3V-biz"/>
                                 <exclude reference="9Wn-0L-Ob0"/>
@@ -403,18 +415,6 @@
                                 <exclude reference="kbS-9y-iEs"/>
                                 <exclude reference="nk5-6o-OVW"/>
                                 <include reference="sZj-2T-oYZ"/>
-                                <include reference="UE8-uw-8ub"/>
-                                <include reference="aG3-0f-lpu"/>
-                                <include reference="tcw-rm-wsm"/>
-                                <include reference="5xw-Ye-YRX"/>
-                                <exclude reference="55b-fq-U01"/>
-                                <include reference="5yr-eq-Zsl"/>
-                                <include reference="ptD-aZ-hGo"/>
-                                <exclude reference="seT-ZH-mD8"/>
-                                <include reference="7dm-xC-nGp"/>
-                                <include reference="xHF-6v-t29"/>
-                                <exclude reference="ywd-bO-Hi5"/>
-                                <include reference="zMx-db-xzo"/>
                             </mask>
                         </variation>
                     </view>
@@ -437,7 +437,7 @@
         <!--Login View Controller-->
         <scene sceneID="JUD-2P-PxG">
             <objects>
-                <viewController id="vPi-68-ekc" customClass="LoginViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vPi-68-ekc" customClass="LoginViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rqI-F7-glU"/>
                         <viewControllerLayoutGuide type="bottom" id="BwC-my-BlB"/>
@@ -469,14 +469,14 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="k12-IR-NAV"/>
                                                         <exclude reference="Ypp-6M-hE4"/>
+                                                        <exclude reference="k12-IR-NAV"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="k12-IR-NAV"/>
                                                         <include reference="Ypp-6M-hE4"/>
+                                                        <include reference="k12-IR-NAV"/>
                                                     </mask>
                                                 </variation>
                                             </textField>
@@ -498,14 +498,14 @@
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="mpH-bZ-Hva"/>
                                                         <exclude reference="DXX-HH-fY7"/>
+                                                        <exclude reference="mpH-bZ-Hva"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="mpH-bZ-Hva"/>
                                                         <include reference="DXX-HH-fY7"/>
+                                                        <include reference="mpH-bZ-Hva"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -529,18 +529,18 @@
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
+                                                        <exclude reference="GQF-vH-7lz"/>
+                                                        <exclude reference="H0K-99-BpU"/>
                                                         <exclude reference="Xtl-Yp-xJ4"/>
                                                         <exclude reference="h3u-Vd-LdY"/>
-                                                        <exclude reference="H0K-99-BpU"/>
-                                                        <exclude reference="GQF-vH-7lz"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
+                                                        <include reference="GQF-vH-7lz"/>
+                                                        <include reference="H0K-99-BpU"/>
                                                         <exclude reference="Xtl-Yp-xJ4"/>
                                                         <exclude reference="h3u-Vd-LdY"/>
-                                                        <include reference="H0K-99-BpU"/>
-                                                        <include reference="GQF-vH-7lz"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -557,14 +557,14 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="jb1-eu-aOG"/>
                                                         <exclude reference="aBS-xp-MKe"/>
+                                                        <exclude reference="jb1-eu-aOG"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="jb1-eu-aOG"/>
                                                         <include reference="aBS-xp-MKe"/>
+                                                        <include reference="jb1-eu-aOG"/>
                                                     </mask>
                                                 </variation>
                                             </textField>
@@ -612,22 +612,22 @@ is incorrect.</string>
                                                 <exclude reference="VuW-s7-FNM"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="jiZ-K4-tc5"/>
-                                                <exclude reference="myD-DU-TWU"/>
                                                 <exclude reference="NKs-Qi-ohi"/>
                                                 <exclude reference="QDC-h5-kJw"/>
+                                                <exclude reference="QGF-nJ-REO"/>
+                                                <exclude reference="mKa-tL-WzM"/>
+                                                <exclude reference="GoQ-Wv-ssQ"/>
+                                                <exclude reference="Scf-DF-oIH"/>
                                                 <exclude reference="Bp8-f9-lrL"/>
                                                 <exclude reference="Ins-Y7-DkO"/>
                                                 <exclude reference="gKL-to-FW9"/>
                                                 <exclude reference="xVd-yH-qsT"/>
-                                                <exclude reference="QGF-nJ-REO"/>
-                                                <exclude reference="mKa-tL-WzM"/>
+                                                <exclude reference="jiZ-K4-tc5"/>
+                                                <exclude reference="myD-DU-TWU"/>
                                                 <exclude reference="6f4-B4-TOG"/>
                                                 <exclude reference="DkI-j5-iSA"/>
                                                 <exclude reference="agO-4B-LQF"/>
                                                 <exclude reference="b81-v3-z6j"/>
-                                                <exclude reference="GoQ-Wv-ssQ"/>
-                                                <exclude reference="Scf-DF-oIH"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -642,22 +642,22 @@ is incorrect.</string>
                                                 <include reference="VuW-s7-FNM"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="jiZ-K4-tc5"/>
-                                                <include reference="myD-DU-TWU"/>
                                                 <include reference="NKs-Qi-ohi"/>
                                                 <include reference="QDC-h5-kJw"/>
+                                                <include reference="QGF-nJ-REO"/>
+                                                <include reference="mKa-tL-WzM"/>
+                                                <include reference="GoQ-Wv-ssQ"/>
+                                                <include reference="Scf-DF-oIH"/>
                                                 <include reference="Bp8-f9-lrL"/>
                                                 <include reference="Ins-Y7-DkO"/>
                                                 <include reference="gKL-to-FW9"/>
                                                 <include reference="xVd-yH-qsT"/>
-                                                <include reference="QGF-nJ-REO"/>
-                                                <include reference="mKa-tL-WzM"/>
+                                                <include reference="jiZ-K4-tc5"/>
+                                                <include reference="myD-DU-TWU"/>
                                                 <include reference="6f4-B4-TOG"/>
                                                 <include reference="DkI-j5-iSA"/>
                                                 <include reference="agO-4B-LQF"/>
                                                 <include reference="b81-v3-z6j"/>
-                                                <include reference="GoQ-Wv-ssQ"/>
-                                                <include reference="Scf-DF-oIH"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -718,6 +718,8 @@ is incorrect.</string>
                                 <exclude reference="NzJ-mR-UQP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="MJ4-IK-wvS"/>
+                                <exclude reference="ic2-j3-rQE"/>
                                 <exclude reference="3I7-nS-mDM"/>
                                 <exclude reference="9mi-E3-Vjq"/>
                                 <exclude reference="O0J-iq-qOf"/>
@@ -728,8 +730,6 @@ is incorrect.</string>
                                 <exclude reference="eJz-nf-tTr"/>
                                 <exclude reference="gIo-Pw-8rx"/>
                                 <exclude reference="p9k-NB-Jin"/>
-                                <exclude reference="MJ4-IK-wvS"/>
-                                <exclude reference="ic2-j3-rQE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -737,6 +737,8 @@ is incorrect.</string>
                                 <include reference="NzJ-mR-UQP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="MJ4-IK-wvS"/>
+                                <exclude reference="ic2-j3-rQE"/>
                                 <exclude reference="3I7-nS-mDM"/>
                                 <exclude reference="9mi-E3-Vjq"/>
                                 <exclude reference="O0J-iq-qOf"/>
@@ -747,8 +749,6 @@ is incorrect.</string>
                                 <exclude reference="eJz-nf-tTr"/>
                                 <include reference="gIo-Pw-8rx"/>
                                 <exclude reference="p9k-NB-Jin"/>
-                                <exclude reference="MJ4-IK-wvS"/>
-                                <exclude reference="ic2-j3-rQE"/>
                             </mask>
                         </variation>
                     </view>
@@ -772,13 +772,13 @@ is incorrect.</string>
         <!--Register View Controller-->
         <scene sceneID="S96-QA-RjI">
             <objects>
-                <viewController id="7ar-XI-pO1" customClass="RegisterViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7ar-XI-pO1" customClass="RegisterViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pRj-QP-xr0"/>
                         <viewControllerLayoutGuide type="bottom" id="cg9-Kd-cID"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fvO-hw-Oed">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFx-BS-krN">
@@ -800,18 +800,18 @@ is incorrect.</string>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" secureTextEntry="YES"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="dPy-rt-mbA"/>
                                                         <exclude reference="6bR-mw-uQh"/>
-                                                        <exclude reference="tav-zy-MhD"/>
                                                         <exclude reference="C7f-cb-tf0"/>
+                                                        <exclude reference="dPy-rt-mbA"/>
+                                                        <exclude reference="tav-zy-MhD"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <exclude reference="dPy-rt-mbA"/>
                                                         <exclude reference="6bR-mw-uQh"/>
-                                                        <include reference="tav-zy-MhD"/>
                                                         <include reference="C7f-cb-tf0"/>
+                                                        <exclude reference="dPy-rt-mbA"/>
+                                                        <include reference="tav-zy-MhD"/>
                                                     </mask>
                                                 </variation>
                                             </textField>
@@ -843,18 +843,18 @@ is incorrect.</string>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="Vmh-UY-3PH"/>
                                                         <exclude reference="6Ta-le-bi3"/>
-                                                        <exclude reference="uEL-cp-oSp"/>
                                                         <exclude reference="SfW-ZZ-HSw"/>
+                                                        <exclude reference="Vmh-UY-3PH"/>
+                                                        <exclude reference="uEL-cp-oSp"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="Vmh-UY-3PH"/>
                                                         <include reference="6Ta-le-bi3"/>
-                                                        <exclude reference="uEL-cp-oSp"/>
                                                         <exclude reference="SfW-ZZ-HSw"/>
+                                                        <include reference="Vmh-UY-3PH"/>
+                                                        <exclude reference="uEL-cp-oSp"/>
                                                     </mask>
                                                 </variation>
                                             </textField>
@@ -866,14 +866,14 @@ is incorrect.</string>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="nDK-90-Ckg"/>
                                                         <exclude reference="IIP-PC-Va1"/>
+                                                        <exclude reference="nDK-90-Ckg"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="nDK-90-Ckg"/>
                                                         <include reference="IIP-PC-Va1"/>
+                                                        <include reference="nDK-90-Ckg"/>
                                                     </mask>
                                                 </variation>
                                             </imageView>
@@ -891,18 +891,18 @@ is incorrect.</string>
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="FQx-yA-agP"/>
-                                                        <exclude reference="RKD-J7-5j9"/>
-                                                        <exclude reference="Q5V-mK-53B"/>
                                                         <exclude reference="9YO-PC-hyV"/>
+                                                        <exclude reference="FQx-yA-agP"/>
+                                                        <exclude reference="Q5V-mK-53B"/>
+                                                        <exclude reference="RKD-J7-5j9"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="FQx-yA-agP"/>
-                                                        <exclude reference="RKD-J7-5j9"/>
-                                                        <exclude reference="Q5V-mK-53B"/>
                                                         <include reference="9YO-PC-hyV"/>
+                                                        <include reference="FQx-yA-agP"/>
+                                                        <exclude reference="Q5V-mK-53B"/>
+                                                        <exclude reference="RKD-J7-5j9"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -922,18 +922,18 @@ is incorrect.</string>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="j4a-61-9wQ"/>
                                                         <exclude reference="BDt-lW-8yL"/>
                                                         <exclude reference="GyW-Ss-wzD"/>
                                                         <exclude reference="HbC-C7-59W"/>
+                                                        <exclude reference="j4a-61-9wQ"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="j4a-61-9wQ"/>
                                                         <exclude reference="BDt-lW-8yL"/>
                                                         <include reference="GyW-Ss-wzD"/>
                                                         <exclude reference="HbC-C7-59W"/>
+                                                        <include reference="j4a-61-9wQ"/>
                                                     </mask>
                                                 </variation>
                                             </textField>
@@ -978,22 +978,22 @@ is incorrect.</string>
                                                 <exclude reference="3Ql-NU-0AK"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="8h2-9i-LR3"/>
-                                                <exclude reference="ksA-US-4DC"/>
                                                 <exclude reference="LTb-wj-aw3"/>
                                                 <exclude reference="n9B-Yb-Djg"/>
+                                                <exclude reference="dTB-5h-K6v"/>
+                                                <exclude reference="i4w-Eo-zr3"/>
+                                                <exclude reference="L0x-nS-60G"/>
+                                                <exclude reference="mjf-7C-KVK"/>
                                                 <exclude reference="MD3-tx-stB"/>
                                                 <exclude reference="XU6-mE-aXa"/>
                                                 <exclude reference="4Gm-Qw-8Oo"/>
                                                 <exclude reference="VOA-no-CcZ"/>
-                                                <exclude reference="dTB-5h-K6v"/>
-                                                <exclude reference="i4w-Eo-zr3"/>
                                                 <exclude reference="2eJ-dP-J3X"/>
                                                 <exclude reference="Hx3-h3-2vG"/>
                                                 <exclude reference="bKC-UJ-5aa"/>
                                                 <exclude reference="qf0-cT-hR4"/>
-                                                <exclude reference="L0x-nS-60G"/>
-                                                <exclude reference="mjf-7C-KVK"/>
+                                                <exclude reference="8h2-9i-LR3"/>
+                                                <exclude reference="ksA-US-4DC"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -1007,22 +1007,22 @@ is incorrect.</string>
                                                 <include reference="3Ql-NU-0AK"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="8h2-9i-LR3"/>
-                                                <include reference="ksA-US-4DC"/>
                                                 <include reference="LTb-wj-aw3"/>
                                                 <include reference="n9B-Yb-Djg"/>
+                                                <include reference="dTB-5h-K6v"/>
+                                                <include reference="i4w-Eo-zr3"/>
+                                                <include reference="L0x-nS-60G"/>
+                                                <include reference="mjf-7C-KVK"/>
                                                 <include reference="MD3-tx-stB"/>
                                                 <include reference="XU6-mE-aXa"/>
                                                 <include reference="4Gm-Qw-8Oo"/>
                                                 <include reference="VOA-no-CcZ"/>
-                                                <include reference="dTB-5h-K6v"/>
-                                                <include reference="i4w-Eo-zr3"/>
                                                 <include reference="2eJ-dP-J3X"/>
                                                 <include reference="Hx3-h3-2vG"/>
                                                 <exclude reference="bKC-UJ-5aa"/>
                                                 <exclude reference="qf0-cT-hR4"/>
-                                                <include reference="L0x-nS-60G"/>
-                                                <include reference="mjf-7C-KVK"/>
+                                                <include reference="8h2-9i-LR3"/>
+                                                <include reference="ksA-US-4DC"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1075,10 +1075,10 @@ is incorrect.</string>
                                 <exclude reference="LFx-BS-krN"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="aOX-kX-B3O"/>
                                 <exclude reference="N1j-7F-Y5E"/>
                                 <exclude reference="n2y-hD-cs5"/>
                                 <exclude reference="tAL-dw-Qnt"/>
-                                <exclude reference="aOX-kX-B3O"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1086,10 +1086,10 @@ is incorrect.</string>
                                 <include reference="LFx-BS-krN"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="aOX-kX-B3O"/>
                                 <include reference="N1j-7F-Y5E"/>
                                 <include reference="n2y-hD-cs5"/>
                                 <include reference="tAL-dw-Qnt"/>
-                                <include reference="aOX-kX-B3O"/>
                             </mask>
                         </variation>
                     </view>
@@ -1111,7 +1111,7 @@ is incorrect.</string>
         <!--Friend List View Controller-->
         <scene sceneID="p1S-07-EDy">
             <objects>
-                <viewController id="tox-fi-jUh" customClass="FriendListViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tox-fi-jUh" customClass="FriendListViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="19Y-P4-Etp"/>
                         <viewControllerLayoutGuide type="bottom" id="MTw-1n-4FN"/>
@@ -1169,11 +1169,11 @@ is incorrect.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="76" id="gWr-hb-G71" customClass="FriendCellTableViewCell" customModule="Patterns" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="76" id="gWr-hb-G71" customClass="FriendCellTableViewCell" customModule="FunQuence" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWr-hb-G71" id="RlM-Xv-n8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27h-gW-c8s">
@@ -1320,7 +1320,7 @@ is incorrect.</string>
                                     <constraint firstAttribute="width" constant="23" id="vhI-Kd-McT"/>
                                     <constraint firstAttribute="height" constant="23" id="wOi-RA-aJx"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="Plus sign"/>
+                                <state key="normal" backgroundImage="Plus sign"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="vhI-Kd-McT"/>
@@ -1387,27 +1387,27 @@ is incorrect.</string>
                                 <exclude reference="khQ-nX-QKq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="k6L-uP-lTX"/>
-                                <exclude reference="nc5-vO-QAd"/>
-                                <exclude reference="u3W-0h-TbM"/>
-                                <exclude reference="wvI-lp-Vgr"/>
+                                <exclude reference="Qn4-Qj-6EI"/>
                                 <exclude reference="09h-oI-R8U"/>
                                 <exclude reference="K0w-7Q-Zgg"/>
-                                <exclude reference="BEg-SC-9YZ"/>
-                                <exclude reference="voa-Rk-FCR"/>
                                 <exclude reference="J4x-w8-c3x"/>
                                 <exclude reference="eIy-kN-1fS"/>
+                                <exclude reference="k6L-uP-lTX"/>
+                                <exclude reference="nc5-vO-QAd"/>
+                                <exclude reference="HRB-y2-WIN"/>
+                                <exclude reference="mjG-ZA-Dpz"/>
+                                <exclude reference="1PD-7V-CGp"/>
+                                <exclude reference="LAP-FI-aEK"/>
                                 <exclude reference="F0G-ql-47a"/>
                                 <exclude reference="pW9-RK-M0O"/>
+                                <exclude reference="u3W-0h-TbM"/>
+                                <exclude reference="wvI-lp-Vgr"/>
+                                <exclude reference="BEg-SC-9YZ"/>
+                                <exclude reference="voa-Rk-FCR"/>
                                 <exclude reference="6vl-AJ-Wiv"/>
                                 <exclude reference="Psg-7Q-21B"/>
                                 <exclude reference="gya-ei-NFg"/>
                                 <exclude reference="umI-sl-WH4"/>
-                                <exclude reference="1PD-7V-CGp"/>
-                                <exclude reference="LAP-FI-aEK"/>
-                                <exclude reference="HRB-y2-WIN"/>
-                                <exclude reference="mjG-ZA-Dpz"/>
-                                <exclude reference="Qn4-Qj-6EI"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1423,27 +1423,27 @@ is incorrect.</string>
                                 <include reference="khQ-nX-QKq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="k6L-uP-lTX"/>
-                                <include reference="nc5-vO-QAd"/>
-                                <include reference="u3W-0h-TbM"/>
-                                <include reference="wvI-lp-Vgr"/>
+                                <include reference="Qn4-Qj-6EI"/>
                                 <include reference="09h-oI-R8U"/>
                                 <include reference="K0w-7Q-Zgg"/>
-                                <include reference="BEg-SC-9YZ"/>
-                                <include reference="voa-Rk-FCR"/>
                                 <include reference="J4x-w8-c3x"/>
                                 <include reference="eIy-kN-1fS"/>
+                                <include reference="k6L-uP-lTX"/>
+                                <include reference="nc5-vO-QAd"/>
+                                <include reference="HRB-y2-WIN"/>
+                                <include reference="mjG-ZA-Dpz"/>
+                                <include reference="1PD-7V-CGp"/>
+                                <include reference="LAP-FI-aEK"/>
                                 <include reference="F0G-ql-47a"/>
                                 <include reference="pW9-RK-M0O"/>
+                                <include reference="u3W-0h-TbM"/>
+                                <include reference="wvI-lp-Vgr"/>
+                                <include reference="BEg-SC-9YZ"/>
+                                <include reference="voa-Rk-FCR"/>
                                 <include reference="6vl-AJ-Wiv"/>
                                 <include reference="Psg-7Q-21B"/>
                                 <exclude reference="gya-ei-NFg"/>
                                 <include reference="umI-sl-WH4"/>
-                                <include reference="1PD-7V-CGp"/>
-                                <include reference="LAP-FI-aEK"/>
-                                <include reference="HRB-y2-WIN"/>
-                                <include reference="mjG-ZA-Dpz"/>
-                                <include reference="Qn4-Qj-6EI"/>
                             </mask>
                         </variation>
                     </view>
@@ -1478,7 +1478,7 @@ is incorrect.</string>
         <!--Sequence Playback View Controller-->
         <scene sceneID="nmU-r4-hrj">
             <objects>
-                <viewController id="dKC-zP-CHX" customClass="SequencePlaybackViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dKC-zP-CHX" customClass="SequencePlaybackViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5r8-Yq-XFZ"/>
                         <viewControllerLayoutGuide type="bottom" id="2nA-nb-WW1"/>
@@ -1792,7 +1792,7 @@ to see the sequence playback.</string>
         <!--Invitation View Controller-->
         <scene sceneID="XmK-XQ-KbQ">
             <objects>
-                <viewController id="4eW-tD-1in" customClass="InvitationViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4eW-tD-1in" customClass="InvitationViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NeI-kw-O68"/>
                         <viewControllerLayoutGuide type="bottom" id="9w4-S0-tZt"/>
@@ -1827,11 +1827,11 @@ to see the sequence playback.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvitationCell" rowHeight="76" id="nQv-DG-KVP" customClass="InvitationCellViewController" customModule="Patterns" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvitationCell" rowHeight="76" id="nQv-DG-KVP" customClass="InvitationCellViewController" customModule="FunQuence" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nQv-DG-KVP" id="tk7-7Y-RH0">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU2-9B-ICy">
@@ -1853,7 +1853,7 @@ to see the sequence playback.</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="141" y="17" width="81" height="41"/>
+                                                        <rect key="frame" x="141" y="17.5" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="844-c0-UNm"/>
                                                         </mask>
@@ -1874,7 +1874,7 @@ to see the sequence playback.</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="50" y="17" width="81" height="41"/>
+                                                        <rect key="frame" x="50" y="17.5" width="81" height="41"/>
                                                         <mask key="constraints">
                                                             <include reference="c03-vg-9j9"/>
                                                         </mask>
@@ -2114,12 +2114,12 @@ to see the sequence playback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkr-E3-kg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365" y="-473"/>
+            <point key="canvasLocation" x="1365" y="-448"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="RRs-6d-6PK">
             <objects>
-                <viewController id="mns-Uc-pT7" customClass="SettingsViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mns-Uc-pT7" customClass="SettingsViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T21-YD-qpv"/>
                         <viewControllerLayoutGuide type="bottom" id="OJ5-2u-ZPB"/>
@@ -2371,7 +2371,7 @@ to see the sequence playback.</string>
         <!--Sequence Input View Controller-->
         <scene sceneID="ikG-rE-9eT">
             <objects>
-                <viewController id="OiR-UG-b1t" customClass="SequenceInputViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OiR-UG-b1t" customClass="SequenceInputViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cmb-OM-y54"/>
                         <viewControllerLayoutGuide type="bottom" id="qyA-xE-V6A"/>
@@ -2717,7 +2717,7 @@ to see the sequence playback.</string>
         <!--Get Ready Overlay View Controller-->
         <scene sceneID="AZG-ks-NqV">
             <objects>
-                <viewController id="HTg-B9-DUB" customClass="GetReadyOverlayViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HTg-B9-DUB" customClass="GetReadyOverlayViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mOK-CI-GuL"/>
                         <viewControllerLayoutGuide type="bottom" id="ePC-gq-WO8"/>
@@ -2781,7 +2781,7 @@ to see the sequence playback.</string>
         <!--Sequence Result View Controller-->
         <scene sceneID="iel-HB-Rtz">
             <objects>
-                <viewController id="2ff-cB-dDi" customClass="SequenceResultViewController" customModule="Patterns" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ff-cB-dDi" customClass="SequenceResultViewController" customModule="FunQuence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9df-AK-8PF"/>
                         <viewControllerLayoutGuide type="bottom" id="lhS-qZ-CgH"/>

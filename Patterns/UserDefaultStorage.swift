@@ -34,4 +34,15 @@ class UserDefaultStorage {
     static func getEmail() -> String {
         return defaults.objectForKey("userEmail") as? String ?? ""
     }
+    
+    // Device token is specific to each device and is needed for Push Notifications
+    // Not to be confused with token (JWT)
+    static func getDeviceToken() -> String? {
+        return defaults.objectForKey("deviceToken") as? String
+    }
+    // Device token is specific to each device and is needed for Push Notifications
+    // Not to be confused with token (JWT)
+    static func setDeviceToken(deviceToken: String) {
+        defaults.setObject(deviceToken, forKey: "deviceToken")
+    }
 }
