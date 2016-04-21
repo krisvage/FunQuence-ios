@@ -21,6 +21,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var invitationCount = 0
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any games yet")
+    let spinner = TableActivityIndicatorView()
 
     // MARK: View Controller Lifecycle
 
@@ -31,7 +32,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
 
-        tableView.backgroundView = emptyMessage
+        tableView.backgroundView = spinner
+        spinner.center = CGPointMake(tableView.frame.size.width / 2, tableView.frame.size.height / 2)
         tableView.separatorStyle = .None
         
         self.notificationBadge.hidden = true
@@ -107,7 +109,10 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 return true;
             }
             return false;
-            
+        }
+
+        if (tableView.backgroundView == spinner) {
+            tableView.backgroundView = emptyMessage
         }
         
         let count = self.gamesList.count
@@ -133,6 +138,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 NSLog("error: %@", error!)
             }
             self.refreshControl!.endRefreshing()
+            self.spinner.stopAnimating()
         }
         reloadInvitationCount()
     }

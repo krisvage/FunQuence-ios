@@ -68,6 +68,8 @@
 		F1A9EDB81CC447EA00CD289E /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F142BE0C1CBD3C320052E6C9 /* Spring.framework */; };
 		F1E9E5E31CC9218C0067131A /* GameAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */; };
 		F1E9E5E41CC921950067131A /* GameAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */; };
+		F1E9E5E61CC92EA40067131A /* TableActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E51CC92EA40067131A /* TableActivityIndicatorView.swift */; };
+		F1E9E5E71CC92EA70067131A /* TableActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9E5E51CC92EA40067131A /* TableActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,7 @@
 		F19D30E51CBBD3EE004A2B07 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F19D30E81CBBD67D004A2B07 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		F1E9E5E21CC9218C0067131A /* GameAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAudioPlayer.swift; sourceTree = "<group>"; };
+		F1E9E5E51CC92EA40067131A /* TableActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F10D4C991CC53F0C00B3C359 /* EmptyTableViewLabel.swift */,
+				F1E9E5E51CC92EA40067131A /* TableActivityIndicatorView.swift */,
 			);
 			name = UIelements;
 			sourceTree = "<group>";
@@ -432,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E9E5E61CC92EA40067131A /* TableActivityIndicatorView.swift in Sources */,
 				26827F121CC58C260053F9E5 /* SequenceResultViewController.swift in Sources */,
 				F100A8CF1CBD409400E517C7 /* API.swift in Sources */,
 				26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */,
@@ -490,6 +495,7 @@
 				F14075B61C85DF1300EEADC1 /* PatternsTests.swift in Sources */,
 				F117FC1C1CC0FD8100B383FF /* LoginViewController.swift in Sources */,
 				F117FC161CC0FD6B00B383FF /* API.swift in Sources */,
+				F1E9E5E71CC92EA70067131A /* TableActivityIndicatorView.swift in Sources */,
 				264BB4EC1CC52E19003508D9 /* SequenceInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

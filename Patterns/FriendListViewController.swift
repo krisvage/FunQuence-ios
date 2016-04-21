@@ -20,6 +20,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     var inputFieldInAlertView: UITextField = UITextField()
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any friends yet")
+    let spinner = TableActivityIndicatorView()
     
     // MARK: View Controller Lifecycle
     
@@ -31,8 +32,9 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
         self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
-        
-        tableView.backgroundView = emptyMessage
+    
+        tableView.backgroundView = spinner
+        spinner.center = CGPointMake(tableView.frame.size.width / 2, tableView.frame.size.height / 2)
         tableView.separatorStyle = .None
         
         refreshControl = UIRefreshControl()
@@ -100,7 +102,11 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func dataDidChange(){
         let count = dataSource.count
         friendsCountLabel.text = String(count)
-        self.tableView.reloadData();
+        tableView.reloadData();
+        
+        if (tableView.backgroundView == spinner) {
+            tableView.backgroundView = emptyMessage
+        }
 
         if (count == 0) {
             emptyMessage.hidden = false
@@ -120,6 +126,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
                 NSLog("error: %@", error!)
             }
             self.refreshControl?.endRefreshing()
+            self.spinner.stopAnimating()
         }
     }
 

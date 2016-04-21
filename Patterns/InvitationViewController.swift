@@ -20,20 +20,22 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     var dataSource = [Invitation]();
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any invitations yet")
+    let spinner = TableActivityIndicatorView()
 
     // MARK: View Controller Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.backgroundView = emptyMessage
-        tableView.separatorStyle = .None
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76;
-        
+
+        tableView.backgroundView = spinner
+        spinner.center = CGPointMake(tableView.frame.size.width / 2, tableView.frame.size.height / 2)
+        tableView.separatorStyle = .None
+
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
@@ -65,6 +67,10 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         
         self.invitationCountLabel.text = String(count)
         self.tableView.reloadData()
+        
+        if (tableView.backgroundView == spinner) {
+            tableView.backgroundView = emptyMessage
+        }
 
         if (count == 0) {
             emptyMessage.hidden = false
@@ -84,6 +90,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
                 NSLog("error: %@", error!)
             }
             self.refreshControl?.endRefreshing()
+            self.spinner.stopAnimating()
         }
     }
     
