@@ -43,7 +43,7 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
             
             
         } else {
-            print("Game was not loaded")
+            NSLog("error: %@", "Game was not loaded")
             return
         }
         setPadAlpha(1)
@@ -84,7 +84,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
             }
         }
     }
-
     
     override func viewDidAppear(animated: Bool) {
         performSegueWithIdentifier("goToReadyOverlay", sender: self)
@@ -111,8 +110,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
             answer_sequence.append("wronganswer")
         }
         Games.answerGameRound(answer_sequence, gameId: currentGame!.gameId, roundNumber: currentGame!.currentRoundNumber) { (message, error) in
-            print(message)
-            print(error)
             if message != nil {
                 self.roundResult = message!
             } else {

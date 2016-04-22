@@ -67,7 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(errorOccured)
             }
         }
-        print("Token string: " + deviceTokenString)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {

@@ -26,8 +26,10 @@ class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var opponentLabel: UILabel!
     @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var exitButton: UIButton!
     
     @IBAction func readyButtonTapped(sender: AnyObject) {
+        exitButton.hidden = true
         setTimeout(2) {
             self.startSequence({ 
                 setTimeout(1, block: {
@@ -39,6 +41,11 @@ class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDeleg
         self.readyText.hidden = true;
     }
     
+    
+    @IBAction func exitButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("gameToMain", sender: sender)
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToSequenceInput"){
             let destinationVC = segue.destinationViewController as! SequenceInputViewController
@@ -52,10 +59,8 @@ class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDeleg
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         if currentGame != nil {
             light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
-            
-            
         } else {
-            print("Game was not loaded")
+            NSLog("error: %@", "Game was not loaded")
         }
         setUpPads()
         setUpView()

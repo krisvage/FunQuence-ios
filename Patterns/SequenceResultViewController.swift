@@ -39,7 +39,6 @@ class SequenceResultViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     func getResultText(gameStatus: String, opponentUsername: String, winner: String?) -> String {
-        print(gameStatus)
         if(gameStatus == "Waiting for both players."){
             return "You have both answered the round correctly and move on to the next round"
         }
@@ -48,7 +47,7 @@ class SequenceResultViewController: UIViewController, UIGestureRecognizerDelegat
             if(roundResult == "Correct answer."){
                 return "Your answer is correct! Wait for \(opponentUsername) to answer and move on to the next round."
             } else {
-                return "Your answer is wrong! If \(opponentUsername) answers correctly he will win the game! If not the game will be draw."
+                return "Your answer is wrong! If \(opponentUsername) answers correctly he will win the game! If not the game will be drawn."
             }
         }
         if(gameStatus == "Game won."){
