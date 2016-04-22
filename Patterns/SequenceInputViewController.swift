@@ -21,6 +21,7 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     private var secondInterval = NSTimer();
     private var countdownTimer = NSTimer();
     private var roundResult: String?
+    private var pads: [UIButton] = []
     
     // Outlets and Actions
     @IBOutlet weak var greenPad: UIButton!
@@ -47,7 +48,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
         }
         setPadAlpha(1)
         setUpView()
-        
     }
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -77,6 +77,12 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
         ]
         let username = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         opponentLabel.text = username;
+        
+        if UserDefaultStorage.getBW() {
+            for pad in pads {
+                pad.setBackgroundImage(UIImage(named: "black_pad_button"), forState: .Normal)
+            }
+        }
     }
 
     
@@ -118,10 +124,11 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     }
 
     func setPadAlpha(alpha: CGFloat){
-        greenPad.alpha = alpha
-        redPad.alpha = alpha
-        bluePad.alpha = alpha
-        yellowPad.alpha = alpha
+        pads = [greenPad, redPad, bluePad, yellowPad]
+        
+        for pad in pads {
+            pad.alpha = alpha
+        }
     }
     
     func resetView(){

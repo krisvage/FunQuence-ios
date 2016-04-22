@@ -15,6 +15,7 @@ class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDeleg
     
     // Private state variables
     private var audioPlayer: GameAudioPlayer?
+    private var pads: [UIButton] = []
 
     @IBOutlet weak var greenPad: UIButton!
     @IBOutlet weak var redPad: UIButton!
@@ -79,10 +80,17 @@ class SequencePlaybackViewController: UIViewController, UIGestureRecognizerDeleg
     }
     
     func setUpPads(){
-        greenPad.alpha = 0.3
-        redPad.alpha = 0.3
-        bluePad.alpha = 0.3
-        yellowPad.alpha = 0.3
+        pads = [greenPad, redPad, bluePad, yellowPad]
+        
+        for pad in pads {
+            pad.alpha = 0.3
+        }
+        
+        if UserDefaultStorage.getBW() {
+            for pad in pads {
+                pad.setBackgroundImage(UIImage(named: "black_pad_button"), forState: .Normal)
+            }
+        }
     }
     
     func resetView(){
