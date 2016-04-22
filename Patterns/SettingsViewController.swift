@@ -40,10 +40,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logOutButtonTapped(sender: AnyObject) {
-        UserDefaultStorage.saveToken("")
-        UserDefaultStorage.saveUsername("")
-        UserDefaultStorage.saveEmail("")
-        UserDefaultStorage.setDeviceToken("")
+        UserDefaultStorage.resetSettings();
         self.performSegueWithIdentifier("settingsToLogin", sender: self)
     }
 

@@ -80,6 +80,10 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             performSegueWithIdentifier("launchLogin", sender: self)
             return;
         }
+        
+        if UserDefaultStorage.getFinishedTutorial() == false {
+            performSegueWithIdentifier("launchTutorial", sender: self)
+        }
         reloadData()
     }
     

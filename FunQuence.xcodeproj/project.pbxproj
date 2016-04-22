@@ -19,10 +19,13 @@
 		26827F101CC577780053F9E5 /* GetReadyOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */; };
 		26827F121CC58C260053F9E5 /* SequenceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */; };
 		2689D14C1CBD13E400FBCB0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */; };
+		26B8829A1CCA587100AACD00 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B882991CCA587100AACD00 /* TutorialViewController.swift */; };
+		26B8829B1CCA59F000AACD00 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
+		26B8829C1CCA5B9C00AACD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A41C85DF1300EEADC1 /* Main.storyboard */; };
+		26B8829D1CCA5BB000AACD00 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B882991CCA587100AACD00 /* TutorialViewController.swift */; };
 		26D441431CC93BB6006ED83D /* NotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D441421CC93BB6006ED83D /* NotificationEvents.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
-		26E58F331CC9595D0064329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A41C85DF1300EEADC1 /* Main.storyboard */; };
 		26E7B9411CC3BEAC00976344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7B9401CC3BEAC00976344 /* SettingsViewController.swift */; };
 		26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7B9401CC3BEAC00976344 /* SettingsViewController.swift */; };
 		26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
@@ -40,7 +43,6 @@
 		F117FC151CC0FD6700B383FF /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CC1CBD404800E517C7 /* Friends.swift */; };
 		F117FC161CC0FD6B00B383FF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A8CE1CBD409400E517C7 /* API.swift */; };
 		F117FC171CC0FD6F00B383FF /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D30E81CBBD67D004A2B07 /* Route.swift */; };
-		F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D234A1CBD254700220218 /* UserDefaultStorage.swift */; };
 		F117FC191CC0FD7500B383FF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
 		F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144A7031CC0251600CA3772 /* Invitation.swift */; };
 		F117FC1B1CC0FD7D00B383FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D23481CBD21F000220218 /* RegisterViewController.swift */; };
@@ -89,6 +91,7 @@
 		26827F0F1CC577780053F9E5 /* GetReadyOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetReadyOverlayViewController.swift; sourceTree = "<group>"; };
 		26827F111CC58C260053F9E5 /* SequenceResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceResultViewController.swift; sourceTree = "<group>"; };
 		2689D14B1CBD13E400FBCB0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		26B882991CCA587100AACD00 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		26D441421CC93BB6006ED83D /* NotificationEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEvents.swift; path = Patterns/NotificationEvents.swift; sourceTree = SOURCE_ROOT; };
 		26D87D5D1CBD2FFB00F78E08 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainFeedViewController.swift; path = Patterns/MainFeedViewController.swift; sourceTree = SOURCE_ROOT; };
 		26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		26E58F301CC958FB0064329E /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				26B882991CCA587100AACD00 /* TutorialViewController.swift */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -418,7 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E58F331CC9595D0064329E /* Main.storyboard in Resources */,
+				26B8829C1CCA5B9C00AACD00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +473,7 @@
 				26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */,
 				F16D234B1CBD254700220218 /* UserDefaultStorage.swift in Sources */,
 				F10D4C9A1CC53F0C00B3C359 /* EmptyTableViewLabel.swift in Sources */,
+				26B8829A1CCA587100AACD00 /* TutorialViewController.swift in Sources */,
 				F117FC271CC0FEB900B383FF /* Game.swift in Sources */,
 				F144A7041CC0251600CA3772 /* Invitation.swift in Sources */,
 				F140759D1C85DF1300EEADC1 /* AppDelegate.swift in Sources */,
@@ -489,9 +494,11 @@
 				F117FC211CC0FD9200B383FF /* InvitationCellViewController.swift in Sources */,
 				F117FC151CC0FD6700B383FF /* Friends.swift in Sources */,
 				F117FC121CC0FD5900B383FF /* Games.swift in Sources */,
+				26B8829B1CCA59F000AACD00 /* UserDefaultStorage.swift in Sources */,
 				F117FC1F1CC0FD8C00B383FF /* GameCellTableViewCell.swift in Sources */,
 				F117FC1B1CC0FD7D00B383FF /* RegisterViewController.swift in Sources */,
 				F117FC141CC0FD6400B383FF /* Users.swift in Sources */,
+				26B8829D1CCA5BB000AACD00 /* TutorialViewController.swift in Sources */,
 				F117FC1E1CC0FD8800B383FF /* FriendListViewController.swift in Sources */,
 				F117FC171CC0FD6F00B383FF /* Route.swift in Sources */,
 				F117FC1D1CC0FD8500B383FF /* FriendCellTableViewCell.swift in Sources */,
@@ -499,7 +506,6 @@
 				F1E9E5E41CC921950067131A /* GameAudioPlayer.swift in Sources */,
 				2643D1A71CC4FC8C0092458A /* TimeUtils.swift in Sources */,
 				26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */,
-				F117FC181CC0FD7200B383FF /* UserDefaultStorage.swift in Sources */,
 				F10D4C9B1CC542D400B3C359 /* EmptyTableViewLabel.swift in Sources */,
 				F117FC281CC0FEB900B383FF /* Game.swift in Sources */,
 				F117FC1A1CC0FD7900B383FF /* Invitation.swift in Sources */,
@@ -582,7 +588,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
+				PROVISIONING_PROFILE = "f0113fb4-9f80-49c7-b890-2c690510b15c";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -622,7 +628,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
+				PROVISIONING_PROFILE = "f0113fb4-9f80-49c7-b890-2c690510b15c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -646,7 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supergroup.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
+				PROVISIONING_PROFILE = "ec9775be-5081-49c1-966d-757af8e99c07";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -669,7 +675,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supergroup.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
+				PROVISIONING_PROFILE = "ec9775be-5081-49c1-966d-757af8e99c07";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

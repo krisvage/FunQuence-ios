@@ -61,4 +61,21 @@ class UserDefaultStorage {
     static func setDeviceToken(deviceToken: String) {
         defaults.setObject(deviceToken, forKey: "deviceToken")
     }
+    
+    static func setFinishedTutorial(didFinishTutorial: Bool){
+        defaults.setObject(didFinishTutorial, forKey: "didFinishTutorial")
+    }
+    
+    static func getFinishedTutorial() -> Bool {
+        return defaults.objectForKey("didFinishTutorial") as? Bool ?? false
+    }
+    
+    static func resetSettings() {
+        UserDefaultStorage.saveToken("")
+        UserDefaultStorage.saveUsername("")
+        UserDefaultStorage.saveEmail("")
+        UserDefaultStorage.setDeviceToken("")
+        UserDefaultStorage.saveBW(false)
+        UserDefaultStorage.saveSound(true)
+    }
 }
