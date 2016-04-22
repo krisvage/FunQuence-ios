@@ -28,7 +28,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     @IBOutlet weak var bluePad: UIButton!
     @IBOutlet weak var yellowPad: UIButton!
     @IBOutlet weak var infoText: UILabel!
-    @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var countdownAnchor: UIView!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var currentUserLabel: UILabel!
@@ -48,7 +47,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
         }
         setPadAlpha(1)
         setUpView()
-        countdownLabel.hidden = true;
         
     }
     
@@ -141,19 +139,12 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     
     func startCountDown(){
         let countdownDuration = Double(self.light_sequence!.count * 3);
-        var counter = Int(countdownDuration);
         self.addCircleWithAnimation(countdownDuration)
-        
-        secondInterval = setInterval(1) {
-            counter -= 1
-            self.countdownLabel.text = String(counter)
-        }
         
         countdownTimer = setTimeout(countdownDuration) {
             self.checkResult();
             self.cancelCountDown()
         }
-        countdownLabel.hidden = false;
     }
     
     func cancelCountDown(){
@@ -161,7 +152,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
         countdownTimer.invalidate()
         cancelCircleAnimation()
         freezeButtons();
-        countdownLabel.hidden = true;
     }
     
     func addCircleWithAnimation(duration: Double){

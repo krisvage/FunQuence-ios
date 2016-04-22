@@ -46,16 +46,16 @@ class SequenceResultViewController: UIViewController, UIGestureRecognizerDelegat
         
         if(gameStatus == "Waiting for \(opponentUsername).") {
             if(roundResult == "Correct answer."){
-                return "You answer is correct! Wait for \(opponentUsername) to answer and move on to the next round."
+                return "Your answer is correct! Wait for \(opponentUsername) to answer and move on to the next round."
             } else {
-                return "You answer is wrong! If \(opponentUsername) answers correctly he will win the game! If not the game will be draw."
+                return "Your answer is wrong! If \(opponentUsername) answers correctly he will win the game! If not the game will be draw."
             }
         }
         if(gameStatus == "Game won."){
             if(winner == UserDefaultStorage.getUsername()){
                 return "\(opponentUsername) has answered incorrectly and you have won the game!";
             } else {
-                return "\(opponentUsername) answered this round corretly and has won the game!"
+                return "\(opponentUsername) answered this round correctly and has won the game!"
             }
         }
         if(gameStatus == "Game draw."){

@@ -51,6 +51,14 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         reloadGames()
         reloadInvitationCount()
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(Int(scrollView.contentOffset.y) < -50 && !(refreshControl?.refreshing)!){
+            print("We reload now")
+            self.refreshControl?.beginRefreshing()
+            reloadData()
+        }
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

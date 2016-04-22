@@ -98,7 +98,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func getUserData() {
-        Users.me { username, email, errorOccured in
+        Users.me { (username, email, wins, losses, errorOccured) in
             if !errorOccured {
                 UserDefaultStorage.saveUsername(username!)
                 UserDefaultStorage.saveEmail(email!)

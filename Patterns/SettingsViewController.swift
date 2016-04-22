@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController {
         UserDefaultStorage.saveToken("")
         UserDefaultStorage.saveUsername("")
         UserDefaultStorage.saveEmail("")
+        UserDefaultStorage.setDeviceToken("")
         self.performSegueWithIdentifier("settingsToLogin", sender: self)
     }
 

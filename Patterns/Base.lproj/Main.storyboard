@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vb2-Tj-Xck" id="NLY-vg-itX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up7-qm-kbt">
@@ -105,7 +105,6 @@
                                                             <exclude reference="sC9-4k-I6Z"/>
                                                         </mask>
                                                     </variation>
-
                                                     <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="201" y="24" width="27" height="27"/>
                                                         <mask key="constraints">
@@ -1175,7 +1174,7 @@ is incorrect.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWr-hb-G71" id="RlM-Xv-n8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27h-gW-c8s">
@@ -1839,7 +1838,7 @@ to see the sequence playback.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nQv-DG-KVP" id="tk7-7Y-RH0">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erlend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU2-9B-ICy">
@@ -2224,7 +2223,6 @@ to see the sequence playback.</string>
                                 <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="org-oO-SJD">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                 <connections>
@@ -2240,7 +2238,6 @@ to see the sequence playback.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-
                             <constraint firstItem="1ea-Pg-iKw" firstAttribute="top" secondItem="org-oO-SJD" secondAttribute="bottom" constant="22" id="1fP-1W-MOY"/>
                             <constraint firstItem="RTQ-qa-eYG" firstAttribute="centerX" secondItem="z9e-OS-b9o" secondAttribute="centerX" id="E3a-hs-jWQ"/>
                             <constraint firstItem="8Gh-YP-x5Q" firstAttribute="top" secondItem="T21-YD-qpv" secondAttribute="bottom" constant="13" id="LbF-9d-iLh"/>
@@ -2250,7 +2247,6 @@ to see the sequence playback.</string>
                             <constraint firstItem="rwc-Ms-6K1" firstAttribute="top" secondItem="8Gh-YP-x5Q" secondAttribute="bottom" constant="8" id="Uvn-bm-JDc">
                                 <variation key="widthClass=compact" constant="10"/>
                             </constraint>
-
                             <constraint firstItem="1ea-Pg-iKw" firstAttribute="centerY" secondItem="9Km-Nd-kLU" secondAttribute="centerY" id="WFj-3L-6Oe"/>
                             <constraint firstItem="9Km-Nd-kLU" firstAttribute="leading" secondItem="z9e-OS-b9o" secondAttribute="leading" constant="40" id="Y7v-Mq-IjH"/>
                             <constraint firstItem="etx-ou-9IZ" firstAttribute="leading" secondItem="z9e-OS-b9o" secondAttribute="leading" constant="13" id="ZAw-pB-6Nx"/>
@@ -2279,26 +2275,26 @@ to see the sequence playback.</string>
                                 <exclude reference="hcT-Qz-Gd3"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZAw-pB-6Nx"/>
-                                <exclude reference="ote-oP-FPu"/>
-                                <exclude reference="LbF-9d-iLh"/>
-                                <exclude reference="OUe-wT-62I"/>
+                                <exclude reference="nqF-8o-c4l"/>
                                 <exclude reference="Shu-pb-JG4"/>
                                 <exclude reference="Uvn-bm-JDc"/>
-                                <exclude reference="fUp-M0-rmD"/>
-                                <exclude reference="t9j-ti-xHr"/>
-                                <exclude reference="gbs-8g-ckm"/>
-                                <exclude reference="mF1-0O-jcY"/>
-                                <exclude reference="N9i-uP-o4E"/>
-                                <exclude reference="bXk-T2-bHc"/>
-                                <exclude reference="Y7v-Mq-IjH"/>
-                                <exclude reference="aMi-Ia-9Gk"/>
-                                <exclude reference="whJ-WY-bpj"/>
+                                <exclude reference="E3a-hs-jWQ"/>
+                                <exclude reference="ZAw-pB-6Nx"/>
+                                <exclude reference="ote-oP-FPu"/>
                                 <exclude reference="1fP-1W-MOY"/>
                                 <exclude reference="WFj-3L-6Oe"/>
                                 <exclude reference="xXm-Zr-Poh"/>
-                                <exclude reference="E3a-hs-jWQ"/>
-                                <exclude reference="nqF-8o-c4l"/>
+                                <exclude reference="aMi-Ia-9Gk"/>
+                                <exclude reference="whJ-WY-bpj"/>
+                                <exclude reference="gbs-8g-ckm"/>
+                                <exclude reference="mF1-0O-jcY"/>
+                                <exclude reference="LbF-9d-iLh"/>
+                                <exclude reference="OUe-wT-62I"/>
+                                <exclude reference="Y7v-Mq-IjH"/>
+                                <exclude reference="N9i-uP-o4E"/>
+                                <exclude reference="bXk-T2-bHc"/>
+                                <exclude reference="fUp-M0-rmD"/>
+                                <exclude reference="t9j-ti-xHr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2315,26 +2311,26 @@ to see the sequence playback.</string>
                                 <include reference="hcT-Qz-Gd3"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZAw-pB-6Nx"/>
-                                <include reference="ote-oP-FPu"/>
-                                <include reference="LbF-9d-iLh"/>
-                                <include reference="OUe-wT-62I"/>
+                                <include reference="nqF-8o-c4l"/>
                                 <include reference="Shu-pb-JG4"/>
                                 <include reference="Uvn-bm-JDc"/>
-                                <include reference="fUp-M0-rmD"/>
-                                <include reference="t9j-ti-xHr"/>
-                                <include reference="gbs-8g-ckm"/>
-                                <include reference="mF1-0O-jcY"/>
-                                <include reference="N9i-uP-o4E"/>
-                                <include reference="bXk-T2-bHc"/>
-                                <include reference="Y7v-Mq-IjH"/>
-                                <include reference="aMi-Ia-9Gk"/>
-                                <include reference="whJ-WY-bpj"/>
+                                <include reference="E3a-hs-jWQ"/>
+                                <include reference="ZAw-pB-6Nx"/>
+                                <include reference="ote-oP-FPu"/>
                                 <include reference="1fP-1W-MOY"/>
                                 <include reference="WFj-3L-6Oe"/>
                                 <include reference="xXm-Zr-Poh"/>
-                                <include reference="E3a-hs-jWQ"/>
-                                <include reference="nqF-8o-c4l"/>
+                                <include reference="aMi-Ia-9Gk"/>
+                                <include reference="whJ-WY-bpj"/>
+                                <include reference="gbs-8g-ckm"/>
+                                <include reference="mF1-0O-jcY"/>
+                                <include reference="LbF-9d-iLh"/>
+                                <include reference="OUe-wT-62I"/>
+                                <include reference="Y7v-Mq-IjH"/>
+                                <include reference="N9i-uP-o4E"/>
+                                <include reference="bXk-T2-bHc"/>
+                                <include reference="fUp-M0-rmD"/>
+                                <include reference="t9j-ti-xHr"/>
                             </mask>
                         </variation>
                     </view>
@@ -2344,7 +2340,6 @@ to see the sequence playback.</string>
                         <outlet property="emailLabel" destination="2Ae-yg-Tfb" id="qBB-9t-45X"/>
                         <outlet property="soundSwitch" destination="org-oO-SJD" id="p3J-lH-eIe"/>
                         <outlet property="usernameLabel" destination="lLJ-Ux-viD" id="K8S-lE-Kez"/>
-                        <outlet property="winsLabel" destination="4bV-yp-pAy" id="QFh-ag-mIj"/>
                         <segue destination="vPi-68-ekc" kind="presentation" identifier="settingsToLogin" id="wR8-ER-97O"/>
                     </connections>
                 </viewController>
@@ -2557,45 +2552,25 @@ to see the sequence playback.</string>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYW-Ha-FtC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crI-vs-NEj">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="71h-me-Sqa">
                                         <variation key="widthClass=compact" constant="100"/>
                                     </constraint>
-                                    <constraint firstItem="crI-vs-NEj" firstAttribute="centerY" secondItem="MYW-Ha-FtC" secondAttribute="centerY" id="78H-MS-qp9"/>
-                                    <constraint firstItem="crI-vs-NEj" firstAttribute="centerX" secondItem="MYW-Ha-FtC" secondAttribute="centerX" id="Qbt-Uh-Lia"/>
                                     <constraint firstAttribute="height" constant="1" id="eRc-qW-mxu">
                                         <variation key="widthClass=compact" constant="100"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="crI-vs-NEj"/>
-                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="71h-me-Sqa"/>
                                         <exclude reference="eRc-qW-mxu"/>
-                                        <exclude reference="78H-MS-qp9"/>
-                                        <exclude reference="Qbt-Uh-Lia"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="crI-vs-NEj"/>
-                                    </mask>
                                     <mask key="constraints">
                                         <include reference="71h-me-Sqa"/>
                                         <include reference="eRc-qW-mxu"/>
-                                        <include reference="78H-MS-qp9"/>
-                                        <include reference="Qbt-Uh-Lia"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2682,7 +2657,6 @@ to see the sequence playback.</string>
                     <connections>
                         <outlet property="bluePad" destination="94p-0P-Lqr" id="Xb6-WQ-dsa"/>
                         <outlet property="countdownAnchor" destination="MYW-Ha-FtC" id="tnb-Wb-pWM"/>
-                        <outlet property="countdownLabel" destination="crI-vs-NEj" id="xZv-kJ-RZw"/>
                         <outlet property="currentUserLabel" destination="rmQ-In-ahf" id="X2n-Si-VUL"/>
                         <outlet property="greenPad" destination="h1U-vK-7D6" id="dUU-MO-Btz"/>
                         <outlet property="infoText" destination="Ga6-cO-S96" id="P4u-jB-S4A"/>
@@ -3007,6 +2981,6 @@ to see the sequence playback.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZZ3-KC-etX"/>
-        <segue reference="wR8-ER-97O"/>
+        <segue reference="zGp-Lx-8Wp"/>
     </inferredMetricsTieBreakers>
 </document>
