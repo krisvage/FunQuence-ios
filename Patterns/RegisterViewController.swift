@@ -66,10 +66,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         keyboardHeight = keyboardRectangle.height
         contentHeight.constant = CGFloat(initialContentHeight!) - keyboardHeight!/2 - 20
     }
-    
 
-    
     // MARK: Navigation
+
     @IBAction func registerButtonTapped(sender: UIButton?) {
         let username = usernameField.text!
         let email = emailField.text!

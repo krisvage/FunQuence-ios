@@ -42,11 +42,9 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         refreshControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl!)
         self.unsubscribe = NotificationEvents.sharedInstance.subscribe(function: reloadData)
-        print("Notification subscribet")
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if(Int(scrollView.contentOffset.y) < -50 && !(refreshControl?.refreshing)!){
-            print("We reload now")
             self.refreshControl?.beginRefreshing()
             reloadData()
         }
@@ -89,7 +87,8 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
             emptyMessage.hidden = false
             tableView.separatorStyle = .None
             if (networkError) {
-                emptyMessage.text = "No internet connection. Reconnect and reload."
+                emptyMessage.text = "No internet connection.\nReconnect and reload."
+                emptyMessage.numberOfLines = 2
             } else {
                 emptyMessage.resetText()
             }

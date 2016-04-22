@@ -170,7 +170,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             self.emptyMessage.hidden = false
             self.tableView.separatorStyle = .None
             if (networkError) {
-                emptyMessage.text = "No internet connection. Reconnect and reload."
+                emptyMessage.text = "No internet connection.\nReconnect and reload."
+                emptyMessage.numberOfLines = 2
             } else {
                 emptyMessage.resetText()
             }
