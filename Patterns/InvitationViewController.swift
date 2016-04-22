@@ -44,6 +44,13 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         self.unsubscribe = NotificationEvents.sharedInstance.subscribe(function: reloadData)
         print("Notification subscribet")
     }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(Int(scrollView.contentOffset.y) < -50 && !(refreshControl?.refreshing)!){
+            print("We reload now")
+            self.refreshControl?.beginRefreshing()
+            reloadData()
+        }
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -51,8 +58,6 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     }
     override func viewDidDisappear(animated: Bool) {
         self.unsubscribe!();
-        print("Notification subscribet")
-
     }
     
     // MARK: Navigation

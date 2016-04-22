@@ -48,6 +48,13 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
 
         reloadData()
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(Int(scrollView.contentOffset.y) < -50 && !(refreshControl?.refreshing)!){
+            self.refreshControl?.beginRefreshing()
+            reloadData()
+        }
+    }
 
     // MARK: Navigation
     

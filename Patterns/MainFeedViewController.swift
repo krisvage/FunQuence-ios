@@ -13,8 +13,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: Properties
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var gamesCountLabel: UILabel!
     @IBOutlet weak var notificationBadge: UIButton!
+    @IBOutlet weak var lossCountLabel: UILabel!
+    @IBOutlet weak var winsCountLabel: UILabel!
 
     var unsubscribe: (() -> Void)?
     let textCellIdentifier = "GameCell"
@@ -50,11 +51,20 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     func reloadData(){
         reloadGames()
         reloadInvitationCount()
+        reloadMe()
+    }
+    
+    func reloadMe(){
+        Users.me { (username, email, wins, losses, errorOccured) in
+            if errorOccured == false {
+                self.lossCountLabel.text = String(losses!)
+                self.winsCountLabel.text = String(wins!)
+            }
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if(Int(scrollView.contentOffset.y) < -50 && !(refreshControl?.refreshing)!){
-            print("We reload now")
             self.refreshControl?.beginRefreshing()
             reloadData()
         }
@@ -147,7 +157,6 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         }
 
         self.tableView.reloadData()
-        self.gamesCountLabel.text = String(count)
     }
     
     func reloadGames() {
