@@ -60,8 +60,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
         audioPlayer!.play(senderPad)
         let colorString = self.getColorStringByPad(senderPad)
         answer_sequence.append(colorString!)
-        currentGame?.gameRounds[0]
-        
         if(answer_sequence.count == light_sequence!.count){
             checkResult();
             cancelCountDown()

@@ -1536,6 +1536,7 @@ is incorrect.</string>
                         <viewControllerLayoutGuide type="bottom" id="WXo-en-f3I"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZC7-ok-Eta">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-BT-7e2">
@@ -1746,28 +1747,28 @@ and remembering color sequences.</string>
                                 <exclude reference="D4k-eX-TRc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="xVi-1H-aty"/>
-                                <exclude reference="zQn-lq-cZ2"/>
-                                <exclude reference="ONV-BN-4mC"/>
-                                <exclude reference="sYK-xq-QXb"/>
-                                <exclude reference="Fue-7d-wsi"/>
-                                <exclude reference="B0Q-Km-LnB"/>
-                                <exclude reference="Sx4-cS-idb"/>
-                                <exclude reference="s6K-wt-o0S"/>
                                 <exclude reference="tt5-IN-I0a"/>
                                 <exclude reference="uIg-Lr-hje"/>
-                                <exclude reference="3kf-px-d45"/>
-                                <exclude reference="d0h-Jr-zga"/>
-                                <exclude reference="j2z-hK-xuc"/>
-                                <exclude reference="LEH-jf-VIR"/>
                                 <exclude reference="J5E-39-ujK"/>
                                 <exclude reference="eh8-Tj-N0I"/>
-                                <exclude reference="QJI-BB-ZSx"/>
-                                <exclude reference="S9A-4E-Vxx"/>
+                                <exclude reference="xy5-S6-LEW"/>
+                                <exclude reference="LEH-jf-VIR"/>
+                                <exclude reference="Fue-7d-wsi"/>
                                 <exclude reference="bF9-8Y-sLD"/>
                                 <exclude reference="hqd-Fb-FMv"/>
                                 <exclude reference="rh3-9o-axY"/>
-                                <exclude reference="xy5-S6-LEW"/>
+                                <exclude reference="ONV-BN-4mC"/>
+                                <exclude reference="sYK-xq-QXb"/>
+                                <exclude reference="B0Q-Km-LnB"/>
+                                <exclude reference="Sx4-cS-idb"/>
+                                <exclude reference="s6K-wt-o0S"/>
+                                <exclude reference="xVi-1H-aty"/>
+                                <exclude reference="zQn-lq-cZ2"/>
+                                <exclude reference="3kf-px-d45"/>
+                                <exclude reference="d0h-Jr-zga"/>
+                                <exclude reference="j2z-hK-xuc"/>
+                                <exclude reference="QJI-BB-ZSx"/>
+                                <exclude reference="S9A-4E-Vxx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1784,28 +1785,28 @@ and remembering color sequences.</string>
                                 <include reference="D4k-eX-TRc"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="xVi-1H-aty"/>
-                                <include reference="zQn-lq-cZ2"/>
-                                <include reference="ONV-BN-4mC"/>
-                                <include reference="sYK-xq-QXb"/>
-                                <include reference="Fue-7d-wsi"/>
-                                <include reference="B0Q-Km-LnB"/>
-                                <include reference="Sx4-cS-idb"/>
-                                <include reference="s6K-wt-o0S"/>
                                 <include reference="tt5-IN-I0a"/>
                                 <include reference="uIg-Lr-hje"/>
-                                <include reference="3kf-px-d45"/>
-                                <include reference="d0h-Jr-zga"/>
-                                <include reference="j2z-hK-xuc"/>
-                                <include reference="LEH-jf-VIR"/>
                                 <include reference="J5E-39-ujK"/>
                                 <include reference="eh8-Tj-N0I"/>
-                                <include reference="QJI-BB-ZSx"/>
-                                <include reference="S9A-4E-Vxx"/>
+                                <include reference="xy5-S6-LEW"/>
+                                <include reference="LEH-jf-VIR"/>
+                                <include reference="Fue-7d-wsi"/>
                                 <include reference="bF9-8Y-sLD"/>
                                 <exclude reference="hqd-Fb-FMv"/>
                                 <exclude reference="rh3-9o-axY"/>
-                                <include reference="xy5-S6-LEW"/>
+                                <include reference="ONV-BN-4mC"/>
+                                <include reference="sYK-xq-QXb"/>
+                                <include reference="B0Q-Km-LnB"/>
+                                <include reference="Sx4-cS-idb"/>
+                                <include reference="s6K-wt-o0S"/>
+                                <include reference="xVi-1H-aty"/>
+                                <include reference="zQn-lq-cZ2"/>
+                                <include reference="3kf-px-d45"/>
+                                <include reference="d0h-Jr-zga"/>
+                                <include reference="j2z-hK-xuc"/>
+                                <include reference="QJI-BB-ZSx"/>
+                                <include reference="S9A-4E-Vxx"/>
                             </mask>
                         </variation>
                     </view>
