@@ -22,6 +22,7 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any invitations yet")
     let spinner = TableActivityIndicatorView()
+    var networkError = false
 
     // MARK: View Controller Lifecycle
 
@@ -82,6 +83,11 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         if (count == 0) {
             emptyMessage.hidden = false
             tableView.separatorStyle = .None
+            if (networkError) {
+                emptyMessage.text = "No internet connection. Reconnect and reload."
+            } else {
+                emptyMessage.resetText()
+            }
         } else {
             emptyMessage.hidden = true
             tableView.separatorStyle = .SingleLine
@@ -92,9 +98,16 @@ class InvitationViewController: UIViewController, UITableViewDataSource, UITable
         Invitations.all { invitations, error in
             if error == nil {
                 self.dataSource = invitations!
+                self.networkError = false
                 self.dataDidChange()
             } else {
-                NSLog("error: %@", error!)
+                if error == "API http request failed" {
+                    self.networkError = true
+                    self.dataDidChange()
+                } else {
+                    self.networkError = false
+                    NSLog("error: %@", error!)
+                }
             }
             self.refreshControl?.endRefreshing()
             self.spinner.stopAnimating()

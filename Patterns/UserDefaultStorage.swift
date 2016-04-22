@@ -35,6 +35,22 @@ class UserDefaultStorage {
         return defaults.objectForKey("userEmail") as? String ?? ""
     }
     
+    static func saveSound(state: Bool) {
+        defaults.setObject(state, forKey: "soundSetting")
+    }
+    
+    static func getSound() -> Bool {
+        return defaults.objectForKey("soundSetting") as? Bool ?? true
+    }
+    
+    static func saveBW(state: Bool) {
+        defaults.setObject(state, forKey: "bwSetting")
+    }
+    
+    static func getBW() -> Bool {
+        return defaults.objectForKey("bwSetting") as? Bool ?? false
+    }
+    
     // Device token is specific to each device and is needed for Push Notifications
     // Not to be confused with token (JWT)
     static func getDeviceToken() -> String? {

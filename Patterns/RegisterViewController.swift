@@ -78,6 +78,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         Users.register(username, email: email, password: password, device_token: UserDefaultStorage.getDeviceToken()) { token, message, error in
             if error == nil {
                 UserDefaultStorage.saveToken(token ?? "")
+                self.getUserData()
                 self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
             } else {
                 if error == "Username already exists." {
@@ -92,6 +93,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     self.emailField.background = UIImage(named: "inputField")
                 }
                 self.displayAlertViewError(error!)
+            }
+        }
+    }
+
+    private func getUserData() {
+        Users.me { username, email, errorOccured in
+            if !errorOccured {
+                UserDefaultStorage.saveUsername(username!)
+                UserDefaultStorage.saveEmail(email!)
             }
         }
     }
@@ -124,27 +134,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: View Controller Configuration
 
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
-        } else {
-            return .All
-        }
-    }
-
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-    
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

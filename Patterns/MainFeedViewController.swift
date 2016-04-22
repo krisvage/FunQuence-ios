@@ -23,6 +23,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var refreshControl: UIRefreshControl?
     let emptyMessage = EmptyTableViewLabel(text: "You do not have any games yet")
     let spinner = TableActivityIndicatorView()
+    var networkError = false
 
     // MARK: View Controller Lifecycle
 
@@ -127,6 +128,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         if (count == 0) {
             self.emptyMessage.hidden = false
             self.tableView.separatorStyle = .None
+            if (networkError) {
+                emptyMessage.text = "No internet connection. Reconnect and reload."
+            } else {
+                emptyMessage.resetText()
+            }
         } else {
             self.emptyMessage.hidden = true
             self.tableView.separatorStyle = .SingleLine
@@ -140,9 +146,16 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         Games.all { games, error in
             if error == nil {
                 self.gamesList = games!
+                self.networkError = false
                 self.dataDidChange()
             } else {
-                NSLog("error: %@", error!)
+                if error == "API http request failed" {
+                    self.networkError = true
+                    self.dataDidChange()
+                } else {
+                    self.networkError = false
+                    NSLog("error: %@", error!)
+                }
             }
             self.refreshControl!.endRefreshing()
             self.spinner.stopAnimating()

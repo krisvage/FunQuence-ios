@@ -29,6 +29,8 @@ class GameAudioPlayer {
     }
     
     func play(pad: UIButton) {
-        sounds[pad]!.play()
+        if UserDefaultStorage.getSound() {
+            sounds[pad]!.play()
+        }
     }
 }
