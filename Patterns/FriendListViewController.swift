@@ -108,6 +108,12 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: UITableViewDataSource
     
     func dataDidChange(){
+        dataSource.sortInPlace { user1, user2 -> Bool in
+            if(user1.username < user2.username){
+                return true;
+            }
+            return false;
+        }
         let count = dataSource.count
         friendsCountLabel.text = String(count)
         tableView.reloadData();

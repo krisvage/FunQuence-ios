@@ -495,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq3-7o-THo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="460"/>
+            <point key="canvasLocation" x="-841.5" y="454"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JUD-2P-PxG">
@@ -3051,6 +3051,6 @@ to see the sequence playback.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZZ3-KC-etX"/>
-        <segue reference="wR8-ER-97O"/>
+        <segue reference="zGp-Lx-8Wp"/>
     </inferredMetricsTieBreakers>
 </document>

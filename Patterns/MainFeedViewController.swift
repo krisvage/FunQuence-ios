@@ -69,6 +69,10 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             reloadData()
         }
     }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -121,21 +125,36 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDataSource
     
     func dataDidChange() {
-        gamesList.sortInPlace { (game1, game2) -> Bool in
-            let status = game1.status["status"]!["message"] as! String
-            let usernames = [
-                game1.players[0]["username"] as! String,
-                game1.players[1]["username"] as! String
-            ]
-            let opponentUsername = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
+        // Dette er jææææææævlig hacky. Men funker :>
+        let waitingForUserGames = gamesList.filter({ (game) -> Bool in
+            let status = game.status["status"]!["message"] as! String
             if(status ==  "Waiting for both players." || status == "Waiting for \(UserDefaultStorage.getUsername())."){
                 return true;
             }
+            return false;
+        })
+        
+        let waitingForOpponentGames = gamesList.filter({ (game) -> Bool in
+            let status = game.status["status"]!["message"] as! String
+            let usernames = [
+                game.players[0]["username"] as! String,
+                game.players[1]["username"] as! String
+            ]
+            let opponentUsername = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
             if(status == "Waiting for \(opponentUsername)."){
                 return true;
             }
             return false;
-        }
+        })
+        
+        let inactiveGames = gamesList.filter({ (game) -> Bool in
+            let gameIsOver = game.status["status"]!["game_is_over"] as! Bool
+            if gameIsOver == true{
+                return true;
+            }
+            return false
+        })
+        gamesList = waitingForUserGames + waitingForOpponentGames + inactiveGames;
 
         if (tableView.backgroundView == spinner) {
             tableView.backgroundView = emptyMessage
