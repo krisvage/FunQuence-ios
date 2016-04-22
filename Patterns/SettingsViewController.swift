@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
     
     // MARK: Properties
 
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
 
@@ -22,6 +24,14 @@ class SettingsViewController: UIViewController {
 
         usernameLabel.text = UserDefaultStorage.getUsername();
         emailLabel.text = UserDefaultStorage.getEmail();
+        Users.me { (username, email, wins, losses, errorOccured) in
+            if wins != nil {
+                self.winsLabel.text = "Wins: " + String(wins!)
+            }
+            if(losses != nil){
+                self.lossesLabel.text = "Losses: " + String(losses!)
+            }
+        }
     }
 
     override func viewDidDisappear(animated: Bool) {

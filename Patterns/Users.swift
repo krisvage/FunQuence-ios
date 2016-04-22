@@ -18,7 +18,7 @@ class Users: API {
 
     
     typealias loginRegisterHandler = (token: String?, message: String?, error: String?) -> ()
-    typealias meHandler = (username: String?, email: String?, errorOccured: Bool) -> ()
+    typealias meHandler = (username: String?, email: String?, wins: Int?, losses: Int?, errorOccured: Bool) -> ()
     
     static let loginRegisterClosure: (Response<AnyObject, NSError>, loginRegisterHandler) -> () = { response, completionHandler in
         switch response.result {
@@ -107,10 +107,12 @@ class Users: API {
                 completionHandler(
                     username: json["user"]["username"].stringValue,
                     email: json["user"]["email"].stringValue,
+                    wins: json["user"]["wins"].intValue,
+                    losses: json["user"]["losses"].intValue,
                     errorOccured: false
                 )
             case .Failure(_):
-                completionHandler(username: nil, email: nil, errorOccured: true)
+                completionHandler(username: nil, email: nil, wins: nil, losses: nil, errorOccured: true)
             }
         }
     }

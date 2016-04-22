@@ -22,6 +22,7 @@
 		26D441431CC93BB6006ED83D /* NotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D441421CC93BB6006ED83D /* NotificationEvents.swift */; };
 		26D87D631CBD454000F78E08 /* GameCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D87D621CBD454000F78E08 /* GameCellTableViewCell.swift */; };
 		26DF8FC71CC001B60005CE2C /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF8FC61CC001B60005CE2C /* TimeAgo.swift */; };
+		26E58F331CC9595D0064329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14075A41C85DF1300EEADC1 /* Main.storyboard */; };
 		26E7B9411CC3BEAC00976344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7B9401CC3BEAC00976344 /* SettingsViewController.swift */; };
 		26E7B9421CC3BEAC00976344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7B9401CC3BEAC00976344 /* SettingsViewController.swift */; };
 		26E989A81CBFCC800045D24F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E989A71CBFCC800045D24F /* FriendListViewController.swift */; };
@@ -161,6 +162,13 @@
 			name = GamePlay;
 			sourceTree = "<group>";
 		};
+		26E58F301CC958FB0064329E /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		26E7B93F1CC3BE9400976344 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +180,7 @@
 		26E989AA1CBFCC860045D24F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26E58F301CC958FB0064329E /* Tutorial */,
 				2643D1A01CC4F71C0092458A /* GamePlay */,
 				26E989B51CBFE7600045D24F /* Main View */,
 				26E989B61CBFE7740045D24F /* Friends View */,
@@ -415,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E58F331CC9595D0064329E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +589,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,8 +613,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mathias Iden (3D2GR74Y59)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mathias Iden (3D2GR74Y59)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -619,7 +629,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -643,7 +653,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supergroup.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8027c1d8-8bda-48ac-8fcf-c2e70b15b6f3";
+				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -654,8 +664,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = icon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mathias Iden (3D2GR74Y59)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mathias Iden (3D2GR74Y59)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,7 +676,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.supergroup.funquence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8027c1d8-8bda-48ac-8fcf-c2e70b15b6f3";
+				PROVISIONING_PROFILE = "3c59a2b1-ddab-4af2-88a8-24dabafc7133";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
