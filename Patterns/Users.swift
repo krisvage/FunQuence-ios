@@ -16,10 +16,8 @@ class Users: API {
     static let meRoute = Route(path: basePath + "/users/me", method: .GET)
     static let setDeviceTokenRoute = Route(path: basePath + "/users/me", method: .PUT)
 
-    
     typealias loginRegisterHandler = (token: String?, message: String?, error: String?) -> ()
     typealias meHandler = (username: String?, email: String?, wins: Int?, losses: Int?, errorOccured: Bool) -> ()
-
 
     static let loginRegisterClosure: (Response<AnyObject, NSError>, loginRegisterHandler) -> () = { response, completionHandler in
         switch response.result {
@@ -97,7 +95,7 @@ class Users: API {
 
      Get current user.
      
-     => username, email, errorOccured
+     => username, email, wins, losses, errorOccured
      */
     static func me(completionHandler: meHandler) {
         request(meRoute) { response in
