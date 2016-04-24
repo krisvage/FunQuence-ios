@@ -9,7 +9,6 @@
 import UIKit
 
 class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate {
-    
     // MARK: Properties
 
     @IBOutlet weak var tableView: UITableView!
@@ -117,8 +116,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         Invitations.allCount { invitationCount, error in
             if error != nil {
                 NSLog("error: %@", error!)
+                return;
             }
-            
             if (invitationCount != self.invitationCount) {
                 self.invitationCount = invitationCount
                 self.invitationCountDidChange()

@@ -82,7 +82,6 @@ class Games: API {
             switch response.result {
             case .Success(_):
                 let json = JSON(response.result.value!)
-                
                 if json["error"] == nil {
                     completionHandler(games: parseGames(json["games"]), error: nil)
                 } else {

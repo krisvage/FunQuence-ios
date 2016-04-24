@@ -29,8 +29,6 @@ class GameCellTableViewCell: UITableViewCell {
         let opponentUsername = usernames[0] == UserDefaultStorage.getUsername() ? usernames[1] : usernames[0]
         let round_number = game.currentRoundNumber
         let status = game.status["status"]!["message"] as! String
-        // TODO: Refactor images. Only need a placeholder and change image uri.
-        // TODO: Make sure all possible states of a game is represented.
         var gameStatusIconString: String?
         switch status {
             case "Waiting for both players.":

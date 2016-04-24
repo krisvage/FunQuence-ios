@@ -28,7 +28,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         initialContentHeight = Int(contentView.frame.height);
-
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegisterViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RegisterViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -46,7 +45,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let keyboardRectangle = keyboardFrame.CGRectValue()
         keyboardHeight = keyboardRectangle.height
         contentHeight.constant = CGFloat(initialContentHeight!) + keyboardHeight!/2
-        
         // If iPhone 5S or lower
         if(view.frame.height < 667){
             scrollOffset(100)
@@ -84,6 +82,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.messageHeader.hidden = true
                 self.view.endEditing(true)
                 self.getUserData()
+                if(UserDefaultStorage.getDeviceToken() != nil){
+                    Users.setDeviceToken(UserDefaultStorage.getDeviceToken()!, completionHandler: nil)
+                }
                 self.dismissViewControllerAnimated(true, completion: {})
             } else {
                 self.messageField.text = error
