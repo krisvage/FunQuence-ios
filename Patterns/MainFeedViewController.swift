@@ -129,7 +129,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDataSource
     
     func dataDidChange() {
-        // Dette er jææææææævlig hacky. Men funker :>
+        // Sorting games into active, pending and inactive. Could be improved.
         let waitingForUserGames = gamesList.filter({ (game) -> Bool in
             let status = game.status["status"]!["message"] as! String
             if(status ==  "Waiting for both players." || status == "Waiting for \(UserDefaultStorage.getUsername())."){
