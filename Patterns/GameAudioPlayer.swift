@@ -22,7 +22,6 @@ class GameAudioPlayer {
             try! AVAudioPlayer(data: NSDataAsset(name: "jump_high")!.data, fileTypeHint: "wav"),
             try! AVAudioPlayer(data: NSDataAsset(name: "jump_highest")!.data, fileTypeHint: "wav")
         ]
-        
         for (index, player) in players.enumerate() {
             sounds[buttons[index]] = player
         }

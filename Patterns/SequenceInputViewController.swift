@@ -37,7 +37,6 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self
-
         if currentGame != nil {
             light_sequence = currentGame!.gameRounds.last!["light_sequence"] as? [String]
             
@@ -57,7 +56,13 @@ class SequenceInputViewController: UIViewController, countdownStarter, UIGesture
     @IBAction func padTapped(sender: AnyObject) {
         // Start the counter if this was the first entry.
         let senderPad = sender as! UIButton;
-        audioPlayer!.play(senderPad)
+        
+        // This make sure that the UI doesn't hang while audioPlayer buffers the .wav files.
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            self.audioPlayer!.play(senderPad)
+        }
+        
         let colorString = self.getColorStringByPad(senderPad)
         answer_sequence.append(colorString!)
         if(answer_sequence.count == light_sequence!.count){
